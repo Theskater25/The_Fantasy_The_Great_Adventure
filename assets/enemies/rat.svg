@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 220" role="img" aria-label="Rat">
+  <defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#36404a"/><stop offset="1" stop-color="#11161d"/></linearGradient><radialGradient id="halo"><stop stop-color="#b3c4d4" stop-opacity=".34"/><stop offset="1" stop-color="#b3c4d4" stop-opacity="0"/></radialGradient></defs>
+  <rect width="320" height="220" rx="18" fill="url(#bg)"/><circle cx="157" cy="103" r="96" fill="url(#halo)"/>
+  <path d="M82 178c-4-49 25-77 77-77s81 28 77 77c-32 30-122 30-154 0z" fill="#777f8b" stroke="#d4d9dc" stroke-width="4"/><circle cx="129" cy="72" r="28" fill="#8d96a0" stroke="#d4d9dc" stroke-width="4"/><circle cx="192" cy="72" r="28" fill="#8d96a0" stroke="#d4d9dc" stroke-width="4"/><path d="M123 116l35 20 35-20" fill="#d2d6d7" stroke="#333a44" stroke-width="4"/><circle cx="143" cy="99" r="6" fill="#ef5e65"/><circle cx="178" cy="99" r="6" fill="#ef5e65"/><path d="M190 145c44 8 66-12 73-43" fill="none" stroke="#c48684" stroke-width="7" stroke-linecap="round"/><path d="M142 152v28M178 152v28" stroke="#d4d9dc" stroke-width="8" stroke-linecap="round"/>
+</svg>

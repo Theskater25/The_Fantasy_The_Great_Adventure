@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 220" role="img" aria-label="Squelette">
+  <defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#3a2e50"/><stop offset="1" stop-color="#0d1120"/></linearGradient><radialGradient id="halo"><stop stop-color="#a98bff" stop-opacity=".42"/><stop offset="1" stop-color="#a98bff" stop-opacity="0"/></radialGradient></defs>
+  <rect width="320" height="220" rx="18" fill="url(#bg)"/><circle cx="160" cy="83" r="96" fill="url(#halo)"/>
+  <path d="M92 208c10-48 34-73 68-73s58 25 68 73" fill="#b9b2a0" stroke="#eee6cb" stroke-width="4"/><path d="M105 61c0-32 23-51 55-51s55 19 55 51v59c-22 19-88 19-110 0z" fill="#d8d0b9" stroke="#fff4cf" stroke-width="4"/>
+  <path d="M124 71l19 8 17-10 17 10 19-8" fill="#241d35" stroke="#66557c" stroke-width="4"/><circle cx="143" cy="75" r="7" fill="#ff667d"/><circle cx="177" cy="75" r="7" fill="#ff667d"/>
+  <path d="M133 110h54M139 125h42" stroke="#3b3040" stroke-width="6"/><path d="M126 151h68M116 171h88M108 191h104" stroke="#ebe0be" stroke-width="9" stroke-linecap="round"/>
+</svg>
