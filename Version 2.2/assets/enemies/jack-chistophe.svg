@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 220" role="img" aria-label="Jack Chistophe">
+  <defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#552e31"/><stop offset="1" stop-color="#160f19"/></linearGradient><radialGradient id="halo"><stop stop-color="#efbd69" stop-opacity=".45"/><stop offset="1" stop-color="#efbd69" stop-opacity="0"/></radialGradient></defs>
+  <rect width="320" height="220" rx="18" fill="url(#bg)"/><circle cx="160" cy="84" r="100" fill="url(#halo)"/>
+  <path d="M78 208c10-50 38-76 82-76s72 26 82 76" fill="#24152a" stroke="#d7a45d" stroke-width="5"/><path d="M103 78c0-47 24-68 57-68s57 21 57 68l-12 84h-90z" fill="#1e2634" stroke="#d7a45d" stroke-width="4"/><path d="M109 79c8-54 94-54 102 0l-30-12h-44z" fill="#343d51"/><path d="M121 99h22M177 99h22" stroke="#f2b85d" stroke-width="7" stroke-linecap="round"/><path d="M144 113h32v44h-32z" fill="#bd4c4e"/><path d="M160 119v31M146 135h28" stroke="#ffd27c" stroke-width="5"/><path d="M125 171l-20 29M195 171l20 29" stroke="#d7a45d" stroke-width="8"/>
+</svg>

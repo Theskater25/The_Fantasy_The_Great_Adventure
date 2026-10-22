@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 220" role="img" aria-label="Le Roi sans Nom">
+  <defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#183c56"/><stop offset="1" stop-color="#111524"/></linearGradient><radialGradient id="halo"><stop stop-color="#6ed8e6" stop-opacity=".48"/><stop offset="1" stop-color="#6ed8e6" stop-opacity="0"/></radialGradient></defs>
+  <rect width="320" height="220" rx="18" fill="url(#bg)"/><circle cx="160" cy="83" r="106" fill="url(#halo)"/>
+  <path d="M61 220l15-91c4-27 26-46 55-55l29-9 29 9c29 9 51 28 55 55l15 91z" fill="#263244" stroke="#92e5e4" stroke-width="5"/><path d="M105 77c0-45 21-65 55-65s55 20 55 65l-10 91h-90z" fill="#3a4d5c" stroke="#dbf0dc" stroke-width="5"/><path d="M94 72l19-40 20 22 27-34 27 34 20-22 19 40" fill="#d4ad52" stroke="#fff0a7" stroke-width="6"/>
+  <path d="M121 102h25M174 102h25" stroke="#dff9ef" stroke-width="8" stroke-linecap="round"/><path d="M134 133h52" stroke="#182334" stroke-width="9"/><path d="M85 173h150M72 201h176" stroke="#547b84" stroke-width="9"/><path d="M160 146v54" stroke="#f6d878" stroke-width="5"/>
+</svg>

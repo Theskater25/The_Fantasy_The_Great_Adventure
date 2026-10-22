@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 220" role="img" aria-label="Ilyan">
+  <defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#5a252e"/><stop offset="1" stop-color="#160f18"/></linearGradient><radialGradient id="halo"><stop stop-color="#ff826d" stop-opacity=".42"/><stop offset="1" stop-color="#ff826d" stop-opacity="0"/></radialGradient></defs>
+  <rect width="320" height="220" rx="18" fill="url(#bg)"/><circle cx="160" cy="81" r="104" fill="url(#halo)"/>
+  <path d="M55 220l11-83c4-28 28-50 58-58l36-10 36 10c30 8 54 30 58 58l11 83z" fill="#8d3640" stroke="#e39b81" stroke-width="5"/><path d="M101 86c0-47 21-73 59-73s59 26 59 73l-10 71h-98z" fill="#343b48" stroke="#e39b81" stroke-width="5"/><path d="M96 79h128l-13-45c-31-23-71-23-102 0z" fill="#28303e" stroke="#f3b063" stroke-width="7"/>
+  <path d="M119 102h24M177 102h24" stroke="#ff745f" stroke-width="9" stroke-linecap="round"/><path d="M137 130h46" stroke="#251a28" stroke-width="9"/><path d="M88 144h144M73 171h174" stroke="#c85b4c" stroke-width="7"/><path d="M72 132l-40 75M248 132l40 75" stroke="#f4ba6e" stroke-width="9"/>
+</svg>

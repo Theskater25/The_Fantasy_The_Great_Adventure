@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 220" role="img" aria-label="Yhorm le Géant">
+  <defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#1d4056"/><stop offset="1" stop-color="#0b1420"/></linearGradient><radialGradient id="halo"><stop stop-color="#79c4e2" stop-opacity=".45"/><stop offset="1" stop-color="#79c4e2" stop-opacity="0"/></radialGradient></defs>
+  <rect width="320" height="220" rx="18" fill="url(#bg)"/><circle cx="160" cy="76" r="112" fill="url(#halo)"/>
+  <path d="M45 220l14-101c5-32 30-52 59-57l42-7 42 7c29 5 54 25 59 57l14 101z" fill="#566c79" stroke="#b9e2e9" stroke-width="5"/><path d="M92 79c0-48 24-72 68-72s68 24 68 72l-9 83H101z" fill="#667c85" stroke="#d4edf0" stroke-width="5"/><path d="M91 75h138l-16-45c-34-23-72-23-106 0z" fill="#2b3a4b" stroke="#b9e2e9" stroke-width="7"/>
+  <path d="M111 101h30M179 101h30" stroke="#ffcf71" stroke-width="10" stroke-linecap="round"/><path d="M130 137h60" stroke="#31434b" stroke-width="10"/><path d="M64 128l-32 80M256 128l32 80" stroke="#d8e8e3" stroke-width="13" stroke-linecap="round"/>
+</svg>
