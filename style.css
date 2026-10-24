@@ -1,4 +1,5 @@
 :root {
+  color-scheme: dark;
   --sky: #0e2138;
   --sky-light: #173a59;
   --field: #273d35;
@@ -308,10 +309,10 @@ body[data-display="large"] .app-shell { font-size: 1.06em; }
 body[data-motion="off"] *, body[data-motion="off"] *::before, body[data-motion="off"] *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
 
 @media (max-width: 680px) {
-  .screen { padding: max(12px, env(safe-area-inset-top)) max(12px, env(safe-area-inset-right)) max(12px, env(safe-area-inset-bottom)) max(12px, env(safe-area-inset-left)); }
+  .screen { padding: max(12px, env(safe-area-inset-top)) max(12px, env(safe-area-inset-right)) max(12px, calc(env(safe-area-inset-bottom) + 8px)) max(12px, env(safe-area-inset-left)); }
   .screen--game { height: auto; min-height: 100vh; min-height: 100dvh; max-height: none; overflow: visible; grid-template-rows: auto 1fr auto; }
   .game-layout { height: auto; overflow: visible; }
-  .story-panel { height: min(58vh, 480px); height: min(58dvh, 480px); min-height: 300px; }
+  .story-panel { height: min(56vh, 440px); height: min(56dvh, 440px); min-height: 270px; }
   .side-panel { min-height: 0; }
   .story-log, .class-section, .defeated-list, .achievement-list { -webkit-overflow-scrolling: touch; }
   .btn, .title-button, .class-card, .chapter-card { min-height: 44px; }
@@ -327,13 +328,15 @@ body[data-motion="off"] *, body[data-motion="off"] *::before, body[data-motion="
   .select-footer { align-items: stretch; flex-direction: column; }
   .name-input { width: 100%; }
   .game-header { gap: 12px; }
-  .header-actions { width: 100%; flex-wrap: wrap; }
+  .header-actions { display: grid; width: 100%; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 7px; }
+  .header-actions .eyebrow { grid-column: 1 / -1; }
+  .header-actions .btn { min-width: 0; min-height: 46px; white-space: normal; line-height: 1.2; }
   .enemy-stage { grid-template-columns: 1fr; }
-  .enemy-portrait { height: 180px; }
+  .enemy-portrait { height: 160px; }
   .enemy-readout { text-align: left; }
   .combat-footer { align-items: stretch; flex-direction: column; }
   .action-list { justify-content: stretch; }
-  .action-list .btn { flex: 1 1 calc(50% - 6px); }
+  .action-list .btn { flex: 1 1 calc(50% - 6px); min-height: 48px; }
   .modal-backdrop { padding: max(10px, env(safe-area-inset-top)) max(10px, env(safe-area-inset-right)) max(10px, env(safe-area-inset-bottom)) max(10px, env(safe-area-inset-left)); }
   .inventory-modal { padding: 18px; }
   .skill-modal { padding: 18px; }
@@ -347,6 +350,16 @@ body[data-motion="off"] *, body[data-motion="off"] *::before, body[data-motion="
   .skill-branch > h3 { justify-content: flex-start; }
   .skill-node { grid-template-columns: 34px minmax(0, 1fr); gap: 9px; min-height: 94px; }
   .skill-tree-summary { align-items: flex-start; flex-direction: column; }
+}
+
+/* Touch pointers should get a clear press response without a sticky hover state. */
+@media (hover: none) and (pointer: coarse) {
+  .btn:hover { color: var(--ink); border-color: rgba(214,174,98,.55); background: rgba(16,31,46,.9); transform: none; }
+  .btn--cyan:hover { color: var(--cyan); border-color: var(--cyan); }
+  .btn--danger:hover { color: #f2a4a4; border-color: rgba(217,105,105,.7); }
+  .title-button:hover:not(.title-button--primary):not(.title-button--danger) { color: var(--ink); border-color: rgba(214,174,98,.42); background: rgba(8,18,30,.72); transform: none; }
+  .chapter-card:hover, .class-card:hover { transform: none; }
+  .btn:active, .title-button:active, .chapter-card:active, .class-card:active { transform: scale(.985); }
 }
 
 /* Landscape phones: keep the journal, actions and hero status together without

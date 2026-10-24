@@ -18,7 +18,9 @@ Le menu d’accueil affiche aussi « VERSION 2.2 · RPG EDITION » pour distingu
 
 ## Jouer sur téléphone
 
-L’interface s’adapte aux écrans tactiles en portrait et en paysage. Les commandes sont dimensionnées pour le toucher et les encoches d’écran sont prises en compte. Le jeu se lance dans Safari sur iPhone/iPad et Chrome sur Android; il n’est pas encore empaqueté comme une application App Store ou Google Play.
+La mise en page s’adapte aux petits écrans en portrait et en paysage. Les boutons de combat restent faciles à toucher, la barre de commandes se range en deux colonnes et les zones sûres des écrans avec encoche sont respectées. Les fichiers de l’application et les portraits sont mis en cache après la première visite pour permettre de relancer le jeu hors ligne; les pistes audio ne sont pas téléchargées par le cache.
+
+Le dossier peut être hébergé en HTTPS comme une PWA. Sur Android, utilise le menu de Chrome puis « Installer l’application » ou « Ajouter à l’écran d’accueil ». Sur iPhone/iPad, ouvre le jeu dans Safari, touche Partager puis « Sur l’écran d’accueil ». Cette installation garde le jeu dans Safari/Chrome : ce n’est pas un paquet natif publié sur l’App Store ou Google Play.
 
 Pour l’ouvrir sur un téléphone connecté au même Wi-Fi que l’ordinateur, lance le serveur ainsi :
 

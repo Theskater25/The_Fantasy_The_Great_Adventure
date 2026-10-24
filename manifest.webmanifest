@@ -1,0 +1,16 @@
+{
+  "id": "./",
+  "name": "The Fantasy — Version 2.2",
+  "short_name": "The Fantasy",
+  "description": "Une aventure RPG fantastique en trois chapitres.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#09111c",
+  "theme_color": "#0e2138",
+  "icons": [
+    { "src": "assets/icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "assets/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}
