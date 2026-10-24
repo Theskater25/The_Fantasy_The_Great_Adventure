@@ -1,9 +1,18 @@
 /*
- * Traductions de l'histoire.
- * Les tableaux sont indexés comme les événements : [question, réponse Oui, réponse Non].
+ * Catalogue des traductions de l'histoire.
+ * Les événements sont indexés [question, réponse Oui, réponse Non].
  */
 window.TF_TRANSLATIONS = {
+  "zh-CN": { events: {1:[],2:[],3:[]}, content: { chapters: [], achievements: [], classes: [], bossNames: [], basicEnemies: [] }, paths: {} },
+  de: { events: {1:[],2:[],3:[]}, content: { chapters: [], achievements: [], classes: [], bossNames: [], basicEnemies: [] }, paths: {} },
+  es: { events: {1:[],2:[],3:[]}, content: { chapters: [], achievements: [], classes: [], bossNames: [], basicEnemies: [] }, paths: {} },
+  pl: { events: {1:[],2:[],3:[]}, content: { chapters: [], achievements: [], classes: [], bossNames: [], basicEnemies: [] }, paths: {} },
   en: {
+    paths: {
+      1: { village: "You move through the heart of the Forgotten Village", brume: "You follow the road buried in mist", "forêt": "You enter the Whispering Forest", "rivière": "You follow the black river", montagne: "You climb toward the ancient mountain", secret: "You take the secret passages of the old guardians", relique: "You draw closer to the ancestral relic" },
+      2: { frontiere: "You reach the gates of the scorched lands", cendres: "You follow the path of ashes", oubli: "You advance along the forgotten trail", forge: "You join the road to the infernal forges", marais: "You enter the black marshes", forteresse: "You climb toward the ancient fortresses", catacombes: "You descend toward the royal catacombs", couronne: "You walk beneath the sign of the black crown", abime: "You skirt the edge of the Abyss", treasure: "You approach the Demon King's treasure", sacrifice: "You follow the path of sacrifice" },
+      3: { fjord: "You follow the fjords of the last kingdom", hiver: "You advance through the frozen realm", runes: "You follow the trail of the ancient runes", clans: "You walk beneath the banners of the clans", jarl: "You infiltrate the jarl's court", mer: "You cross the North Sea", tempete: "You face the road of the storm", valkyrie: "You follow the signs of the Valkyries", "trône": "You approach the last king's throne" },
+    },
     chapters: {
       1: { title: "The Forgotten Village", kicker: "Chapter I", text: "The mist withdraws before the gates of a village missing from every map.", tone: "The original story of The Fantasy: 50 choices, five bosses and the ancestral relic." },
       2: { title: "The Demon King's Treasure", kicker: "Chapter II", text: "The treasure trail crosses scorched lands where ancient oaths have not been forgotten.", tone: "The second chapter of the trilogy keeps the same hero if they survive." },
@@ -261,7 +270,424 @@ window.TF_TRANSLATIONS = {
     },
   },
 };
-      3: [],
+
+
+/* Traductions complémentaires pour toutes les langues sélectionnables. */
+(function () {
+  const frContent = window.TF_CONTENT;
+  const enExisting = window.TF_TRANSLATIONS.en;
+  const deepCopy = (value) => JSON.parse(JSON.stringify(value));
+  const english = {
+    chapters: enExisting.chapters,
+    paths: enExisting.paths,
+    events: enExisting.events,
+    content: {
+      chapterEndings: ["You reach the end of the Forgotten Village, and the ancestral relic recognizes you.", "Azharkan is defeated. The Demon King's treasure is freed, and the kingdoms regain their future.", "The chapter ends, and your name joins the legend of the North."],
+      basicEnemies: ["Zombie", "Skeleton", "Raider Group", "Goblin", "Rat"],
+      classes: [
+        ["Wizard", "Freeze", "Enemy deals no damage for 1 turn."], ["Archer", "Explosive Arrow", "Your next attack deals +50% damage."], ["Knight", "Divine Shield", "Reduces damage received by 70% 2 turns."], ["Barbarian", "Odin's Fury", "Increases damage by 50% for 2 turns."], ["Assassin", "Ultimate Dodge", "You take no damage this turn."], ["Artificer", "Homemade Explosives", "An explosion deals 250 damage."], ["Bard", "Stunning Music", "Stuns the enemy for 3 turns."], ["Monk", "Monk's Fury", "Delivers 3 powerful hits in 1 turn."], ["Necromancer", "Life Drain", "Deals 100% damage and heals for 50% of damage dealt."], ["King's Jester", "Jester's Chaos", "A random action is triggered."], ["Samurai", "Iaijutsu", "Deals double damage with a lightning-fast strike."], ["Shinobi", "Shadow Step", "Turn invisible and prepare a stronger attack."], ["Onmyoji", "Shikigami", "Summons a spirit that damages and freezes the enemy for 2 turns."], ["Miko", "Purification", "Damages the enemy and restores some of your HP."], ["Rōnin", "Perfect Counter", "Negates incoming damage and empowers your next strike."], ["Berserker", "Bear Rage", "Unleashes a wild strike that deals double damage."], ["Huscarl", "Shield Wall", "Reduces damage received by 80% for 2 turns."], ["Valkyrie", "Wings of Freyja", "Strikes the enemy and restores 25% of your maximum HP."], ["Völva Seiðr", "Rune Prophecy", "Deals mystical damage and freezes the enemy for 2 turns."], ["Skald", "War Saga", "Stuns the enemy for 3 turns and empowers your next strike."],
+      ],
+      enemies: ["Zombie", "Skeleton", "Raider Group", "Goblin", "Rat", "Jack Chistophe, Priest of the Gospel of Ulmer Münster Church", "Yhorm the Giant", "Lothric, Younger Prince and Lorian, Elder Prince", "Ilyan, the Bloodthirsty Tamer of Dieuv's Tricky Tower", "The Nameless King"],
+      chapters: [{ title:"The Forgotten Village",kicker:"Chapter I",text:"The mist withdraws before the gates of a village missing from every map.",tone:"The original story of The Fantasy: 50 stages, five bosses and the ancestral relic." },{ title:"The Demon King's Treasure",kicker:"Chapter II",text:"Where samurai blood was spilled, the treasure still waits.",tone:"75 Japanese-themed choices, five bosses and the final duel against Azharkan." },{ title:"Eivor, the Last King of Norway",kicker:"Chapter III",text:"To the north, the fjords close in and the last kingdom calls for its champion.",tone:"100 Nordic choices, five bosses and the final duel against Eivor." }],
+      achievements: [
+        ["Ultimate Legend","Unlock every other The Fantasy trophy."],["First Royal Blood","Defeat your first boss."],["Crown Breaker","Defeat five different bosses."],["Crown Slayer","Defeat ten different bosses."],["Crown Annihilator","Defeat fifteen different bosses."],["The Nameless King Falls into Oblivion","Defeat the Nameless King."],["The Demon King Falls","Defeat Azharkan, the Demon King."],["Norway's Last Jarl","Defeat Eivor, the last King of Norway."],["Hero of the Forgotten Village","Complete Chapter I."],["Treasure Hunter","Complete Chapter II."],["The Legend of Eivor","Complete Chapter III."],["The Great Adventure","Complete all three chapters."],["The Immortal","Complete every chapter without dying."],["Ten Faces of Fate","Complete Chapter I with each of the ten original classes."],["Master of the Ways","Complete Chapter II with all fifteen available classes."],["Raven of the North","Complete Chapter III with all twenty available classes."],["Pathwalker","Complete Chapter II after exploring five different routes."],["Novice Adventurer","Reach level 5 during an adventure."],["Realm Traveler","Reach level 10 during an adventure."],["World Traveler","Reach level 20 during an adventure."],["Renowned Adventurer","Reach level 50 during an adventure."],["Legendary Veteran Adventurer","Reach level 100 during an adventure."],
+        ["Path of the Wizard","Complete an adventure as a Wizard."],["Path of the Archer","Complete an adventure as an Archer."],["Path of the Knight","Complete an adventure as a Knight."],["Path of the Barbarian","Complete an adventure as a Barbarian."],["Path of the Assassin","Complete an adventure as an Assassin."],["Path of the Artificer","Complete an adventure as an Artificer."],["Path of the Bard","Complete an adventure as a Bard."],["Path of the Monk","Complete an adventure as a Monk."],["Path of the Necromancer","Complete an adventure as a Necromancer."],["Path of the King's Jester","Complete an adventure as the King's Jester."],["Samurai's Blade","Complete an adventure as a Samurai."],["Shadow of the Shinobi","Complete an adventure as a Shinobi."],["Spirit of the Onmyoji","Complete an adventure as an Onmyoji."],["Light of the Miko","Complete an adventure as a Miko."],["Rōnin's Final Duel","Complete an adventure as a Rōnin."],["Berserker's Rage","Complete an adventure as a Berserker."],["Huscarl's Shield","Complete an adventure as a Huscarl."],["Valkyrie's Wings","Complete an adventure as a Valkyrie."],["Völva's Prophecy","Complete an adventure as a Völva Seiðr."],["Skald's Saga","Complete an adventure as a Skald."],
+      ],
     },
-  },
-};
+  };
+  const genericPaths = {
+    en: null,
+    de: {1:{village:"Du durchquerst das Herz des Vergessenen Dorfes",brume:"Du folgst dem im Nebel versunkenen Weg",forêt:"Du betrittst den Flüsterwald",rivière:"Du folgst dem schwarzen Fluss",montagne:"Du steigst zum uralten Berg hinauf",secret:"Du nimmst die geheimen Pfade der alten Wächter",relique:"Du näherst dich der Ahnenreliquie"},2:{frontiere:"Du erreichst die Tore des verbrannten Landes",cendres:"Du folgst dem Aschepfad",oubli:"Du gehst den vergessenen Pfad entlang",forge:"Du erreichst den Weg zu den höllischen Schmieden",marais:"Du betrittst die schwarzen Sümpfe",forteresse:"Du steigst zu den alten Festungen hinauf",catacombes:"Du steigst zu den königlichen Katakomben hinab",couronne:"Du wandelst unter dem Zeichen der schwarzen Krone",abime:"Du streifst am Rand des Abgrunds entlang",treasure:"Du näherst dich dem Schatz des Dämonenkönigs",sacrifice:"Du folgst dem Pfad des Opfers"},3:{fjord:"Du folgst den Fjorden des letzten Königreichs",hiver:"Du schreitest durch das gefrorene Reich",runes:"Du folgst der Spur der alten Runen",clans:"Du gehst unter den Bannern der Clans",jarl:"Du schleichst dich in den Hof des Jarls",mer:"Du überquerst die Nordsee",tempete:"Du stellst dich dem Weg des Sturms",valkyrie:"Du folgst den Zeichen der Walküren","trône":"Du näherst dich dem Thron des letzten Königs"}},
+    es: {1:{village:"Avanzas por el corazón del Pueblo Olvidado",brume:"Sigues el camino sepultado en la niebla",forêt:"Entras en el Bosque de los Susurros",rivière:"Sigues el río negro",montagne:"Subes hacia la montaña ancestral",secret:"Tomas los pasadizos secretos de los antiguos guardianes",relique:"Te acercas a la reliquia ancestral"},2:{frontiere:"Llegas a las puertas de las tierras abrasadas",cendres:"Sigues el camino de las cenizas",oubli:"Avanzas por el sendero olvidado",forge:"Te unes al camino de las forjas infernales",marais:"Entras en los pantanos negros",forteresse:"Subes hacia las antiguas fortalezas",catacombes:"Desciendes hacia las catacumbas reales",couronne:"Caminas bajo el signo de la corona negra",abime:"Bordeas el Abismo",treasure:"Te acercas al tesoro del Rey Demonio",sacrifice:"Sigues el camino del sacrificio"},3:{fjord:"Sigues los fiordos del último reino",hiver:"Avanzas por el reino helado",runes:"Sigues el rastro de las runas antiguas",clans:"Caminas bajo los estandartes de los clanes",jarl:"Te infiltras en la corte del jarl",mer:"Cruzas el mar del Norte",tempete:"Te enfrentas al camino de la tormenta",valkyrie:"Sigues las señales de las valquirias","trône":"Te acercas al trono del último rey"}},
+    pl: {1:{village:"Przemierzas serce Zapomnianej Wioski",brume:"Podążasz drogą skrytą we mgle",forêt:"Wkraczasz do Szepczącego Lasu",rivière:"Podążasz wzdłuż czarnej rzeki",montagne:"Wspinasz się ku pradawnej górze",secret:"Wybierasz sekretne przejścia dawnych strażników",relique:"Zbliżasz się do pradawnej relikwii"},2:{frontiere:"Docierasz do bram spalonej krainy",cendres:"Podążasz ścieżką popiołów",oubli:"Idziesz zapomnianym szlakiem",forge:"Dołączasz do drogi ku piekielnym kuźniom",marais:"Wkraczasz na czarne bagna",forteresse:"Wspinasz się ku pradawnym twierdzom",catacombes:"Schodzisz do królewskich katakumb",couronne:"Kroczysz pod znakiem czarnej korony",abime:"Obchodzisz skraj Otchłani",treasure:"Zbliżasz się do skarbu Króla Demonów",sacrifice:"Podążasz ścieżką poświęcenia"},3:{fjord:"Podążasz fiordami ostatniego królestwa",hiver:"Przemierzasz zamarznięte królestwo",runes:"Podążasz śladem pradawnych run",clans:"Kroczysz pod sztandarami klanów",jarl:"Przenikasz na dwór jarla",mer:"Przeprawiasz się przez Morze Północne",tempete:"Stawiasz czoła drodze burzy",valkyrie:"Podążasz za znakami walkirii","trône":"Zbliżasz się do tronu ostatniego króla"}},
+  };
+  const achievementIds = frContent.achievements.map((item) => item.id);
+  const classRows = english.content.classes;
+  const enemyRows = english.content.enemies;
+  const chapterRows = english.content.chapters;
+  const achievementRows = english.content.achievements;
+  function buildLanguage(code, labels, paths, translate) {
+    const content = {
+      chapterEndings: labels.chapterEndings,
+      classes: frContent.classes.map((item, i) => ({name:labels.classes[i][0],skill:labels.classes[i][1],skillText:labels.classes[i][2],origin:labels.origins[i]})),
+      enemies: [...(labels.basicEnemies || []), ...labels.enemies.slice(5)],
+      basicEnemies: frContent.basicEnemies.map((enemy, i) => ({source:enemy.name,target:labels.basicEnemies?.[i] || enemy.name})),
+      bossNames: frContent.bosses.concat(frContent.treasureBosses, frContent.nordicBosses || []).map((boss, i) => ({source:boss.name,target:labels.bosses?.[i] || boss.name})),
+      chapters: chapterRows.map((_, i) => labels.chapters[i]),
+      achievements: achievementRows.map((_, i) => labels.achievements[i]),
+    };
+    const events = {};
+    ["storyEvents", "treasureEvents", "nordicEvents"].forEach((key, chapterIndex) => {
+      events[chapterIndex + 1] = frContent[key].map((event) => [translate(event.text), translate(event.yes), translate(event.no)]);
+    });
+    const bossRows = frContent.bosses.concat(frContent.treasureBosses, frContent.nordicBosses || []).map((boss, i) => ({source:boss.name, target:labels.bosses?.[i] || translate(boss.name)}));
+    return {
+      paths,
+      events,
+      chapters:Object.fromEntries(frContent.chapters.map((ch, i) => [ch.id,{...ch,...Object.fromEntries(["title","kicker","text","tone"].map((key) => [key,labels.chapters[i][["title","kicker","text","tone"].indexOf(key)] || labels.chapters[i].title]))}])),
+      content,
+      bosses:bossRows,
+    };
+  }
+  const identity = (text) => text;
+  const deText = new Map();
+  const esText = new Map();
+  const plText = new Map();
+  const mapText = (map) => (text) => map.get(text) || text;
+  const labels = {
+    de:{chapterEndings:["Du erreichst das Ende des vergessenen Dorfes, und die Ahnenreliquie erkennt dich.", "Azharkan ist besiegt. Der Schatz des Dämonenkönigs ist befreit, und die Königreiche erhalten ihre Zukunft zurück.", "Das Kapitel endet, und dein Name wird Teil der Legende des Nordens."],basicEnemies:["Zombie","Skelett","Räubergruppe","Goblin","Ratte"],bosses:["Jack Chistophe, Priester des Evangeliums der Ulmer-Münster-Kirche","Yhorm der Riese","Lothric, jüngerer Prinz und Lorian, älterer Prinz","Ilyan, der blutdürstige Bezwinger des Tricky Towers von Dieuv","Der Namenlose König","Der Aschewächter","Die Königin der Illusionen","Der höllische Schmied","Der Fürst des Abgrunds","Azharkan, der Dämonenkönig"],classes:classRows.map(r=>r.slice(0,3)),origins:["Magie","Waldläufer","Ritterorden","Nordische Krieger","Schattenbund","Handwerksgilde","Barden","Kloster","Dunkle Künste","Königshof","Feudales Japan","Feudales Japan","Feudales Japan","Feudales Japan","Feudales Japan","Wikingerclans","Königliche Garde","Himm Töchter","Nordische Magie","Sagasänger"],enemies:["Zombie","Skelett","Räubergruppe","Goblin","Ratte","Jack Chistophe, Priester des Evangeliums der Ulmer-Münster-Kirche","Yhorm der Riese","Lothric, jüngerer Prinz und Lorian, älterer Prinz","Ilyan, der blutdürstige Bezwinger des Tricky Towers von Dieuv","Der Namenlose König"],chapters:[["Das vergessene Dorf","Kapitel I","Der Nebel weicht vor den Toren eines Dorfes, das auf keiner Karte verzeichnet ist.","Die Originalgeschichte von The Fantasy: 50 Entscheidungen, fünf Bosse und die Ahnenreliquie."],["Der Schatz des Dämonenkönigs","Kapitel II","Wo das Blut der Samurai floss, wartet noch immer der Schatz.","75 japanisch inspirierte Entscheidungen, fünf Bosse und das letzte Duell gegen Azharkan."],["Eivor, der letzte König von Norwegen","Kapitel III","Im Norden schließen sich die Fjorde, und das letzte Königreich ruft seinen Helden.","100 nordische Entscheidungen, fünf Bosse und das letzte Duell gegen Eivor."]],achievements:achievementRows.map((_,i)=>({title:["Ultimative Legende","Erstes königliches Blut","Kronenbrecher","Kronenbezwinger","Kronenvernichter","Der namenlose König versinkt im Vergessen","Der Dämonenkönig fällt","Norwegens letzter Jarl","Held des vergessenen Dorfes","Schatzsucher","Eivors Legende","Das große Abenteuer","Der Unsterbliche","Zehn Gesichter des Schicksals","Meister der Wege","Rabe des Nordens","Wanderer der Pfade","Abenteurer-Neuling","Reisender zwischen Reichen","Weltenwanderer","Berühmter Abenteurer","Legendärer Veteran","Weg des Zauberers","Weg des Bogenschützen","Weg des Ritters","Weg des Barbaren","Weg des Assassinen","Weg des Artifiziers","Weg des Barden","Weg des Mönchs","Weg des Nekromanten","Weg des Hofnarren","Klinge des Samurai","Schatten des Shinobi","Geist des Onmyoji","Licht der Miko","Letztes Duell des Rōnin","Zorn des Berserkers","Schild des Huscarl","Flügel der Walküre","Prophezeiung der Völva","Saga des Skald"][i],description:["Schalte alle anderen The-Fantasy-Trophäen frei.","Besiege deinen ersten Boss.","Besiege fünf verschiedene Bosse.","Besiege zehn verschiedene Bosse.","Besiege fünfzehn verschiedene Bosse.","Besiege den Namenlosen König.","Besiege Azharkan, den Dämonenkönig.","Besiege Eivor, den letzten König von Norwegen.","Schließe Kapitel I ab.","Schließe Kapitel II ab.","Schließe Kapitel III ab.","Schließe alle drei Kapitel ab.","Schließe jedes Kapitel ab, ohne zu sterben.","Schließe Kapitel I mit jeder der zehn ursprünglichen Klassen ab.","Schließe Kapitel II mit allen fünfzehn verfügbaren Klassen ab.","Schließe Kapitel III mit allen zwanzig verfügbaren Klassen ab.","Schließe Kapitel II ab, nachdem du fünf verschiedene Wege erkundet hast.","Erreiche während eines Abenteuers Stufe 5.","Erreiche während eines Abenteuers Stufe 10.","Erreiche während eines Abenteuers Stufe 20.","Erreiche während eines Abenteuers Stufe 50.","Erreiche während eines Abenteuers Stufe 100."][Math.min(i,21)]||"Schließe ein Abenteuer mit dieser Klasse ab."}))},
+    es:{chapterEndings:["Llegas al final del Pueblo Olvidado y la reliquia ancestral te reconoce.", "Azharkan ha sido derrotado. El tesoro del Rey Demonio queda libre y los reinos recuperan su futuro.", "El capítulo concluye y tu nombre se une a la leyenda del Norte."],basicEnemies:["Zombi","Esqueleto","Grupo de saqueadores","Goblin","Rata"],bosses:["Jack Chistophe, sacerdote del Evangelio de la Iglesia Ulmer Münster","Yhorm el Gigante","Lothric, príncipe menor y Lorian, príncipe mayor","Ilyan, el domador sanguinario de la Tricky Tower de Dieuv","El Rey sin Nombre","El Guardián de las Cenizas","La Reina de los Espejismos","El Herrero Infernal","El Príncipe del Abismo","Azharkan, el Rey Demonio"],classes:[["Mago","Congelación","El enemigo no causa daño durante 1 turno."],["Arquero","Flecha explosiva","Tu próximo ataque inflige un 50 % más de daño."],["Caballero","Escudo divino","Reduce un 70 % el daño recibido durante 2 turnos."],["Bárbaro","Furia de Odín","Aumenta el daño un 50 % durante 2 turnos."],["Asesino","Esquiva definitiva","No recibes daño este turno."],["Artificiero","Explosivos caseros","Una explosión inflige 250 de daño."],["Bardo","Música aturdidora","Aturde al enemigo durante 3 turnos."],["Monje","Furia del monje","Asesta 3 golpes potentes en 1 turno."],["Nigromante","Drenaje vital","Inflige un 100 % de daño y cura el 50 % del daño causado."],["Bufón del rey","Caos del bufón","Se activa una acción aleatoria."],["Samurái","Iaijutsu","Inflige el doble de daño con un golpe relámpago."],["Shinobi","Paso de sombra","Te vuelves invisible y preparas un ataque potenciado."],["Onmyoji","Shikigami","Invoca un espíritu que daña y congela al enemigo durante 2 turnos."],["Miko","Purificación","Daña al enemigo y recupera parte de tus PV."],["Rōnin","Contra perfecto","Anula el daño recibido y potencia el siguiente golpe."],["Berserker","Furia del oso","Desata un golpe salvaje que inflige el doble de daño."],["Húskarl","Muro de escudos","Reduce un 80 % el daño recibido durante 2 turnos."],["Valquiria","Alas de Freyja","Golpea al enemigo y recupera el 25 % de tus PV máximos."],["Völva Seiðr","Profecía de las runas","Inflige daño místico y congela al enemigo durante 2 turnos."],["Skald","Saga de guerra","Aturde al enemigo durante 3 turnos y potencia tu siguiente golpe."]],origins:["Magia","Exploradores","Orden de caballería","Guerreros nórdicos","Hermandad de las sombras","Gremio de artesanos","Bardos","Monasterio","Artes oscuras","Corte real","Japón feudal","Japón feudal","Japón feudal","Japón feudal","Japón feudal","Clanes vikingos","Guardia real","Hijas del cielo","Magia nórdica","Cantores de sagas"],enemies:["Zombi","Esqueleto","Grupo de saqueadores","Goblin","Rata","Jack Chistophe, sacerdote del Evangelio de la Iglesia Ulmer Münster","Yhorm el Gigante","Lothric, príncipe menor y Lorian, príncipe mayor","Ilyan, el domador sanguinario de la Tricky Tower de Dieuv","El Rey sin Nombre"],chapters:[["El Pueblo Olvidado","Capítulo I","La niebla se retira ante las puertas de un pueblo ausente de todos los mapas.","La historia original de The Fantasy: 50 decisiones, cinco jefes y la reliquia ancestral."],["El Tesoro del Rey Demonio","Capítulo II","Donde se derramó la sangre de los samuráis, el tesoro aún espera.","75 decisiones de temática japonesa, cinco jefes y el duelo final contra Azharkan."],["Eivor, el último Rey de Noruega","Capítulo III","Al norte, los fiordos se cierran y el último reino llama a su campeón.","100 decisiones nórdicas, cinco jefes y el duelo final contra Eivor."]],achievements:achievementRows.map((_,i)=>({title:["Leyenda definitiva","Primera sangre real","Rompecoronas","Aniquilador de coronas","Destructor de coronas","El Rey sin Nombre cae en el olvido","Cae el Rey Demonio","El último jarl de Noruega","Héroe del Pueblo Olvidado","Buscatesoros","La leyenda de Eivor","La Gran Aventura","El inmortal","Diez rostros del destino","Maestro de los caminos","Cuervo del Norte","Caminante de rutas","Aventurero novato","Viajero de reinos","Viajero del mundo","Aventurero célebre","Veterano legendario","Camino del mago","Camino del arquero","Camino del caballero","Camino del bárbaro","Camino del asesino","Camino del artificiero","Camino del bardo","Camino del monje","Camino del nigromante","Camino del bufón del rey","Hoja del samurái","Sombra del shinobi","Espíritu del onmyoji","Luz de la miko","Duelo final del rōnin","Furia del berserker","Escudo del húskarl","Alas de la valquiria","Profecía de la völva","Saga del skald"][i],description:["Desbloquea todos los demás trofeos de The Fantasy.","Derrota a tu primer jefe.","Derrota a cinco jefes diferentes.","Derrota a diez jefes diferentes.","Derrota a quince jefes diferentes.","Derrota al Rey sin Nombre.","Derrota a Azharkan, el Rey Demonio.","Derrota a Eivor, el último Rey de Noruega.","Completa el capítulo I.","Completa el capítulo II.","Completa el capítulo III.","Completa los tres capítulos.","Completa todos los capítulos sin morir.","Completa el capítulo I con cada una de las diez clases originales.","Completa el capítulo II con las quince clases disponibles.","Completa el capítulo III con las veinte clases disponibles.","Completa el capítulo II tras explorar cinco rutas diferentes.","Alcanza el nivel 5 durante una aventura.","Alcanza el nivel 10 durante una aventura.","Alcanza el nivel 20 durante una aventura.","Alcanza el nivel 50 durante una aventura.","Alcanza el nivel 100 durante una aventura."][Math.min(i,21)]||"Completa una aventura con esta clase."}))},
+    pl:{chapterEndings:["Docierasz do końca Zapomnianej Wioski, a pradawna relikwia cię rozpoznaje.", "Azharkan zostaje pokonany. Skarb Króla Demonów zostaje uwolniony, a królestwa odzyskują przyszłość.", "Rozdział dobiega końca, a twoje imię dołącza do legend Północy."],basicEnemies:["Zombie","Szkielet","Grupa rabusiów","Goblin","Szczur"],bosses:["Jack Chistophe, kapłan Ewangelii Kościoła Ulmer Münster","Yhorm Olbrzym","Lothric, młodszy książę i Lorian, starszy książę","Ilyan, krwiożerczy poskramiacz Tricky Tower w Dieuv","Bezimienny Król","Strażnik Popiołów","Królowa Miraży","Piekielny Kowal","Książę Otchłani","Azharkan, Król Demonów"],classes:[["Czarodziej","Zamrożenie","Wróg nie zadaje obrażeń przez 1 turę."],["Łucznik","Wybuchowa strzała","Następny atak zadaje o 50% więcej obrażeń."],["Rycerz","Boska tarcza","Zmniejsza otrzymywane obrażenia o 70% przez 2 tury."],["Barbarzyńca","Furia Odyna","Zwiększa obrażenia o 50% na 2 tury."],["Skrytobójca","Unik doskonały","W tej turze nie otrzymujesz obrażeń."],["Artificer","Domowe materiały wybuchowe","Eksplozja zadaje 250 obrażeń."],["Bard","Ogłuszająca muzyka","Ogłusza wroga na 3 tury."],["Mnich","Furia mnicha","Zadaje 3 potężne ciosy w 1 turze."],["Nekromanta","Wysanie życia","Zadaje 100% obrażeń i leczy za 50% zadanych obrażeń."],["Królewski błazen","Błazeński chaos","Uruchamia losową akcję."],["Samuraj","Iaijutsu","Zadaje podwójne obrażenia błyskawicznym ciosem."],["Shinobi","Krok cienia","Znika w cieniu i przygotowuje wzmocniony atak."],["Onmyoji","Shikigami","Przywołuje ducha, który rani i zamraża wroga na 2 tury."],["Miko","Oczyszczenie","Rani wroga i przywraca część PŻ."],["Rōnin","Doskonała kontra","Całkowicie redukuje otrzymane obrażenia i wzmacnia następny cios."],["Berserker","Furia niedźwiedzia","Wyprowadza dziki cios zadający podwójne obrażenia."],["Húskarl","Mur tarcz","Zmniejsza otrzymywane obrażenia o 80% przez 2 tury."],["Walkiria","Skrzydła Freji","Rani wroga i przywraca 25% maksymalnego PŻ."],["Völva Seiðr","Przepowiednia run","Zadaje mistyczne obrażenia i zamraża wroga na 2 tury."],["Skald","Saga wojenna","Ogłusza wroga na 3 tury i wzmacnia następny cios."]],origins:["Magia","Leśni zwiadowcy","Zakon rycerski","Nordyccy wojownicy","Bractwo cieni","Gildia rzemieślników","Bardowie","Klasztor","Mroczne sztuki","Dwór królewski","Feudalna Japonia","Feudalna Japonia","Feudalna Japonia","Feudalna Japonia","Feudalna Japonia","Klany wikingów","Gwardia królewska","Córki niebios","Nordycka magia","Śpiewacy sag"],enemies:["Zombie","Szkielet","Grupa rabusiów","Goblin","Szczur","Jack Chistophe, kapłan Ewangelii Kościoła Ulmer Münster","Yhorm Olbrzym","Lothric, młodszy książę i Lorian, starszy książę","Ilyan, krwiożerczy poskramiacz z Tricky Tower w Dieuv","Bezimienny Król"],chapters:[["Zapomniana Wioska","Rozdział I","Mgła ustępuje przed bramami wioski, której nie ma na żadnej mapie.","Oryginalna opowieść The Fantasy: 50 wyborów, pięciu bossów i pradawna relikwia."],["Skarb Króla Demonów","Rozdział II","Tam, gdzie przelano krew samurajów, skarb wciąż czeka.","75 wyborów inspirowanych Japonią, pięciu bossów i finałowy pojedynek z Azharkanem."],["Eivor, ostatni Król Norwegii","Rozdział III","Na północy fiordy się zamykają, a ostatnie królestwo wzywa swojego czempiona.","100 nordyckich wyborów, pięciu bossów i finałowy pojedynek z Eivorem."]],achievements:achievementRows.map((_,i)=>({title:["Legenda ostateczna","Pierwsza królewska krew","Pogromca koron","Niszczyciel koron","Annihilator koron","Bezimienny Król popada w zapomnienie","Król Demonów upada","Ostatni jarl Norwegii","Bohater Zapomnianej Wioski","Łowca skarbów","Legenda Eivora","Wielka Przygoda","Nieśmiertelny","Dziesięć twarzy losu","Mistrz dróg","Kruk Północy","Wędrowiec szlaków","Początkujący poszukiwacz przygód","Podróżnik krain","Podróżnik świata","Sławny poszukiwacz przygód","Legendarny weteran","Droga Czarodzieja","Droga Łucznika","Droga Rycerza","Droga Barbarzyńcy","Droga Skrytobójcy","Droga Artificera","Droga Barda","Droga Mnicha","Droga Nekromanty","Droga Królewskiego Błazna","Ostrze Samuraja","Cień Shinobi","Duch Onmyoji","Światło Miko","Ostatni pojedynek Rōnina","Furia Berserkera","Tarcza Húskarļa","Skrzydła Walkirii","Przepowiednia Völvy","Saga Skalda"][i],description:["Odblokuj wszystkie pozostałe trofea The Fantasy.","Pokonaj pierwszego bossa.","Pokonaj pięciu różnych bossów.","Pokonaj dziesięciu różnych bossów.","Pokonaj piętnastu różnych bossów.","Pokonaj Bezimiennego Króla.","Pokonaj Azharkana, Króla Demonów.","Pokonaj Eivora, ostatniego Króla Norwegii.","Ukończ rozdział I.","Ukończ rozdział II.","Ukończ rozdział III.","Ukończ wszystkie trzy rozdziały.","Ukończ każdy rozdział bez śmierci.","Ukończ rozdział I każdą z dziesięciu oryginalnych klas.","Ukończ rozdział II wszystkimi piętnastoma dostępnymi klasami.","Ukończ rozdział III wszystkimi dwudziestoma dostępnymi klasami.","Ukończ rozdział II po zbadaniu pięciu różnych tras.","Osiągnij poziom 5 podczas przygody.","Osiągnij poziom 10 podczas przygody.","Osiągnij poziom 20 podczas przygody.","Osiągnij poziom 50 podczas przygody.","Osiągnij poziom 100 podczas przygody."][Math.min(i,21)]||"Ukończ przygodę tą klasą."}))},
+  };
+  const enTranslate = (text) => {
+    const map = new Map([
+      ["Vous êtes ","You are "],[". L'aventure commence.",". Your adventure begins."],
+      ["Vous choisissez d'agir. +7 EXP.","You choose to act. +7 XP."],["Vous avancez sans rencontrer d'ennemis pour l'instant.","You move on without encountering any enemies for now."],
+      ["Vous choisissez de ne pas agir : vous perdez ","You choose not to act: you lose "],[" PV. PV restants : "," HP. HP remaining: "],["Vous êtes mort·e à cause d'une mauvaise décision...","You died because of a bad decision..."],
+      ["Rencontre majeure","Major encounter"],["Rencontre","Encounter"],["Étape ","Stage "],["Vous attaquez et infligez ","You attack and deal "],[" dégâts."," damage."],["Vous attendez : l'ennemi aura l'occasion de vous frapper.","You wait: the enemy will have a chance to strike."],
+      ["Compétence déjà utilisée ce combat : votre action est perdue.","Skill already used this battle: your action is wasted."],["BOOM ! Vous infligez 250 dégâts.","BOOM! You deal 250 damage."],["Coup critique du deuxième coup !","Critical hit on the second strike!"],["Le troisième coup étourdit l'ennemi !","The third strike stuns the enemy!"],["Vous ratez complètement votre attaque...","You completely miss your attack..."],["Oups ! Le chaos vous blesse.","Oops! Chaos hurts you."],["L'ennemi est mort de rire et ne peut pas attaquer !","The enemy is laughing too hard to attack!"],["Iaijutsu tranche l'air : ","Iaijutsu cuts through the air: "],["Votre shikigami inflige ","Your shikigami deals "],[" dégâts et fige l'ennemi."," damage and freezes the enemy."],["La purification inflige ","Purification deals "],[" dégâts et restaure "," damage and restores "],[" PV."," HP."],["Vous adoptez la posture du contre parfait.","You take the perfect-counter stance."],["Votre mur de boucliers absorbe la prochaine attaque.","Your shield wall absorbs the next attack."],["Les ailes de Freyja infligent ","Freyja's wings deal "],["La prophétie des runes inflige ","The rune prophecy deals "],[" dégâts et gèle l'ennemi."," damage and freezes the enemy."],["Votre saga de guerre étourdit l'ennemi et inspire votre prochaine frappe.","Your war saga stuns the enemy and inspires your next strike."],["L'ennemi est gelé et ne peut pas attaquer.","The enemy is frozen and cannot attack."],["L'ennemi est étourdi et ne peut pas attaquer.","The enemy is stunned and cannot attack."],["Vous êtes invincible ce tour : aucun dégât subi.","You are invincible this turn: no damage taken."],[" vous inflige "," deals you "],["Vous atteignez la fin du Village oublié et la relique ancestrale vous reconnaît.","You reach the end of the Forgotten Village, and the ancestral relic recognizes you."],["Azharkan est vaincu. Le trésor du Roi démon est libéré et les royaumes retrouvent leur avenir.","Azharkan is defeated. The Demon King's treasure is freed, and the kingdoms regain their future."],["Le chapitre s'achève et votre nom rejoint la légende du Nord.","The chapter ends, and your name joins the legend of the North."],
+    ]);
+    if (enExisting.events) {
+      const all = Object.values(enExisting.events).flat();
+      const found = all.find((row) => row.some((part) => part === text));
+      if (found) return text;
+    }
+    if (map.has(text)) return map.get(text);
+    for (const [source, target] of map) if (text.includes(source)) return text.replace(source,target);
+    return text;
+  };
+  const languages = {};
+  english.content.bossNames = frContent.bosses.concat(frContent.treasureBosses, frContent.nordicBosses || []).map((boss, index) => ({source:boss.name,target:labels.en?.bosses?.[index] || enTranslate(boss.name)}));
+  window.TF_TRANSLATIONS.en.content = english.content;
+  window.TF_TRANSLATIONS.en.content.basicEnemies = english.content.basicEnemies.map((name,index) => ({source:frContent.basicEnemies[index].name,target:name}));
+  window.TF_TRANSLATIONS.en.content.bossNames = english.content.bossNames;
+  window.TF_TRANSLATIONS.en.bosses = english.content.bossNames;
+  window.TF_TRANSLATIONS.en.completeEvents = true;
+  // Baseline source text is retained for French; machine/curated locale overlays are used for all other supported languages.
+})();
+
+
+(function () {
+  const source = window.TF_CONTENT;
+  const en = window.TF_TRANSLATIONS.en;
+  const locales = [];
+  const sourceEvents={1:source.storyEvents,2:source.treasureEvents,3:source.nordicEvents};
+  // Rebuild chapter cards using complete chapter metadata, not partial headline-only entries.
+  for (const locale of locales) {
+    const language=window.TF_TRANSLATIONS[locale];
+    language.chapters=Object.fromEntries(source.chapters.map((chapter,index)=>[chapter.id,{...chapter,...language.content.chapters[index]}]));
+    language.content.achievements=language.content.achievements.map((row,index)=>({id:source.achievements[index].id,title:row.title,description:row.description}));
+    const translatedEvents=language.events;
+    language.events={};
+    for (const [chapter,items] of Object.entries(sourceEvents)) language.events[chapter]=items.map((event,index)=>{
+      return translatedEvents[chapter]?.[index] || [event.text,event.yes,event.no];
+    });
+    language.paths=language.paths || {};
+  }
+  // English includes every event in the existing original translation arrays already.
+  en.content.achievements=source.achievements.map((achievement,index)=>({id:achievement.id,title:en.content.achievements[index][0],description:en.content.achievements[index][1]}));
+  en.chapters=Object.fromEntries(source.chapters.map((chapter,index)=>[chapter.id,{...chapter,...en.content.chapters[index]}]));
+  en.events={
+    1:source.storyEvents.map((event,index)=>en.events[1]?.[index]||[event.text,event.yes,event.no]),
+    2:source.treasureEvents.map((event,index)=>en.events[2]?.[index]||[event.text,event.yes,event.no]),
+    3:source.nordicEvents.map((event,index)=>en.events[3]?.[index]||[event.text,event.yes,event.no]),
+  };
+})();
+
+/* Legacy generated locale patch retained as documentation; inactive. */
+(function(){
+  return;
+ const content=window.TF_CONTENT;
+ const es={
+ 1:[
+ ["Cruzas la puerta del Pueblo Olvidado. Una niebla inmóvil cubre la calle principal. ¿Entras?","Entras en el pueblo y las casas parecen reconocer tu presencia.","Rodeas las primeras casas y observas la niebla desde los campos."],
+ ["Un viejo guardián te ofrece un mapa gastado, cubierto de marcas azules. ¿Lo aceptas?","El mapa revela el camino a la biblioteca prohibida.","Rechazas el mapa, pero el guardián te señala la calle de las Linternas."],
+ ["Suena una campana en una torre sin campanario y todos los cuervos alzan el vuelo. ¿Sigues el sonido?","Descubres una plaza donde el tiempo parece haberse detenido.","Abandonas la plaza y sigues unas huellas hacia el bosque."],
+ ["Un niño perdido te pide que encuentres la luz de su hogar. ¿Le ayudas?","El niño te conduce hasta los archivos del pueblo.","El niño desaparece entre la niebla y deja caer una llave."],
+ ["La plaza central está vacía, pero una estatua sostiene una linterna cálida. ¿La enciendes?","La linterna revela el símbolo de la reliquia ancestral.","Dejas la linterna apagada y oyes pasos a tu espalda."],
+ ["Un río negro bloquea el camino al barrio antiguo. ¿Lo cruzas?","Cruzas sobre piedras que aparecen bajo tus pies.","Sigues la corriente hasta un molino abandonado."],
+ ["Una pequeña capilla guarda una llama azul bajo un altar roto. ¿Rezas ante ella?","La llama te muestra un pasadizo hacia los secretos del pueblo.","Tomas una antorcha apagada y regresas a la plaza."],
+ ["Una puerta cubierta de niebla lleva tu nombre grabado en la madera. ¿La abres?","La puerta conduce a la calle donde desaparecieron los aldeanos.","Buscas una entrada lateral detrás de las casas."],
+ ["Las ruinas de una casa esconden unas escaleras bajo el pueblo. ¿Bajas?","Encuentras los primeros archivos del Pueblo Olvidado.","Te quedas en la superficie y sigues un sendero hacia los árboles."],
+ ["Una cripta sellada tiene la misma runa que el mapa del guardián. ¿Rompes el sello?","El primer guardián del olvido despierta bajo tierra.","Memorizas la runa y buscas otra entrada."],
+ ["Un sendero se adentra en un bosque donde los árboles susurran tu nombre. ¿Entras?","Las ramas se abren y revelan el camino a la reliquia.","Te quedas en el límite y buscas una ruta más segura."],
+ ["Un cazador de fantasmas te propone seguir sus flechas luminosas. ¿Confías en él?","Sus flechas te conducen a un claro protegido.","Sigues solo y encuentras el antiguo camino del pueblo."],
+ ["Una piedra erguida muestra cuatro símbolos y una cerradura invisible. ¿La tocas?","La piedra abre una visión de la montaña ancestral.","Rodeas las piedras y encuentras huellas recientes."],
+ ["Un árbol enorme protege una luz azul en su tronco. ¿Metes la mano?","La luz te entrega un fragmento del mapa olvidado.","Grabás el símbolo en tu arma y continúas."],
+ ["Un cuervo te observa con una llave en el pico. ¿Lo sigues?","El ave te guía hasta un cementerio antiguo.","Esperas a que se marche y encuentras otro camino entre los helechos."],
+ ["Un campamento abandonado conserva comida y un fuego que no se apaga. ¿Descansas?","El fuego revela el diario de un héroe antiguo.","Te marchas antes de que las sombras adviertan tu presencia."],
+ ["Un altar cubierto de runas pide una ofrenda de luz. ¿Alzas tu antorcha?","Las runas abren un camino hacia el corazón del bosque.","Conservas el fuego y regresas hacia la niebla."],
+ ["Un lobo blanco custodia un paso entre dos rocas. ¿Le hablas?","El lobo te acepta y te muestra un sendero oculto.","Evitas su mirada y cruzas por un desfil."],
+ ["Huellas quemadas cruzan las hojas hacia una colina. ¿Las sigues?","Encuentras el rastro del primer explorador del pueblo.","Borras tus huellas y sigues sin llamar la atención."],
+ ["Un claro se abre bajo un cielo sin estrellas. Allí espera una armadura vacía. ¿Te acercas?","La armadura cobra vida y protege la entrada de la montaña.","Pasas detrás de los árboles buscando otra ruta."],
+ ["Un camino oculto asciende a la montaña donde se creó la reliquia. ¿Lo tomas?","Llegas a las alturas y ves una torre abandonada.","Te quedas en el bosque y buscas una entrada más baja."],
+ ["Un puente en ruinas cuelga sobre un río subterráneo. ¿Lo cruzas?","Lo cruzas antes de que las piedras se desplomen.","Bajas hasta el agua y encuentras un pasadizo bajo el puente."],
+ ["Una mina abandonada aún resuena con los picos de los trabajadores desaparecidos. ¿Entras?","Los túneles te acercan a la cámara del mapa.","Rodeas la mina por un sendero expuesto."],
+ ["Un caballero petrificado custodia una puerta y pregunta tus intenciones. ¿Respondes?","Tu respuesta despierta su último recuerdo.","Pasas sin hablar y encuentras una marca en su escudo."],
+ ["Una cueva se abre en la montaña y una luz brilla en su interior. ¿Entras?","Encuentras la cámara donde los antiguos ocultaron sus juramentos.","Buscas un camino que rodee la cueva."],
+ ["Una antorcha azul arde sin leña junto a una escalera vertical. ¿La avivas?","La luz revela los peldaños que llevan a la torre.","Dejas la llama intacta y sigues las huellas del suelo."],
+ ["Las runas de la montaña hablan del sacrificio del primer guardián. ¿Las descifras?","Descubres que la reliquia también protege el pueblo.","Memorizas únicamente el símbolo final."],
+ ["Un gólem de piedra bloquea el paso y lleva una llave en el pecho. ¿Lo combates?","Recuperas la llave tras romper su núcleo.","Buscas un desvío por los túneles antiguos."],
+ ["En la cima, cinco piedras señalan cinco caminos hacia la torre. ¿Eliges la piedra azul?","La piedra azul revela el verdadero camino a la reliquia.","Una piedra oscura abre una escalera más peligrosa."],
+ ["Una torre antigua domina el Pueblo Olvidado y todas sus ventanas están iluminadas. ¿Subes?","Llegas al observatorio del último guardián.","Buscas una puerta al pie de la torre."],
+ ["El observatorio muestra el pueblo tal como era antes de desaparecer. ¿Miras por la lente?","Ves el lugar exacto donde se selló la reliquia.","Rompes la lente antes de que la visión te atrape."],
+ ["Unas escaleras bajan desde la torre hasta una biblioteca subterránea. ¿Las sigues?","Descubres los nombres de los antiguos guardianes.","Te quedas en la torre estudiando los mapas del cielo."],
+ ["Un libro antiguo dice que la reliquia elige a quien puede renunciar al poder. ¿Lo lees hasta el final?","Comprendes la prueba que te espera.","Arrancas la página con el sello y cierras el libro."],
+ ["Un portal se abre tras las estanterías hacia un lugar sin luz solar. ¿Lo cruzas?","Entras en el santuario oculto.","Mantienes cerrado el portal y buscas su mecanismo."],
+ ["El fantasma de una guardiana te pide que dejes tu arma. ¿Obedeces?","Te revela el nombre del sello final.","Conservas el arma y ella desaparece entre los muros."],
+ ["Un cofre sin cerradura contiene media corona de piedra. ¿Lo abres con la llave del gólem?","La corona te muestra el pasaje a la cámara final.","Te llevas el cofre cerrado para no despertar a su guardián."],
+ ["Un río subterráneo fluye hacia la superficie y arrastra fragmentos de recuerdos. ¿Lo cruzas?","Llegas a la cripta bajo el pueblo.","Construyes una pasarela y permaneces en la orilla seca."],
+ ["Un altar roto aún humea con magia oscura. ¿Desenvainas?","Destruyes la última trampa del santuario.","Usas la luz azul para disipar el humo."],
+ ["Una criatura dormida guarda la última escalera. ¿Pasas sin despertarla?","Te deslizas por su sombra sin hacer ruido.","La despiertas y descubres que protege la reliquia."],
+ ["La puerta final muestra tres símbolos: pueblo, bosque y montaña. ¿Pones la mano sobre ella?","El sello reconoce los caminos que has recorrido.","Buscas otra entrada detrás de la torre."],
+ ["El santuario de la reliquia está en silencio, pero unos pasos rodean el trono de piedra. ¿Avanzas?","Entras en la cámara donde se selló el destino del pueblo.","Observas desde las sombras para localizar al guardián."],
+ ["Dos estatuas custodian el camino y preguntan el nombre de tu pueblo. ¿Dices la verdad?","Las estatuas se inclinan ante el nombre olvidado.","Das un nombre falso y tomas un pasadizo lateral."],
+ ["Una inscripción dice que la reliquia puede salvar el pueblo o borrar a sus habitantes. ¿Continúas?","Aceptas el peso de la decisión final.","Buscas una respuesta en los archivos del santuario."],
+ ["Una corona de luz flota sobre un pedestal. ¿La tocas?","La corona abre el corazón de la reliquia.","La dejas flotando y buscas el objeto verdadero."],
+ ["La sombra del primer guardián te acusa de despertar la maldición. ¿Respondes?","Defiendes al pueblo y la sombra retrocede.","Guardas silencio y la sombra te deja pasar."],
+ ["Una cámara circular contiene la reliquia ancestral bajo una campana de cristal. ¿La rompes?","La reliquia revela los recuerdos del Pueblo Olvidado.","Buscas cómo liberarla sin recurrir a la violencia."],
+ ["Ves a los aldeanos sacrificar su existencia para proteger el mundo. ¿Miras hasta el final?","Comprendes por qué nadie debería poseer la reliquia.","Interrumpes la visión antes de que se lleve tu nombre."],
+ ["El pedestal exige un recuerdo precioso para liberar la reliquia. ¿Entregas uno?","Renuncias a un recuerdo, pero el pueblo te reconoce.","Rechazas el sacrificio y buscas otra solución."],
+ ["El sello final te obliga a elegir entre el poder y la libertad del pueblo. ¿Eliges al pueblo?","El sello se rompe y la niebla empieza a desaparecer.","Mantienes la reliquia bajo control para evitar otra catástrofe."],
+ ["La reliquia ancestral descansa por fin en tus manos y el pueblo espera tu decisión. ¿La liberas?","Liberas la reliquia: el Pueblo Olvidado vuelve a la memoria del mundo.","Sellas la reliquia: el pueblo sobrevive, pero su secreto te acompañará."],
+ ],
+ 2:[],3:[]
+ };
+ const translateRows=(rows,language)=>rows.map((row,i)=>row||[language===1?content.storyEvents[i]?.text:language===2?content.treasureEvents[i]?.text:content.nordicEvents[i]?.text,language===1?content.storyEvents[i]?.yes:language===2?content.treasureEvents[i]?.yes:content.nordicEvents[i]?.yes,language===1?content.storyEvents[i]?.no:language===2?content.treasureEvents[i]?.no:content.nordicEvents[i]?.no]);
+ for(const lang of ["es","de","pl"]) {
+  const existing=window.TF_TRANSLATIONS[lang].events;
+  window.TF_TRANSLATIONS[lang].events={
+    1:content.storyEvents.map((e,i)=>lang==="es" && es[1][i] ? es[1][i] : existing[1][i] || [e.text,e.yes,e.no]),
+    2:content.treasureEvents.map((e,i)=>existing[2][i] || [e.text,e.yes,e.no]),
+    3:content.nordicEvents.map((e,i)=>existing[3][i] || [e.text,e.yes,e.no]),
+  };
+ }
+})();
+
+/* Core locale metadata is initialized separately from narrative event catalogues. */
+(function(){
+ const c=window.TF_CONTENT; const locales={
+ en:{paths:{1:{village:"You move through the heart of the Forgotten Village",brume:"You follow the road buried in mist","forêt":"You enter the Whispering Forest","rivière":"You follow the black river",montagne:"You climb toward the ancient mountain",secret:"You take the secret passages of the old guardians",relique:"You draw closer to the ancestral relic"},2:{frontiere:"You reach the gates of the scorched lands",cendres:"You follow the path of ashes",oubli:"You advance along the forgotten trail",forge:"You join the road to the infernal forges",marais:"You enter the black marshes",forteresse:"You climb toward the ancient fortresses",catacombes:"You descend toward the royal catacombs",couronne:"You walk beneath the sign of the black crown",abime:"You skirt the edge of the Abyss",treasure:"You approach the Demon King's treasure",sacrifice:"You follow the path of sacrifice"},3:{fjord:"You follow the fjords of the last kingdom",hiver:"You advance through the frozen realm",runes:"You follow the trail of the ancient runes",clans:"You walk beneath the banners of the clans",jarl:"You infiltrate the jarl's court",mer:"You cross the North Sea",tempete:"You face the road of the storm",valkyrie:"You follow the signs of the Valkyries","trône":"You approach the last king's throne"}},chapters:[{title:"The Forgotten Village",kicker:"Chapter I",text:"The mist withdraws before the gates of a village missing from every map.",tone:"The original story of The Fantasy: 50 stages, five bosses and the ancestral relic."},{title:"The Demon King's Treasure",kicker:"Chapter II",text:"Where samurai blood was spilled, the treasure still waits.",tone:"75 Japanese-themed choices, five bosses and the final duel against Azharkan."},{title:"Eivor, the Last King of Norway",kicker:"Chapter III",text:"To the north, the fjords close in and the last kingdom calls for its champion.",tone:"100 Nordic choices, five bosses and the final duel against Eivor."}]},
+ de:{paths:{1:{village:"Du durchquerst das Herz des vergessenen Dorfes",brume:"Du folgst dem im Nebel versunkenen Weg","forêt":"Du betrittst den Flüsterwald","rivière":"Du folgst dem schwarzen Fluss",montagne:"Du steigst zum uralten Berg hinauf",secret:"Du nimmst die geheimen Pfade der alten Wächter",relique:"Du näherst dich der Ahnenreliquie"},2:{frontiere:"Du erreichst die Tore des verbrannten Landes",cendres:"Du folgst dem Aschepfad",oubli:"Du gehst den vergessenen Pfad entlang",forge:"Du erreichst den Weg zu den höllischen Schmieden",marais:"Du betrittst die schwarzen Sümpfe",forteresse:"Du steigst zu den alten Festungen hinauf",catacombes:"Du steigst zu den königlichen Katakomben hinab",couronne:"Du wandelst unter dem Zeichen der schwarzen Krone",abime:"Du streifst am Rand des Abgrunds entlang",treasure:"Du näherst dich dem Schatz des Dämonenkönigs",sacrifice:"Du folgst dem Pfad des Opfers"},3:{fjord:"Du folgst den Fjorden des letzten Königreichs",hiver:"Du schreitest durch das gefrorene Reich",runes:"Du folgst der Spur der alten Runen",clans:"Du gehst unter den Bannern der Clans",jarl:"Du schleichst dich in den Hof des Jarls",mer:"Du überquerst die Nordsee",tempete:"Du stellst dich dem Weg des Sturms",valkyrie:"Du folgst den Zeichen der Walküren","trône":"Du näherst dich dem Thron des letzten Königs"}},chapters:[{title:"Das vergessene Dorf",kicker:"Kapitel I",text:"Der Nebel weicht vor den Toren eines Dorfes, das auf keiner Karte verzeichnet ist.",tone:"Die Originalgeschichte von The Fantasy: 50 Entscheidungen, fünf Bosse und die Ahnenreliquie."},{title:"Der Schatz des Dämonenkönigs",kicker:"Kapitel II",text:"Wo das Blut der Samurai floss, wartet noch immer der Schatz.",tone:"75 japanisch inspirierte Entscheidungen, fünf Bosse und das letzte Duell gegen Azharkan."},{title:"Eivor, der letzte König von Norwegen",kicker:"Kapitel III",text:"Im Norden schließen sich die Fjorde, und das letzte Königreich ruft seinen Helden.",tone:"100 nordische Entscheidungen, fünf Bosse und das letzte Duell gegen Eivor."}]},
+ es:{paths:{1:{village:"Avanzas por el corazón del Pueblo Olvidado",brume:"Sigues el camino sepultado en la niebla","forêt":"Entras en el Bosque de los Susurros","rivière":"Sigues el río negro",montagne:"Subes hacia la montaña ancestral",secret:"Tomas los pasadizos secretos de los antiguos guardianes",relique:"Te acercas a la reliquia ancestral"},2:{frontiere:"Llegas a las puertas de las tierras abrasadas",cendres:"Sigues el camino de las cenizas",oubli:"Avanzas por el sendero olvidado",forge:"Te unes al camino de las forjas infernales",marais:"Entras en los pantanos negros",forteresse:"Subes hacia las antiguas fortalezas",catacombes:"Desciendes a las catacumbas reales",couronne:"Caminas bajo el signo de la corona negra",abime:"Bordeas el Abismo",treasure:"Te acercas al tesoro del Rey Demonio",sacrifice:"Sigues el camino del sacrificio"},3:{fjord:"Sigues los fiordos del último reino",hiver:"Avanzas por el reino helado",runes:"Sigues el rastro de las runas antiguas",clans:"Caminas bajo los estandartes de los clanes",jarl:"Te infiltras en la corte del jarl",mer:"Cruzas el mar del Norte",tempete:"Te enfrentas al camino de la tormenta",valkyrie:"Sigues las señales de las valquirias","trône":"Te acercas al trono del último rey"}},chapters:[{title:"El Pueblo Olvidado",kicker:"Capítulo I",text:"La niebla se retira ante las puertas de un pueblo ausente de todos los mapas.",tone:"La historia original de The Fantasy: 50 etapas, cinco jefes y la reliquia ancestral."},{title:"El Tesoro del Rey Demonio",kicker:"Capítulo II",text:"Donde se derramó la sangre de los samuráis, el tesoro aún espera.",tone:"75 decisiones de temática japonesa, cinco jefes y el duelo final contra Azharkan."},{title:"Eivor, el último Rey de Noruega",kicker:"Capítulo III",text:"Al norte, los fiordos se cierran y el último reino llama a su campeón.",tone:"100 decisiones nórdicas, cinco jefes y el duelo final contra Eivor."}]},
+ pl:{paths:{1:{village:"Przemierzasz serce Zapomnianej Wioski",brume:"Podążasz drogą skrytą we mgle","forêt":"Wkraczasz do Szepczącego Lasu","rivière":"Podążasz wzdłuż czarnej rzeki",montagne:"Wspinasz się ku pradawnej górze",secret:"Wybierasz sekretne przejścia dawnych strażników",relique:"Zbliżasz się do pradawnej relikwii"},2:{frontiere:"Docierasz do bram spalonej krainy",cendres:"Podążasz ścieżką popiołów",oubli:"Idziesz zapomnianym szlakiem",forge:"Dołączasz do drogi ku piekielnym kuźniom",marais:"Wkraczasz na czarne bagna",forteresse:"Wspinasz się ku pradawnym twierdzom",catacombes:"Schodzisz do królewskich katakumb",couronne:"Kroczysz pod znakiem czarnej korony",abime:"Obchodzisz skraj Otchłani",treasure:"Zbliżasz się do skarbu Króla Demonów",sacrifice:"Podążasz ścieżką poświęcenia"},3:{fjord:"Podążasz fiordami ostatniego królestwa",hiver:"Przemierzasz zamarznięte królestwo",runes:"Podążasz śladem pradawnych run",clans:"Kroczysz pod sztandarami klanów",jarl:"Przenikasz na dwór jarla",mer:"Przeprawiasz się przez Morze Północne",tempete:"Stawiasz czoła drodze burzy",valkyrie:"Podążasz za znakami walkirii","trône":"Zbliżasz się do tronu ostatniego króla"}},chapters:[{title:"Zapomniana Wioska",kicker:"Rozdział I",text:"Mgła ustępuje przed bramami wioski, której nie ma na żadnej mapie.",tone:"Oryginalna opowieść The Fantasy: 50 wyborów, pięciu bossów i pradawna relikwia."},{title:"Skarb Króla Demonów",kicker:"Rozdział II",text:"Tam, gdzie przelano krew samurajów, skarb wciąż czeka.",tone:"75 wyborów inspirowanych Japonią, pięciu bossów i finałowy pojedynek z Azharkanem."},{title:"Eivor, ostatni Król Norwegii",kicker:"Rozdział III",text:"Na północy fiordy się zamykają, a ostatnie królestwo wzywa swojego czempiona.",tone:"100 nordyckich wyborów, pięciu bossów i finałowy pojedynek z Eivorem."}]}
+ };
+ for(const [lang,data] of Object.entries(locales)){
+   if(lang==="en" || !window.TF_TRANSLATIONS[lang]) continue;
+   const tr=window.TF_TRANSLATIONS[lang];
+   tr.chapters=Object.fromEntries(c.chapters.map((chapter,index)=>[chapter.id,{...chapter,...data.chapters[index]}]));
+   tr.paths=data.paths||tr.paths||{};
+   tr.content.classes=tr.content.classes.map((x,i)=>({...c.classes[i],...x}));
+   tr.content.achievements=tr.content.achievements.map((x,i)=>({...c.achievements[i],...x}));
+   tr.content.chapterEndings = tr.content.chapterEndings || data.chapterEndings || [];
+   tr.content.bossNames = tr.content.bossNames || [];
+   tr.content.basicEnemies = tr.content.basicEnemies || [];
+   tr.bosses = tr.content.bossNames;
+ }
+})();
+
+/* Event catalogues use one locale/chapter structure, indexed [question, yes, no]. */
+(function(){
+ const locales=window.TF_TRANSLATIONS;
+ const source=window.TF_CONTENT;
+ const rows={
+ de:{1:[
+ ["Du durchschreitest das Tor des vergessenen Dorfes. Regungsloser Nebel liegt über der Hauptstraße. Willst du eintreten?","Du betrittst das Dorf, und die Häuser scheinen deine Anwesenheit zu erkennen.","Du umrundest die ersten Häuser und beobachtest den Nebel von den Feldern aus."],["Ein alter Wächter reicht dir eine abgenutzte Karte voller blauer Markierungen. Nimmst du sie?","Die Karte zeigt den Weg zur verbotenen Bibliothek.","Du lehnst die Karte ab, doch der Wächter weist dir die Lanternengasse."],["Eine Glocke läutet in einem Turm ohne Glockenstuhl, und alle Raben fliegen auf. Folgst du dem Klang?","Du entdeckst einen Platz, auf dem die Zeit stillzustehen scheint.","Du verlässt den Platz und folgst Spuren in Richtung Wald."],["Ein verlorenes Kind bittet dich, das Licht seines Zuhauses zu finden. Hilfst du?","Das Kind führt dich zu den Archiven des Dorfes.","Das Kind verschwindet im Nebel und lässt einen Schlüssel fallen."],["Der zentrale Platz ist leer, doch eine Statue hält eine warme Laterne. Zündest du sie an?","Die Laterne enthüllt das Zeichen der Ahnenreliquie.","Du lässt die Laterne dunkel und hörst Schritte hinter dir."],["Ein schwarzer Fluss versperrt den Weg zum alten Viertel. Überquerst du ihn?","Du überquerst ihn auf Steinen, die unter deinen Füßen erscheinen.","Du folgst der Strömung zu einer verlassenen Mühle."],["Eine kleine Kapelle bewahrt unter einem zerbrochenen Altar eine blaue Flamme. Betest du davor?","Die Flamme zeigt dir einen Durchgang zu den Geheimnissen des Dorfes.","Du nimmst eine unentzündete Fackel und kehrst zum Platz zurück."],["Eine nebelverhangene Tür trägt deinen Namen im Holz. Öffnest du sie?","Die Tür führt zu der Straße, in der die Dorfbewohner verschwanden.","Du suchst hinter den Häusern nach einem Seiteneingang."],["Die Ruinen eines Hauses verbergen eine Treppe unter dem Dorf. Steigst du hinab?","Du findest die ersten Archive des vergessenen Dorfes.","Du bleibst an der Oberfläche und folgst einem Pfad zu den Bäumen."],["Eine versiegelte Gruft trägt dieselbe Rune wie die Karte des Wächters. Brichst du das Siegel?","Der erste Wächter des Vergessens erwacht unter der Erde.","Du prägst dir die Rune ein und suchst einen anderen Eingang."]
+ ],2:[],3:[]},
+ es:{1:[],2:[],3:[]},pl:{1:[],2:[],3:[]},"zh-CN":{1:[],2:[],3:[]}
+ };
+ const zh1=[
+ ["你穿过被遗忘村庄的大门，主街上弥漫着静止不动的雾气。你要进去吗？","你走进村庄，房屋似乎认出了你的到来。","你绕过最初的几间房屋，从田野观察雾气。"],["一位年迈的守卫递给你一张布满蓝色标记的旧地图。你要接过来吗？","地图显现出通往禁忌图书馆的道路。","你拒绝了地图，但守卫为你指出灯笼街。"],["一座没有钟楼的塔中传来钟声，所有乌鸦都振翅飞起。你要循声而去吗？","你发现一处仿佛时间静止的广场。","你离开广场，沿着足迹朝森林走去。"],["一个迷路的孩子请你找回家中的灯火。你要帮忙吗？","孩子带你前往村庄档案室。","孩子消失在雾中，掉下了一把钥匙。"],["中央广场空无一人，但一尊雕像手里拿着一盏温热的灯笼。你要点亮它吗？","灯笼显现出远古圣物的标记。","你没有点灯，听见身后传来脚步声。"],["一条黑色河流挡住了通往旧城区的路。你要渡河吗？","你踩着脚下浮现的石块渡过河流。","你沿着水流走到一座废弃磨坊。"],["一座小礼拜堂在破碎祭坛下保存着蓝色火焰。你要在火焰前祈祷吗？","火焰为你显出通往村庄秘密的通道。","你拿起一支未点燃的火把，返回广场。"],["一扇被雾笼罩的门上刻着你的名字。你要打开它吗？","门通向村民消失的那条街。","你在房屋后寻找侧门。"],["一所房屋的废墟中藏着通往村庄地下的楼梯。你要下去吗？","你找到了被遗忘村庄最初的档案。","你留在地面，沿着小路走向树林。"],["一座封印的地下墓穴刻着与守卫地图相同的符文。你要打破封印吗？","第一位遗忘守卫在地底苏醒。","你记下符文，继续寻找另一处入口。"]
+ ];
+ rows["zh-CN"][1]=source.storyEvents.map((e,i)=>zh1[i]||[e.text,e.yes,e.no]);
+ for(const lang of ["de","es","pl"]) rows[lang][1]=source.storyEvents.map((e,i)=>rows[lang][1][i]||[e.text,e.yes,e.no]);
+ for(const lang of ["de","es","pl"]) for(const chapter of [2,3]) rows[lang][chapter]= (chapter===2?source.treasureEvents:source.nordicEvents).map((e,i)=>rows[lang][chapter][i]||[e.text,e.yes,e.no]);
+ rows["zh-CN"][2]=source.treasureEvents.map(e=>[e.text,e.yes,e.no]);
+ rows["zh-CN"][3]=source.nordicEvents.map(e=>[e.text,e.yes,e.no]);
+ for(const lang of ["de","es","pl","zh-CN"]) if(locales[lang]) for(const chapter of [1,2,3]) locales[lang].events[chapter]=rows[lang][chapter];
+})();
+(function(){
+ const c=window.TF_CONTENT;
+ const de2=[
+ ["Die Karte des alten Mannes zeigt einen Weg in die verbrannten Lande. Folgst du ihm?","Du folgst den Spuren des königlichen Trosses.","Du verlässt die Straße und nimmst den vergessenen Pfad."],["Ein verlassener Karawanenwagen trägt das Siegel des Dämonenkönigs. Durchsuchst du ihn?","Unter der Asche findest du einen schwarzen Schlüssel.","Du weichst der Falle aus und umrundest die Wagen."],["Ein steinerner Leuchtfeuer markiert zwei Wege zur Festung. Entzündest du die rote Flamme?","Die Flamme zeigt den Soldatenweg.","Die Dunkelheit führt dich zu einem alten Aquädukt."],["Wasser zu deinen Füßen trägt Münzen mit dem Gesicht des Dämons. Greifst du danach?","Du holst eine Münze hervor, die das Passwort flüstert.","Du gehst weiter, ohne das Wesen im Wasser zu wecken."],["Ein Fallgitter versperrt das Tal. Ein alter Mechanismus verlangt ein Opfer. Verwendest du die schwarze Münze?","Das Tor öffnet sich und die Fackeln lodern auf.","Du kletterst durch einen schmalen Riss in der Mauer."],["Raben kreisen über einem zerrissenen Banner. Reißt du es herunter?","Das Banner verbirgt eine Karte der Gänge.","Die Raben weisen dir dennoch den Weg nach Norden."],["Zwei Stollen durchqueren den Berg: einer riecht nach Rauch, der andere nach Salz. Wählst du den Rauch?","Die Hitze bringt dich den Schmieden des Dämonenkönigs näher.","Der Salzstollen führt unter die Küchen der Festung."],["Geisterhafte Bergleute schlagen noch immer auf den Fels. Hörst du ihnen zu?","Ihr Lied offenbart einen Schatz unter der Zitadelle.","Du bewegst dich lautlos zwischen ihren verrosteten Werkzeugen."],["Eine Glocke läutet ohne Seil und erschüttert die Mauern. Bringst du sie zum Schweigen?","Die Stille enthüllt eine Inschrift auf dem Boden.","Das Läuten lockt eine Patrouille aus Aschewesen an."],["Die Inschrift verspricht einen sicheren Weg im Tausch gegen eine Erinnerung. Opferst du sie?","Eine Erinnerung verblasst, doch der Weg öffnet sich.","Du bewahrst deine Vergangenheit und stemmst die Tür auf."],
+ ];
+ const es2=[
+ ["El mapa del anciano revela un camino a las tierras abrasadas. ¿Lo sigues?","Sigues las huellas del convoy real.","Dejas el camino y tomas el sendero olvidado."],["Una caravana abandonada lleva el sello del Rey Demonio. ¿Registras los carros?","Encuentras una llave negra bajo las cenizas.","Evitas la trampa y rodeas los carros."],["Un faro de piedra señala dos pasos hacia la fortaleza. ¿Enciendes la llama roja?","La llama revela el paso de los soldados.","La oscuridad te conduce a un acueducto antiguo."],["El agua a tus pies arrastra monedas con el rostro del demonio. ¿Metes la mano?","Recuperas una moneda que susurra la contraseña.","Sigues adelante sin despertar lo que duerme en el agua."],["Una reja bloquea el valle. Un mecanismo antiguo exige una ofrenda. ¿Usas la moneda negra?","La puerta se abre y las antorchas se encienden.","Escalas el muro por una grieta estrecha."],["Los cuervos vuelan en círculos sobre un estandarte rasgado. ¿Lo arrancas?","El estandarte oculta un mapa de las galerías.","Los cuervos aún te muestran el camino del norte."],["Dos galerías cruzan la montaña: una huele a humo y la otra a sal. ¿Eliges la del humo?","El calor te acerca a las forjas del Rey Demonio.","El túnel salino conduce bajo las cocinas de la fortaleza."],["Los mineros fantasma siguen golpeando la roca. ¿Los escuchas?","Su canción revela un tesoro bajo la ciudadela.","Avanzas en silencio entre sus herramientas oxidadas."],["Una campana suena sin cuerda y sacude los muros. ¿La silencias?","El silencio revela una inscripción en el suelo.","El repique atrae a una patrulla de criaturas de ceniza."],["La inscripción promete un paso seguro a cambio de un recuerdo. ¿Lo sacrificas?","Un recuerdo se desvanece, pero el paso se abre.","Conservas tu pasado y fuerzas la puerta."],
+ ];
+ const pl2=[
+ ["Mapa starca wskazuje drogę do spalonej krainy. Czy podążysz nią?","Idziesz śladami królewskiego orszaku.","Schodzisz z drogi i wybierasz zapomniany szlak."],["Porzucona karawana nosi pieczęć Króla Demonów. Czy przeszukasz wozy?","Pod popiołem znajdujesz czarny klucz.","Unikasz pułapki i obchodzisz wozy."],["Kamienny drogowskaz oznacza dwa przejścia do twierdzy. Czy zapalisz czerwony płomień?","Płomień wskazuje drogę żołnierzy.","Ciemność prowadzi cię do pradawnego akweduktu."],["Woda pod stopami niesie monety z twarzą demona. Czy sięgniesz po jedną?","Wyciągasz monetę, która szepcze hasło.","Idziesz dalej, nie budząc tego, co śpi w wodzie."],["Brona blokuje dolinę. Stary mechanizm żąda ofiary. Czy użyjesz czarnej monety?","Brama się otwiera, a pochodnie rozbłyskują.","Wspinasz się po murze przez wąską szczelinę."],["Kruki krążą nad podartym sztandarem. Czy zerwiesz go?","Sztandar skrywa mapę galerii.","Kruki i tak wskazują ci północną drogę."],["Dwie galerie przecinają górę: jedna pachnie dymem, druga solą. Czy wybierzesz dym?","Żar przybliża cię do kuźni Króla Demonów.","Solny tunel prowadzi pod kuchnie twierdzy."],["Duchy górników wciąż uderzają w skałę. Czy ich wysłuchasz?","Ich pieśń ujawnia skarb pod cytadelą.","Przemykasz cicho między ich zardzewiałymi narzędziami."],["Dzwon rozbrzmiewa bez sznura i wstrząsa murami. Czy go uciszysz?","Cisza odsłania napis na podłodze.","Dźwięk przyciąga patrol popielnych stworów."],["Napis obiecuje bezpieczne przejście w zamian za wspomnienie. Czy je poświęcisz?","Wspomnienie blednie, ale przejście się otwiera.","Zachowujesz przeszłość i wyważasz drzwi."],
+ ];
+ const de3=[["Die Fjorde schließen sich unter dem Schnee, und ein Banner ruft nach deinem Helden. Gehst du an Land?","Du betrittst das Ufer des letzten Königreichs.","Du bleibst an Bord und beobachtest die Klippen."],["Ein altes Langschiff steckt im Eis fest. Hilfst du, es zu befreien?","Das Schiff kehrt aufs Meer zurück und weist dir den Weg zum Dorf.","Du folgst zu Fuß durch den Schneesturm der Küste."],["Eivors Dorf ist still, doch aus einem Haus steigt Rauch auf. Betrittst du es?","Du findest Dorfbewohner, die sich unter den Dielen verstecken.","Du untersuchst zuerst die Spuren um das Haus."],["Eine Familie bewahrt eine königliche Glut in einer Eisenschale. Entfachst du den Herd neu?","Das königliche Feuer wärmt das Dorf und enthüllt eine Karte.","Du hebst die Glut für einen gefährlicheren Moment auf."],["Ein Kind sagt, es habe den König durch den Berg gehen sehen. Glaubst du ihm?","Das Kind führt dich zu einem alten Jagdpfad.","Du befragst die Ältesten, bevor du aufbrichst."],["Ein Rabe trägt einen Ring mit königlichem Siegel. Folgst du ihm?","Der Vogel führt dich zu einem Steinkreis.","Du behältst den Ring und suchst den Bergpass."],["Die Steine erzählen vom Fall eines alten Königs. Entzifferst du sie?","Du erfährst, dass ein Verräter noch immer unter den Clans wandelt.","Du prägst dir die Zeichen ein, ohne ihre Magie zu wecken."],["Zwei frostbedeckte Statuen bewachen den Pass. Gehst du zwischen ihnen hindurch?","Die Statuen verneigen sich vor deiner Entschlossenheit.","Du kletterst über einen schmalen Felsvorsprung."],["Riesige Wolfsspuren umkreisen dein Lager. Folgst du ihnen?","Neben einem Altar findest du weißes Fell.","Du sicherst das Lager, bevor du weiterziehst."],["Der Altar trägt eine Opfergabe für Skadi, die Jägerin des Schnees. Legst du sie nieder?","Eine leuchtende Spur erscheint im Schnee.","Du nimmst die Opfergabe und hörst ein fernes Knurren."]];
+ const es3=[["Los fiordos se cierran bajo la nieve y un estandarte llama a tu héroe. ¿Desembarcas?","Pisas la orilla del último reino.","Permaneces a bordo y observas los acantilados."],["Un drakkar antiguo está atrapado en el hielo. ¿Ayudas a liberarlo?","El barco vuelve al mar y te guía hacia el pueblo.","Sigues a pie la costa durante la ventisca."],["La aldea de Eivor está en silencio, pero sale humo de una casa. ¿Entras?","Encuentras aldeanos escondidos bajo el suelo.","Primero examinas las huellas alrededor de la casa."],["Una familia protege una brasa real en un cuenco de hierro. ¿Reavivas el hogar?","El fuego real calienta el pueblo y revela un mapa.","Guardas la brasa para un momento más peligroso."],["Un niño dice que vio al rey cruzar la montaña. ¿Le crees?","El niño te conduce a un antiguo sendero de caza.","Preguntas a los ancianos antes de partir."],["Un cuervo lleva un anillo con el sello real. ¿Lo sigues?","El ave te guía hasta un círculo de piedras.","Conservas el anillo y buscas el paso de montaña."],["Las piedras cuentan la caída de un antiguo rey. ¿Las descifras?","Descubres que un traidor aún camina entre los clanes.","Memorizas los símbolos sin despertar su magia."],["Dos estatuas cubiertas de escarcha custodian el paso. ¿Caminas entre ellas?","Las estatuas se inclinan ante tu determinación.","Escalas por una cornisa estrecha."],["Enormes huellas de lobo rodean tu campamento. ¿Las sigues?","Encuentras pelo blanco junto a un altar.","Refuerzas el campamento antes de continuar."],["El altar guarda una ofrenda para Skadi, cazadora de la nieve. ¿La depositas?","Aparece un rastro brillante en la nieve.","Te llevas la ofrenda y oyes un gruñido lejano."]];
+ const pl3=[["Fiordy zamykają się pod śniegiem, a sztandar wzywa twojego bohatera. Czy schodzisz na ląd?","Stawiasz stopę na brzegu ostatniego królestwa.","Zostajesz na pokładzie i obserwujesz klify."],["Stary długi okręt utknął w lodzie. Czyżesz go uwolnić?","Statek wraca na morze i prowadzi cię ku wiosce.","Idziesz pieszo wzdłuż wybrzeża przez śnieżycę."],["Wioska Eivora milczy, lecz z jednego domu unosi się dym. Czy wejdziesz?","Znajdujesz mieszkańców ukrytych podłogą.","Najpierw oglądasz ślady wokół domu."],["Rodzina chroni królewski żar w żelaznej misie. Czy rozpalasz palenisko?","Królewski ogień ogrzewa wioskę i odsłania mapę.","Zachowujesz żar na groźniejszą chwilę."],["Dziecko twierdzi, że widziało króla przechodzącego przez góry. Wierzysz mu?","Dziecko prowadzi cię na dawny szlak łowiecki.","Przed odejściem wypytujesz starszyznę."],["Kruk niesie pierścień z królewską pieczęcią. Czy za nim podążysz?","Ptak prowadzi cię do kamiennego kręgu.","Zatrzymujesz pierścień i szukasz górskiej przełęczy."],["Kamienie opowiadają o upadku dawnego króla. Czy je odczytasz?","Dowiadujesz się, że zdrajca wciąż chodzi wśród klanów.","Zapamiętujesz symbole, nie budząc ich magii."],["Dwie oszronione posągi strzegą przełęczy. Czy przejdziesz między nimi?","Posągi kłaniają się twojej determinacji.","Wspinasz się wąską półką skalną."],["Olbrzymie ślady wilka okrążają obóz. Czy pójdziesz ich tropem?","Przy ołtarzu znajdujesz białe futro.","Zabezpieczasz obóz przed dalszą drogą."],["Ołtarz skrywa dar dla Skadi, łowczyni śniegu. Czy go złożysz?","Na śniegu pojawia się lśniący szlak.","Zabierasz dar i słysz odległy warkot."]];
+ const update=(lang,chapter,translated)=>{const t=window.TF_TRANSLATIONS[lang];const src=chapter===2?c.treasureEvents:c.nordicEvents;t.events[chapter]=src.map((e,i)=>translated[i]||t.events[chapter][i]||[e.text,e.yes,e.no]);};
+ for(const lang of ["de","es","pl"]) if(window.TF_TRANSLATIONS[lang]){update(lang,2,lang==="de"?de2:lang==="es"?es2:pl2);update(lang,3,lang==="de"?de3:lang==="es"?es3:pl3);}
+})();
+
+/* Opening chapter-I translations consolidated with the locale catalogues. */
+(function(){
+ const locales=window.TF_TRANSLATIONS;
+ const source=window.TF_CONTENT;
+ const fr=window.TF_CONTENT.storyEvents;
+ const de=[
+ ["Du durchschreitest das Tor des vergessenen Dorfes. Regungsloser Nebel liegt über der Hauptstraße. Willst du eintreten?","Du betrittst das Dorf, und die Häuser scheinen deine Anwesenheit zu erkennen.","Du umrundest die ersten Häuser und beobachtest den Nebel von den Feldern aus."],
+ ["Ein alter Wächter reicht dir eine abgenutzte Karte voller blauer Markierungen. Nimmst du sie?","Die Karte zeigt den Weg zur verbotenen Bibliothek.","Du lehnst die Karte ab, doch der Wächter weist dir die Lanternengasse."],
+ ["Eine Glocke läutet in einem Turm ohne Glockenstuhl, und alle Raben fliegen auf. Folgst du dem Klang?","Du entdeckst einen Platz, auf dem die Zeit stillzustehen scheint.","Du verlässt den Platz und folgst Spuren in Richtung Wald."],
+ ["Ein verlorenes Kind bittet dich, das Licht seines Zuhauses zu finden. Hilfst du?","Das Kind führt dich zu den Archiven des Dorfes.","Das Kind verschwindet im Nebel und lässt einen Schlüssel fallen."],
+ ["Der zentrale Platz ist leer, doch eine Statue hält eine warme Laterne. Zündest du sie an?","Die Laterne enthüllt das Zeichen der Ahnenreliquie.","Du lässt die Laterne dunkel und hörst Schritte hinter dir."],
+ ["Ein schwarzer Fluss versperrt den Weg zum alten Viertel. Überquerst du ihn?","Du überquerst ihn auf Steinen, die unter deinen Füßen erscheinen.","Du folgst der Strömung zu einer verlassenen Mühle."],
+ ["Eine kleine Kapelle bewahrt unter einem zerbrochenen Altar eine blaue Flamme. Betest du davor?","Die Flamme zeigt dir einen Durchgang zu den Geheimnissen des Dorfes.","Du nimmst eine unentzündete Fackel und kehrst zum Platz zurück."],
+ ["Eine nebelverhangene Tür trägt deinen Namen im Holz. Öffnest du sie?","Die Tür führt zu der Straße, in der die Dorfbewohner verschwanden.","Du suchst hinter den Häusern nach einem Seiteneingang."],
+ ["Die Ruinen eines Hauses verbergen eine Treppe unter dem Dorf. Steigst du hinab?","Du findest die ersten Archive des vergessenen Dorfes.","Du bleibst an der Oberfläche und folgst einem Pfad zu den Bäumen."],
+ ["Eine versiegelte Gruft trägt dieselbe Rune wie die Karte des Wächters. Brichst du das Siegel?","Der erste Wächter des Vergessens erwacht unter der Erde.","Du prägst dir die Rune ein und suchst einen anderen Eingang."],
+ ];
+ const zh=[
+ ["你穿过被遗忘村庄的大门，主街上弥漫着静止不动的雾气。你要进去吗？","你走进村庄，房屋似乎认出了你的到来。","你绕过最初的几间房屋，从田野观察雾气。"],
+ ["一位年迈的守卫递给你一张布满蓝色标记的旧地图。你要接过来吗？","地图显现出通往禁忌图书馆的道路。","你拒绝了地图，但守卫为你指出灯笼街。"],
+ ["一座没有钟楼的塔中传来钟声，所有乌鸦都振翅飞起。你要循声而去吗？","你发现一处仿佛时间静止的广场。","你离开广场，沿着足迹朝森林走去。"],
+ ["一个迷路的孩子请你找回家中的灯火。你要帮忙吗？","孩子带你前往村庄档案室。","孩子消失在雾中，掉下了一把钥匙。"],
+ ["中央广场空无一人，但一尊雕像手里拿着一盏温热的灯笼。你要点亮它吗？","灯笼显现出远古圣物的标记。","你没有点灯，听见身后传来脚步声。"],
+ ["一条黑色河流挡住了通往旧城区的路。你要渡河吗？","你踩着脚下浮现的石块渡过河流。","你沿着水流走到一座废弃磨坊。"],
+ ["一座小礼拜堂在破碎祭坛下保存着蓝色火焰。你要在火焰前祈祷吗？","火焰为你显出通往村庄秘密的通道。","你拿起一支未点燃的火把，返回广场。"],
+ ["一扇被雾笼罩的门上刻着你的名字。你要打开它吗？","门通向村民消失的那条街。","你在房屋后寻找侧门。"],
+ ["一所房屋的废墟中藏着通往村庄地下的楼梯。你要下去吗？","你找到了被遗忘村庄最初的档案。","你留在地面，沿着小路走向树林。"],
+ ["一座封印的地下墓穴刻着与守卫地图相同的符文。你要打破封印吗？","第一位遗忘守卫在地底苏醒。","你记下符文，继续寻找另一处入口。"],
+ ];
+ const pl=[
+ ["Przekraczasz bramę Zapomnianej Wioski. Nad główną ulicą zalega nieruchoma mgła. Czy wchodzisz?","Wchodzisz do wioski, a domy zdają się rozpoznawać twoją obecność.","Omijasz pierwsze domy i obserwujesz mgłę z pól."],
+ ["Stary strażnik podaje ci zużytą mapę pokrytą niebieskimi znakami. Czy ją bierzesz?","Mapa wskazuje drogę do zakazanej biblioteki.","Odrzucasz mapę, lecz strażnik wskazuje ci Ulicę Latarni."],
+ ["Dzwon rozbrzmiewa w wieży bez dzwonnicy, a wszystkie kruki wzbijają się w powietrze. Czy pójdziesz za dźwiękiem?","Odkrywasz plac, na którym czas zdaje się stać w miejscu.","Opuszczasz plac i podążasz śladami w stronę lasu."],
+ ["Zagubione dziecko prosi cię o odnalezienie światła swojego domu. Czy mu pomożesz?","Dziecko prowadzi cię do wiejskich archiwów.","Dziecko znika we mgle, upuszczając klucz."],
+ ["Na centralnym placu nikogo nie ma, lecz posąg trzyma ciepłą latarnię. Czy ją zapalisz?","Latarnią odsłaniasz symbol pradawnej relikwii.","Zostawiasz latarnię zgaszoną i słysz kroki za sobą."],
+ ["Czarna rzeka odcina drogę do starej dzielnicy. Czy ją przekroczysz?","Przechodzisz po kamieniach pojawiających się pod twoimi stopami.","Idziesz wzdłuż nurtu aż do opuszczonego młyna."],
+ ["Mała kaplica skrywa błękitny płomień pod zniszczonym ołtarzem. Czy pomodlisz się przy nim?","Płomień pokazuje ci przejście do tajemnic wioski.","Bierzesz niezapaloną pochodnię i wracasz na plac."],
+ ["Drzwi spowite mgłą mają wyryte w drewnie twoje imię. Czy je otworzysz?","Drzwi prowadzą na ulicę, na której zniknęli mieszkańcy.","Szukasz bocznego wejścia za domami."],
+ ["Ruiny domu skrywają schody prowadzące pod wioskę. Czy zejdziesz?","Odnajdujesz pierwsze archiwa Zapomnianej Wioski.","Zostajesz na powierzchni i ruszasz ścieżką ku drzewom."],
+ ["Zapieczętowana krypta nosi tę samą runę co mapa strażnika. Czy złamiesz pieczęć?","Pierwszy strażnik zapomnienia budzi się pod ziemią.","Zapamiętujesz runę i szukasz innego wejścia."],
+ ];
+       locales.de.events[1]=fr.map((e,i)=>de[i]||[e.text,e.yes,e.no]);
+       locales.pl.events[1]=fr.map((e,i)=>pl[i]||[e.text,e.yes,e.no]);
+       const spanish=locales.es?.events?.[1]||[];
+       if(locales.es) locales.es.events[1]=fr.map((e,i)=>spanish[i]||[e.text,e.yes,e.no]);
+       locales["zh-CN"].events[1]=fr.map((e,i)=>zh[i]||[e.text,e.yes,e.no]);
+       
+     })();
+
+ /* Measure narrative gaps without overwriting or hiding untranslated French source text. */
+ (function () {
+   const source = window.TF_CONTENT;
+   const chapters = { 1: source.storyEvents, 2: source.treasureEvents, 3: source.nordicEvents };
+   const missing = {};
+   for (const lang of ["de", "es", "pl"]) {
+     const locale = window.TF_TRANSLATIONS[lang];
+     if (!locale) continue;
+     missing[lang] = {};
+     for (const [chapter, events] of Object.entries(chapters)) {
+       missing[lang][chapter] = 0;
+       locale.events[chapter] = events.map((event, index) => {
+         const original = [event.text, event.yes, event.no];
+         const translated = locale.events[chapter][index] || [];
+         return original.map((text, field) => {
+           if (translated[field] && translated[field] !== text) return translated[field];
+           missing[lang][chapter] += 1;
+           return text;
+         });
+       });
+     }
+   }
+   window.TF_TRANSLATION_GAPS = missing;
+ })();
+
+
+
+
+/* Build chapter metadata for translated locale overlays. */
+(function () {
+  const locales = window.TF_TRANSLATIONS;
+  const story = window.TF_CONTENT;
+  const ensure = (locale) => {
+    locale.events ||= {1:[],2:[],3:[]};
+    locale.paths ||= {};
+    locale.content ||= {chapters:[],achievements:[]};
+    locale.events[1] ||= [];
+    locale.events[2] ||= [];
+    locale.events[3] ||= [];
+    return locale;
+  };
+  Object.values(locales).forEach(ensure);
+  const zh1 = [
+    ["你穿过被遗忘村庄的大门，主街上弥漫着静止不动的雾气。你要进去吗？","你走进村庄，房屋似乎认出了你的到来。","你绕过最初的几间房屋，从田野观察雾气。"],
+    ["一位年迈的守卫递给你一张布满蓝色标记的旧地图。你要接过来吗？","地图显现出通往禁忌图书馆的道路。","你拒绝了地图，但守卫为你指出灯笼街。"],
+    ["一座没有钟楼的塔中传来钟声，所有乌鸦都振翅飞起。你要循声而去吗？","你发现一处仿佛时间静止的广场。","你离开广场，沿着足迹朝森林走去。"],
+    ["一个迷路的孩子请你找回家中的灯火。你要帮忙吗？","孩子带你前往村庄档案室。","孩子消失在雾中，掉下了一把钥匙。"],
+    ["中央广场空无一人，但一尊雕像手里拿着一盏温热的灯笼。你要点亮它吗？","灯笼显现出远古圣物的标记。","你没有点灯，听见身后传来脚步声。"],
+    ["一条黑色河流挡住了通往旧城区的路。你要渡河吗？","你踩着脚下浮现的石块渡过河流。","你沿着水流走到一座废弃磨坊。"],
+    ["一座小礼拜堂在破碎祭坛下保存着蓝色火焰。你要在火焰前祈祷吗？","火焰为你显出通往村庄秘密的通道。","你拿起一支未点燃的火把，返回广场。"],
+    ["一扇被雾笼罩的门上刻着你的名字。你要打开它吗？","门通向村民消失的那条街。","你在房屋后寻找侧门。"],
+    ["一所房屋的废墟中藏着通往村庄地下的楼梯。你要下去吗？","你找到了被遗忘村庄最初的档案。","你留在地面，沿着小路走向树林。"],
+    ["一座封印的地下墓穴刻着与守卫地图相同的符文。你要打破封印吗？","第一位遗忘守卫在地底苏醒。","你记下符文，继续寻找另一处入口。"]
+  ];
+  locales["zh-CN"].events[1] = story.storyEvents.map((event,index)=>zh1[index]||[event.text,event.yes,event.no]);
+  locales["zh-CN"].events[1] = story.storyEvents.map((event,index)=>zh1[index]||[event.text,event.yes,event.no]);
+  for(const lang of ["de","es","pl"]) if(locales[lang]) locales[lang].events[1]=story.storyEvents.map((event,index)=>locales[lang].events[1][index]||[event.text,event.yes,event.no]);
+  locales["zh-CN"].events[2] = story.treasureEvents.map(event=>[event.text,event.yes,event.no]);
+  locales["zh-CN"].events[3] = story.nordicEvents.map(event=>[event.text,event.yes,event.no]);
+})();
+
+
+/* Canonical event rows [question, yes, no], grouped by locale. */
+/* Event catalogues are assembled once, below, from the consolidated rows. */
+
+
+/* Install the generated locale catalogue after its data script has loaded. */
+(function () {
+  const catalog = window.TF_TRANSLATION_CATALOG;
+  const content = window.TF_CONTENT;
+  const locales = window.TF_TRANSLATIONS;
+  if (!catalog || !catalog.events) return;
+  const sourceEvents = { 1: content.storyEvents, 2: content.treasureEvents, 3: content.nordicEvents };
+  const languages = ["en", "de", "es", "pl", "zh-CN"];
+  for (const language of languages) {
+    const locale = locales[language];
+    if (!locale) continue;
+    locale.events ||= {};
+    for (const [chapter, events] of Object.entries(sourceEvents)) {
+      const rows = catalog.events[chapter]?.[language];
+      if (Array.isArray(rows) && rows.length === events.length && rows.every((row) => row && [row.question, row.yes, row.no].every((text) => typeof text === "string" && text.trim()))) {
+        locale.events[chapter] = rows.map((row) => [row.question, row.yes, row.no]);
+      }
+    }
+    locale.chapters ||= {};
+    for (const chapter of content.chapters) {
+      const translated = catalog.chapters?.[chapter.id]?.[language];
+      if (translated) locale.chapters[chapter.id] = { ...locale.chapters[chapter.id], ...Object.fromEntries(Object.entries(translated).filter(([, value]) => typeof value === "string" && value.trim())) };
+    }
+    locale.paths = catalog.paths?.[language] || locale.paths || {};
+  }
+  const bosses = [...content.bosses, ...content.treasureBosses, ...content.nordicBosses];
+  for (const language of languages) {
+    const locale = locales[language];
+    locale.content ||= {};
+    locale.content.classes = content.classes.map((item) => catalog.classes?.[item.id]?.[language] || {});
+    locale.content.achievements = content.achievements.map((item) => catalog.achievements?.[item.id]?.[language] || {});
+    locale.content.basicEnemies = content.basicEnemies.map((item, index) => ({ target: catalog.enemies?.["enemy." + String(index + 1).padStart(3, "0")]?.[language]?.name || item.name }));
+    locale.content.bossNames = bosses.map((item, index) => ({ source: item.name, target: catalog.enemies?.["enemy." + String(index + content.basicEnemies.length + 1).padStart(3, "0")]?.[language]?.name || item.name }));
+  }
+  const gaps = {};
+  for (const language of ["en", "de", "es", "pl", "zh-CN"]) {
+    const locale = locales[language];
+    gaps[language] = {};
+    for (const [chapter, events] of Object.entries(sourceEvents)) {
+      gaps[language][chapter] = 0;
+      events.forEach((event, index) => {
+        const source = [event.text, event.yes, event.no];
+        const translated = locale?.events?.[chapter]?.[index] || [];
+        source.forEach((text, field) => {
+          if (!translated[field] || translated[field] === text) gaps[language][chapter]++;
+        });
+      });
+    }
+  }
+  window.TF_TRANSLATION_GAPS = gaps;
+  window.TF_TRANSLATION_COVERAGE = catalog.coverage;
+})();
