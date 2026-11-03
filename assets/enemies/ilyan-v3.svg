@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 360" role="img" aria-label="Ilyan the Blood Hunter">
+<defs>
+  <linearGradient id="sky" x2="0" y2="1"><stop stop-color="#101b2b"/><stop offset=".58" stop-color="#263344"/><stop offset="1" stop-color="#10151d"/></linearGradient>
+  <radialGradient id="aura"><stop stop-color="#ffb078" stop-opacity=".46"/><stop offset="1" stop-color="#ffb078" stop-opacity="0"/></radialGradient>
+  <linearGradient id="metal" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#e6d9b2"/><stop offset=".22" stop-color="#2b293a"/><stop offset=".58" stop-color="#394351"/><stop offset="1" stop-color="#171e2b"/></linearGradient>
+  <linearGradient id="flesh" x1="0" y1="0" x2=".8" y2="1"><stop stop-color="#f2d5ad"/><stop offset=".4" stop-color="#a8444b"/><stop offset="1" stop-color="#453a42"/></linearGradient>
+  <linearGradient id="cloth" x2="1" y2="1"><stop stop-color="#2b293a"/><stop offset=".45" stop-color="#343646"/><stop offset="1" stop-color="#111725"/></linearGradient>
+  <filter id="soft"><feGaussianBlur stdDeviation="18"/></filter>
+  <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency=".78" numOctaves="2" seed="35"/><feColorMatrix values=".35 0 0 0 .12 .3 .35 0 0 .1 .2 .25 .4 0 .08 0 0 0 .14 0"/><feBlend in="SourceGraphic" mode="soft-light"/></filter>
+</defs>
+<rect width="480" height="360" rx="24" fill="url(#sky)"/>
+<path d="M0 266l70-57 48 31 56-62 57 71 68-52 67 65 62-43 52 39v102H0z" fill="#131d29"/><circle cx="240" cy="133" r="148" fill="url(#aura)"/>
+<circle cx="240" cy="123" r="99" fill="none" stroke="#ffb078" stroke-opacity=".36" stroke-width="2"/><circle cx="240" cy="123" r="110" fill="none" stroke="#e6cf91" stroke-opacity=".18" stroke-width="1" stroke-dasharray="4 9"/>
+<path d="M67 360l20-95q18-48 69-64l40-14h88l40 14q51 16 69 64l20 95z" fill="url(#cloth)" stroke="#d4c38e" stroke-opacity=".6" stroke-width="5"/>
+<path d="M99 265l58-64 51 10 32 43-37 106H84zm282 0-58-64-51 10-32 43 37 106h119z" fill="url(#metal)" stroke="#9faeb3" stroke-opacity=".72" stroke-width="5"/>
+<path d="M173 222l36-30 31 22 31-22 36 30-26 48-41-21-41 21z" fill="#263849" stroke="#d7c693" stroke-width="4"/>
+<path d="M207 143h66l20 65-53 35-53-35z" fill="url(#flesh)" stroke="#342f33" stroke-width="5"/>
+<path d="M193 151q-3-87 47-96 50 9 47 96l-19-24-28-14-28 14z" fill="url(#metal)" stroke="#d5c999" stroke-width="6"/>
+
+
+<path d="M204 153l20 5 10 8m42-13-20 5-10 8" fill="none" stroke="#201d28" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/><path d="M209 165l18 1m26 0 18-1" stroke="#141722" stroke-width="6" stroke-linecap="round"/><ellipse cx="220" cy="166" rx="6" ry="4" fill="#ffb078"/><ellipse cx="260" cy="166" rx="6" ry="4" fill="#ffb078"/><path d="M240 165l-8 25 10 3m-26 20q24-20 48 0" fill="none" stroke="#302630" stroke-width="6" stroke-linecap="round"/><path d="M224 209h32" stroke="#cbb998" stroke-width="3" stroke-dasharray="4 4"/>
+<path d="M202 117q-85-16-62-87 19 46 71 54m67 33q85-16 62-87-19 46-71 54" fill="#3e2731" stroke="#dc7772" stroke-width="9"/><path d="M215 180l-20 32 26 20m44-52 20 32-26 20" fill="none" stroke="#ef956c" stroke-width="7"/><path d="M128 255l-24 85m248-85 24 85" stroke="#aa7e68" stroke-width="11"/>
+<path d="M221 239l19 18 19-18v121h-38z" fill="#151d2a" stroke="#d6bd7e" stroke-width="3"/><path d="M240 249l-12 18 12 14 12-14z" fill="#ffb078" stroke="#fff0bd" stroke-width="2"/>
+<g fill="#ffb078" opacity=".75"><circle cx="82" cy="113" r="3"/><circle cx="393" cy="84" r="2"/><circle cx="352" cy="170" r="3"/><path d="M118 66l-5 16 10-7zm244 124-6 19 12-8z"/></g>
+<rect x="1.5" y="1.5" width="477" height="357" rx="22" fill="none" stroke="#f1e2b6" stroke-opacity=".42" stroke-width="3"/>
+<path d="M18 290h444" stroke="#ffb078" stroke-opacity=".25" stroke-width="2"/>
+<g filter="url(#grain)" opacity=".12"><rect width="480" height="360" fill="#fff"/></g>
+</svg>
