@@ -16,9 +16,6 @@ game/                 Jeu autonome
   translations/       Catalogues et sources des traductions
 docs/
   guides/             Instructions de jeu et de développement
-  rapports/           Rapports de fusion, de parcours et de publication
-  historique/         Journal des changements
-  images/             Illustrations des rapports
   plans/              Pistes d'évolution
 tools/
   qa/                 Contrôles et serveur local
