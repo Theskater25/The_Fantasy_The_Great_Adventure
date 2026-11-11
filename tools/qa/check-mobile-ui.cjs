@@ -6,8 +6,8 @@ const fs = require("node:fs");
 const path = require("node:path");
 const playwrightPath = process.env.PLAYWRIGHT_MODULE || path.resolve(path.dirname(process.execPath), "../node_modules/playwright");
 const { chromium } = require(playwrightPath);
-const root = path.resolve(__dirname, "../..");
-const screenshots = path.join(root, "qa-screenshots");
+const { gameRoot: root, resultsRoot } = require('./project.cjs');
+const screenshots = resultsRoot;
 fs.mkdirSync(screenshots, { recursive: true });
 (async () => {
   const browser = await chromium.launch({ headless: true, executablePath: process.env.PLAYWRIGHT_CHROMIUM_PATH || undefined });

@@ -1,9 +1,9 @@
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import vm from "node:vm";
+import project from "./project.cjs";
 
-const projectRoot = new URL("../../", import.meta.url);
-const readProjectFile = (path) => readFileSync(new URL(path, projectRoot), "utf8");
+const readProjectFile = (path) => readFileSync(project.gameFile(path), "utf8");
 const dataSandbox = { window: {} };
 vm.runInNewContext(readProjectFile("story-data.js"), dataSandbox);
 const achievements = new Map(dataSandbox.window.TF_CONTENT.achievements.map((entry) => [entry.id, entry]));

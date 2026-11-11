@@ -39,7 +39,7 @@ Ce document consigne les changements effectivement appliqués au projet, dans l'
 
 ## 2026-11-11 — Campagne terminée et correctifs vérifiés
 
-- Parcours réel des 225 étapes et 15 boss avec un Chevalier conservé entre les trois chapitres, jusqu'au niveau 18. Trois quêtes secondaires accomplies; 18/42 trophées affichés en fin de test. Détails, limites et capture dans [le rapport du parcours](RAPPORT_PARCOURS_2026-11-11.md).
+- Parcours réel des 225 étapes et 15 boss avec un Chevalier conservé entre les trois chapitres, jusqu'au niveau 18. Trois quêtes secondaires accomplies; 18/42 trophées affichés en fin de test. Détails, limites et capture dans [le rapport du parcours](../rapports/RAPPORT_PARCOURS_2026-11-11.md).
 - Vérification des trois spécialisations choisies et de leurs ultimes : Fauche-vie, Gardien vengeur, Alchimiste de guerre. Vol de vie, défense avec soin/renvoi et attaque renforcée par potion observés en combat.
 - Correction du sélecteur de portrait : une expression régulière doit être appelée par `.test.test(...)`, et non comme une fonction. Le premier boss du chapitre II bloquait le rendu; la reprise et les boss suivants ont ensuite été joués.
 - Cadrage automatique sur l'ennemi en combat, conservation du nom du héros lors d'un changement de classe, attribution de la boussole de quête même en présence d'autres reliques (unicité vérifiée par identifiant).

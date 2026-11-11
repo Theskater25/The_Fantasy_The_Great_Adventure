@@ -3,7 +3,7 @@ const http = require("node:http");
 const fs = require("node:fs");
 const path = require("node:path");
 
-const root = process.cwd();
+const { gameRoot: root } = require("./project.cjs");
 const types = {
   ".js": "text/javascript; charset=utf-8",
   ".html": "text/html; charset=utf-8",

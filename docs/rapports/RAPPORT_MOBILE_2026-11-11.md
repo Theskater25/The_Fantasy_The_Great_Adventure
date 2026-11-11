@@ -21,15 +21,15 @@ Les **22 contrôles automatiques ont réussi**, sans erreur JavaScript. Les capt
 
 ## Captures
 
-- [Scène en portrait](qa-screenshots/mobile-v23-scene.png)
-- [Boss en 390 px](qa-screenshots/mobile-v23-boss-390.png)
-- [Boss en 320 px](qa-screenshots/mobile-v23-boss-320.png)
-- [Combat en paysage](qa-screenshots/mobile-v23-boss-844.png)
-- [Arbre mobile](qa-screenshots/mobile-v23-skills.png)
-- [Inventaire](qa-screenshots/mobile-v23-inventory.png)
-- [Réglages](qa-screenshots/mobile-v23-settings.png)
-- [Retour bureau](qa-screenshots/mobile-v23-desktop.png)
-- [Résultats structurés](qa-screenshots/mobile-v23-checks.json)
+- [Scène en portrait](../../tests/results/v2.3/mobile-v23-scene.png)
+- [Boss en 390 px](../../tests/results/v2.3/mobile-v23-boss-390.png)
+- [Boss en 320 px](../../tests/results/v2.3/mobile-v23-boss-320.png)
+- [Combat en paysage](../../tests/results/v2.3/mobile-v23-boss-844.png)
+- [Arbre mobile](../../tests/results/v2.3/mobile-v23-skills.png)
+- [Inventaire](../../tests/results/v2.3/mobile-v23-inventory.png)
+- [Réglages](../../tests/results/v2.3/mobile-v23-settings.png)
+- [Retour bureau](../../tests/results/v2.3/mobile-v23-desktop.png)
+- [Résultats structurés](../../tests/results/v2.3/mobile-v23-checks.json)
 
 ## Portée
 

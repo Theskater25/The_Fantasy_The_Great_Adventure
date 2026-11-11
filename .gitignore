@@ -9,4 +9,7 @@ Thumbs.db
 .DS_Store
 
 # Captures intermédiaires de contrôles échoués
-qa-screenshots/*failure*.png
+tests/results/**/*failure*.png
+
+# Site assemblé automatiquement pour GitHub Pages
+/dist/

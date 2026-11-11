@@ -1,9 +1,9 @@
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import vm from "node:vm";
+import project from "./project.cjs";
 
-const root = new URL("../../", import.meta.url);
-const read = (name) => readFileSync(new URL(name, root), "utf8");
+const read = (name) => readFileSync(project.gameFile(name), "utf8");
 const box = { window: {} };
 vm.createContext(box);
 for (const file of ["story-data.js", "translations/catalog.js", "translations.js", "trophies.js"]) vm.runInContext(read(file), box, { filename: file });

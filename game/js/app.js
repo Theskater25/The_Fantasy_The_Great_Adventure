@@ -1455,7 +1455,7 @@ window.TF_TRANSLATIONS = TRANSLATIONS;
 window.renderGame = renderGame;
 if ("serviceWorker" in navigator && location.protocol !== "file:") {
   window.addEventListener("load", () => {
-    navigator.serviceWorker.register("./service-worker.js?v=20261111-v26-merge-r1", { scope: "./" }).catch(() => {});
+    navigator.serviceWorker.register("./service-worker.js?v=20261111-v26-layout-r2", { scope: "./" }).catch(() => {});
   }, { once: true });
 }
 state.screen = "title";

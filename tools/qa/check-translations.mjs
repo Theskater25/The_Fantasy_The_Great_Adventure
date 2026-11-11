@@ -1,11 +1,12 @@
 /* Audit completeness of event translations without mutating locale catalogues. */
 import { readFileSync } from "node:fs";
 import vm from "node:vm";
+import project from "./project.cjs";
 
 const sandbox = { window: {} };
 vm.createContext(sandbox);
 for (const file of ["story-data.js", "translations/catalog.js", "translations.js"]) {
-  vm.runInContext(readFileSync(file, "utf8"), sandbox, { filename: file });
+  vm.runInContext(readFileSync(project.gameFile(file), "utf8"), sandbox, { filename: file });
 }
 const { TF_CONTENT: content, TF_TRANSLATIONS: locales } = sandbox.window;
 const chapters = [content.storyEvents, content.treasureEvents, content.nordicEvents];

@@ -104,7 +104,7 @@ Important : state est la partie actuelle. profile reste enregistré entre plusie
 
 ### Correctifs vérifiés par le parcours du 11 novembre 2026
 
-La campagne de 225 étapes et 15 boss a été terminée avec un Chevalier, niveau final 18. Consulter [le rapport](RAPPORT_PARCOURS_2026-11-11.md) avant de conclure à un équilibrage général : les maîtrises du profil étaient déjà partiellement acquises, les chapitres II/III étaient trop faciles, les autres classes et le mobile physique restent à tester.
+La campagne de 225 étapes et 15 boss a été terminée avec un Chevalier, niveau final 18. Consulter [le rapport](../rapports/RAPPORT_PARCOURS_2026-11-11.md) avant de conclure à un équilibrage général : les maîtrises du profil étaient déjà partiellement acquises, les chapitres II/III étaient trop faciles, les autres classes et le mobile physique restent à tester.
 
 - `getActions()` produit les boutons; `bindGameActions()` leur attache les gestionnaires. Ne pas ajouter aussi des attributs `onclick`, qui déclencheraient deux actions par clic.
 - `enemyPortraitAsset()` utilise des entrées `BOSS_ART` dont la propriété `test` est une expression régulière : appeler `entry.test.test(originalName)`. Une erreur de rendu peut être interceptée par le `catch` général de `continueSave()` et afficher à tort « sauvegarde illisible »; examiner l'erreur de rendu avant d'effacer une sauvegarde.
@@ -821,7 +821,7 @@ L'historique complet reste dans `state.log` et dans la sauvegarde. L'onglet **Jo
 
 Démarrer un serveur local sur le port 8125, puis lancer le script avec Playwright disponible. `PLAYWRIGHT_MODULE` permet de préciser le module, `PLAYWRIGHT_CHROMIUM_PATH` un exécutable Chromium déjà installé, et `MOBILE_QA_URL` l'adresse du serveur si nécessaire. Le test principal désactive les service workers pour mesurer le code présent sur disque; la vérification hors ligne se fait séparément.
 
-Formats vérifiés : 320 × 568, 390 × 844, 430 × 932, 667 × 375, 844 × 390 et bureau 1280 × 800. Voir [le rapport mobile](RAPPORT_MOBILE_2026-11-11.md). Il s'agit de viewports de navigateur, pas d'une validation matérielle Safari iPhone/Chrome Android. Tester encore sur appareil réel la barre d'adresse, le clavier, les encoches, le zoom et l'installation PWA.
+Formats vérifiés : 320 × 568, 390 × 844, 430 × 932, 667 × 375, 844 × 390 et bureau 1280 × 800. Voir [le rapport mobile](../rapports/RAPPORT_MOBILE_2026-11-11.md). Il s'agit de viewports de navigateur, pas d'une validation matérielle Safari iPhone/Chrome Android. Tester encore sur appareil réel la barre d'adresse, le clavier, les encoches, le zoom et l'installation PWA.
 
 ## 22. Partager le jeu sur Discord
 

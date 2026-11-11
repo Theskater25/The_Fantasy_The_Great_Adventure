@@ -43,8 +43,8 @@
   background-position: calc(var(--atlas-x) * var(--prop-zoom)) calc(var(--atlas-y) * var(--prop-zoom));
   image-rendering: crisp-edges; image-rendering: pixelated;
 }
-.scene-prop--forest { background-image: url("assets/scenery/forest-village.png"); }
-.scene-prop--ruins { background-image: url("assets/scenery/ruins-north.png"); }
+.scene-prop--forest { background-image: url("../assets/scenery/forest-village.png"); }
+.scene-prop--ruins { background-image: url("../assets/scenery/ruins-north.png"); }
 .scene-prop.is-far { opacity: .72; }
 .scene-prop.is-feature { opacity: .94; }
 .enemy-stage[data-environment] .enemy-portrait { z-index: 1; }

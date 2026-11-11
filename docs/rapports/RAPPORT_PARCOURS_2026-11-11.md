@@ -14,7 +14,7 @@ Les 225 étapes et les 15 boss ont été terminés en une campagne avec le même
 
 État final : 293/293 PV, 96 ATQ, 3 322 EXP, 15 objets, 4 potions. Le profil affiche **18/42 trophées**, dont les trois fins, les quinze boss, « The Great Adventure » et « L'immortel ». Le niveau 20 et les trophées des autres classes n'ont pas été obtenus dans ce parcours.
 
-![Fin de la campagne](parcours-campagne-2026-11-11.jpg)
+![Fin de la campagne](../images/parcours-campagne-2026-11-11.jpg)
 
 ## Fonctionnalités effectivement essayées
 

@@ -5,7 +5,8 @@ const fs = require('node:fs');
 const path = require('node:path');
 const { pathToFileURL } = require('node:url');
 const { chromium } = require(process.env.TF_PLAYWRIGHT_MODULE || 'playwright');
-const root = path.resolve(__dirname, '../..');
+const { gameRoot: root, resultsRoot } = require('./project.cjs');
+fs.mkdirSync(resultsRoot, { recursive: true });
 const url = process.env.MERGE_QA_URL || 'http://127.0.0.1:8123/index.html';
 const oldKeys = ['the-fantasy-version-2-3-save', 'the-fantasy-version-2-3-settings',
   'the-fantasy-version-2-3-achievements', 'the-fantasy-version-2-4-save',
@@ -86,7 +87,7 @@ const oldKeys = ['the-fantasy-version-2-3-save', 'the-fantasy-version-2-3-settin
     })), files);
     assert.ok(images.every(img => img.width > 0 && img.height > 0));
     report.offlineSprites = 20; report.offlineAtlases = 2;
-    await page.screenshot({ path: path.join(root, 'qa-screenshots/merge-2.6-offline.png') });
+    await page.screenshot({ path: path.join(resultsRoot, 'merge-2.6-offline.png') });
     await context.close();
     const fileContext = await browser.newContext({ serviceWorkers: 'block' });
     const local = await fileContext.newPage(); local.on('pageerror', e => errors.push(String(e)));
@@ -102,7 +103,7 @@ const oldKeys = ['the-fantasy-version-2-3-save', 'the-fantasy-version-2-3-settin
     assert.equal(await local.locator('.arena-scenery .scene-prop').count() > 0, true);
     report.fileLaunch = true;
     assert.deepEqual(errors, []);
-    fs.writeFileSync(path.join(root, 'qa-screenshots/merge-2.6-report.json'), JSON.stringify(report, null, 2) + '\n');
+    fs.writeFileSync(path.join(resultsRoot, 'merge-2.6-report.json'), JSON.stringify(report, null, 2) + '\n');
     console.log(JSON.stringify(report, null, 2));
   } finally { await browser.close(); }
 })().catch(e => { console.error(e); process.exitCode = 1; });

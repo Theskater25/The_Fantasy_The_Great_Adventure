@@ -1,15 +1,16 @@
 /* Validate the structured catalogue and emit its browser-ready script. */
 import { readFileSync, writeFileSync } from "node:fs";
 import vm from "node:vm";
+import project from "./project.cjs";
 
-const catalogPath = "translations/catalog.json";
+const catalogPath = project.gameFile("translations/catalog.json");
 const catalog = JSON.parse(readFileSync(catalogPath, "utf8"));
-const appSource = readFileSync("app.js", "utf8");
-const uiPatches = JSON.parse(readFileSync("translations/ui-patches.json", "utf8"));
+const appSource = readFileSync(project.gameFile("app.js"), "utf8");
+const uiPatches = JSON.parse(readFileSync(project.gameFile("translations/ui-patches.json"), "utf8"));
 const sandbox = { window: {} };
 vm.createContext(sandbox);
 for (const file of ["story-data.js", "translations.js"]) {
-  vm.runInContext(readFileSync(file, "utf8"), sandbox, { filename: file });
+  vm.runInContext(readFileSync(project.gameFile(file), "utf8"), sandbox, { filename: file });
 }
 const { TF_CONTENT: content, TF_TRANSLATIONS: locales } = sandbox.window;
 const sources = { 1: content.storyEvents, 2: content.treasureEvents, 3: content.nordicEvents };
@@ -102,7 +103,7 @@ for (const language of languages) {
 catalog.coverage = coverage;
 
 writeFileSync(catalogPath, JSON.stringify(catalog, null, 2) + "\n", "utf8");
-writeFileSync("translations/catalog.js", `window.TF_TRANSLATION_CATALOG = ${JSON.stringify(catalog)};\n`, "utf8");
+writeFileSync(project.gameFile("translations/catalog.js"), `window.TF_TRANSLATION_CATALOG = ${JSON.stringify(catalog)};\n`, "utf8");
 for (const [language, result] of Object.entries(coverage)) {
   console.log(`${language}: ${result.narrativeFieldsTranslated}/${result.narrativeFieldsTotal} narrative fields`);
 }

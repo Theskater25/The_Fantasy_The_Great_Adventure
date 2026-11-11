@@ -5,7 +5,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 const http = require('node:http');
 const { chromium } = require(process.env.TF_PLAYWRIGHT_MODULE || 'playwright');
-const root = path.resolve(__dirname, '../..');
+const { gameRoot: root, resultsRoot } = require('./project.cjs');
 const manifest = JSON.parse(fs.readFileSync(path.join(root, 'assets/enemies/sprites/manifest.json'), 'utf8')).sprites;
 const mime = { '.html': 'text/html', '.js': 'application/javascript', '.css': 'text/css', '.png': 'image/png', '.svg': 'image/svg+xml', '.json': 'application/json', '.mp3': 'audio/mpeg' };
 const server = http.createServer((req, res) => {
@@ -77,7 +77,7 @@ const server = http.createServer((req, res) => {
       }, { name, decor });
       await page.locator('.enemy-portrait img').evaluate(img => img.decode());
     };
-    const screenshotDir = path.join(root, 'qa-screenshots');
+    const screenshotDir = resultsRoot;
     fs.mkdirSync(screenshotDir, { recursive: true });
     const screenshots = [];
     const sceneryManifest = JSON.parse(fs.readFileSync(path.join(root, 'assets/scenery/manifest.json'), 'utf8').replace(/^\uFEFF/, ''));

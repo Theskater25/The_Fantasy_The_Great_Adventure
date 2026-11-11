@@ -2,8 +2,9 @@
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import vm from "node:vm";
+import project from "./project.cjs";
 
-const source = readFileSync(new URL("../../app.js", import.meta.url), "utf8");
+const source = readFileSync(project.gameFile("app.js"), "utf8");
 function implementation(name) {
   const start = source.indexOf(`function ${name}(`);
   assert.ok(start >= 0, `Missing function: ${name}`);
