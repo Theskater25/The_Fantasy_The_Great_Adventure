@@ -102,7 +102,7 @@ button, input, select { -webkit-tap-highlight-color: transparent; }
 .achievement-list { display: grid; gap: 8px; max-height: min(58vh, 520px); overflow-y: auto; padding-right: 4px; }
 .achievement-row { display: grid; grid-template-columns: 45px minmax(0, 1fr) auto; gap: 12px; align-items: center; padding: 11px 12px; border: 1px solid rgba(214,174,98,.16); border-radius: 11px; background: rgba(8,18,30,.5); }
 .achievement-row.is-unlocked { border-color: rgba(242,210,139,.48); background: linear-gradient(100deg, rgba(214,174,98,.14), rgba(8,18,30,.52)); }
-.achievement-row.is-locked { opacity: .52; filter: grayscale(.8); }
+.achievement-row.is-locked { background: rgba(8,18,30,.65); }
 .achievement-icon { width: 38px; height: 38px; display: grid; place-items: center; color: var(--gold-bright); border: 1px solid rgba(214,174,98,.48); border-radius: 10px; background: #14283a; font-size: 21px; }
 .achievement-title-line { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
 .trophy-badge { display: inline-flex; align-items: center; gap: 4px; padding: 3px 7px; border: 1px solid currentColor; border-radius: 999px; font-size: 9px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; white-space: nowrap; }
@@ -115,6 +115,28 @@ button, input, select { -webkit-tap-highlight-color: transparent; }
 .achievement-row h3 { color: var(--ink); font: 700 16px Georgia, serif; }
 .achievement-row p { margin-top: 3px; color: var(--muted); font-size: 11px; line-height: 1.4; }
 .achievement-state { color: var(--gold-bright); font-size: 20px; font-weight: 800; }
+.achievements-card { width: min(880px, 100%); }
+.trophy-summary { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-bottom: 12px; }
+.trophy-summary > div { display: grid; gap: 5px; padding: 12px; border: 1px solid rgba(102,215,231,.25); border-radius: 12px; background: rgba(102,215,231,.06); }
+.trophy-summary strong { color: var(--gold-bright); font-size: 25px; }
+.trophy-summary span, .trophy-hint { color: var(--muted); font-size: 12px; line-height: 1.5; }
+.trophy-filters { display: flex; flex-wrap: wrap; gap: 7px; margin: 14px 0; }
+.trophy-filters button { min-height: 44px; }
+.trophy-filters [aria-pressed="true"] { color: #07151c; background: var(--cyan); border-color: var(--cyan); }
+.trophy-group { display: grid; gap: 8px; }
+.trophy-group > h2 { font: 700 17px Georgia, serif; color: var(--gold-bright); margin: 8px 0; }
+.trophy-progress { display: flex; align-items: center; gap: 10px; margin-top: 8px; }
+.trophy-progress progress { width: min(180px, 65%); height: 7px; accent-color: var(--cyan); }
+.trophy-progress span { color: var(--cyan); font-size: 11px; white-space: nowrap; }
+.trophy-optional { color: var(--cyan); font-size: 10px; }
+@media (max-width: 520px) {
+  .achievements-card { padding: 20px 12px; }
+  .achievements-card h1 { font-size: 30px; margin-bottom: 18px; }
+  .achievements-card .achievement-row { grid-template-columns: 30px minmax(0, 1fr) 14px; gap: 8px; padding: 10px 8px; }
+  .achievements-card .achievement-icon { width: 28px; height: 32px; font-size: 17px; }
+  .achievements-card .achievement-list { max-height: 44dvh; }
+  .trophy-summary strong { font-size: 21px; }
+}
 
 .brand { display: flex; align-items: center; gap: 18px; margin-bottom: 42px; }
 .brand > .btn { margin-left: auto; }
@@ -408,4 +430,55 @@ body[data-motion="off"] *, body[data-motion="off"] *::before, body[data-motion="
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; }
+}
+
+/* Version 2.3 campaign journal, onboarding, and boss phase cues. */
+.journal-modal, .tutorial-modal { width: min(760px, 100%); max-height: min(88vh, 820px); max-height: min(88dvh, 820px); overflow: auto; padding: 24px; }
+.journal-tabs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 7px; margin: 16px 0; }
+.journal-tab { min-height: 44px; padding: 8px 10px; color: var(--muted); border: 1px solid rgba(214,174,98,.23); border-radius: 9px; background: rgba(8,18,30,.76); font: 700 12px Georgia, serif; cursor: pointer; }
+.journal-tab.is-active { color: var(--gold-bright); border-color: rgba(214,174,98,.7); background: rgba(214,174,98,.1); }
+.journal-content { min-height: 180px; max-height: min(58vh, 500px); max-height: min(58dvh, 500px); overflow: auto; overscroll-behavior: contain; -webkit-overflow-scrolling: touch; }
+.journal-quest-card { display: grid; gap: 10px; margin: 0 0 12px; padding: 16px; border: 1px solid rgba(214,174,98,.25); border-radius: 12px; background: linear-gradient(135deg, rgba(15,33,49,.96), rgba(8,18,30,.9)); }
+.journal-quest-card--main { border-color: rgba(129,203,211,.4); }
+.journal-quest-card.is-complete { border-color: rgba(139,203,155,.55); }
+.journal-card-top, .journal-progress { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.journal-card-top > span { color: var(--gold-bright); font: 700 17px Georgia, serif; }
+.journal-card-top > b { color: var(--cyan); font-size: 11px; }
+.journal-quest-card.is-complete .journal-card-top > b { color: #9ed8a9; }
+.journal-quest-card p, .tutorial-tip p { margin: 0; color: var(--muted); line-height: 1.55; }
+.journal-progress { color: var(--muted); font-size: 12px; }
+.journal-progress strong { color: var(--ink); }
+.journal-quest-card > small { color: var(--cyan); line-height: 1.45; }
+.journal-decision-list, .journal-codex-list { display: grid; gap: 8px; }
+.journal-decision, .journal-codex-entry { display: grid; grid-template-columns: minmax(70px, .35fr) minmax(0, 1fr); gap: 5px 12px; padding: 12px; border: 1px solid rgba(214,174,98,.18); border-radius: 10px; background: rgba(8,18,30,.76); }
+.journal-decision > span { color: var(--gold-bright); font-size: 11px; }
+.journal-decision > strong { color: var(--ink); font-size: 13px; }
+.journal-decision > small { grid-column: 2; color: var(--muted); line-height: 1.45; }
+.journal-empty, .journal-codex-count { color: var(--muted); text-align: center; }
+.journal-codex-entry { grid-template-columns: 32px minmax(0, 1fr) auto; align-items: center; }
+.journal-codex-entry > span { color: var(--gold-bright); font-size: 20px; text-align: center; }
+.journal-codex-entry > div { display: grid; gap: 3px; }
+.journal-codex-entry strong { color: var(--ink); font: 700 14px Georgia, serif; }
+.journal-codex-entry small { color: var(--muted); }
+.journal-codex-entry > b { color: #9ed8a9; }
+.journal-codex-entry.is-unknown { opacity: .64; }
+.tutorial-intro { color: var(--gold-bright); font-size: 16px; line-height: 1.55; }
+.tutorial-tip { display: grid; gap: 7px; margin: 12px 0; padding: 14px; border-left: 3px solid var(--cyan); border-radius: 0 9px 9px 0; background: rgba(8,18,30,.75); }
+.tutorial-tip strong { color: var(--gold-bright); font: 700 15px Georgia, serif; }
+.boss-phase-tag { display: inline-flex; margin: 0 0 8px; padding: 4px 8px; color: #ffd096; border: 1px solid rgba(232,126,91,.55); border-radius: 999px; background: rgba(130,45,38,.22); font-size: 10px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; }
+.journal-tab:focus-visible, [data-journal-open]:focus-visible, [data-tutorial-open]:focus-visible { outline: 2px solid var(--cyan); outline-offset: 2px; }
+.choice-outcomes { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; margin-top: 14px; }
+.choice-outcomes > div { padding: 10px 12px; border: 1px solid rgba(214,174,98,.2); border-radius: 9px; background: rgba(8,18,30,.76); }
+.choice-outcomes > div:first-child { border-color: rgba(129,203,211,.36); }
+.choice-outcomes b { color: var(--gold-bright); font-size: 12px; }
+.choice-outcomes p { margin: 5px 0 0; color: var(--muted); font-size: 12px; line-height: 1.45; }
+
+@media (max-width: 680px) {
+  .journal-modal, .tutorial-modal { width: 100%; max-height: calc(100dvh - 20px); padding: 17px; }
+  .journal-content { max-height: 54dvh; }
+  .journal-card-top > span { font-size: 15px; }
+  .journal-decision { grid-template-columns: 58px minmax(0, 1fr); padding: 10px; }
+  .journal-decision > small { grid-column: 1 / -1; }
+  .choice-outcomes { grid-template-columns: 1fr; gap: 6px; margin-top: 10px; }
+  .choice-outcomes > div { padding: 9px 10px; }
 }

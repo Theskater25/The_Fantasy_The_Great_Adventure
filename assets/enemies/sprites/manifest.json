@@ -1,0 +1,206 @@
+{
+  "version": "2.4",
+  "origin": "PNG fournis par le joueur le 11 novembre 2026, copies sans modification",
+  "sprites": [
+    {
+      "id": "zombie",
+      "name": "Zombie",
+      "sourceFile": "fullbody_undead_sprite.png",
+      "file": "zombie.png",
+      "width": 71,
+      "height": 86,
+      "displayScale": 2,
+      "sha256": "d43c2b2459f5227afd03ea076707e2188c63f1207f3fe8022f61c381fca39204"
+    },
+    {
+      "id": "skeleton",
+      "name": "Squelette",
+      "sourceFile": "fullbody_undead_sprite (1).png",
+      "file": "skeleton.png",
+      "width": 45,
+      "height": 64,
+      "displayScale": 2,
+      "sha256": "880e0646ae3740f23dc0eea38d7444d799af7563dd626a043a6b42d02b933a7f"
+    },
+    {
+      "id": "raiders",
+      "name": "Groupe de pillard",
+      "sourceFile": "a_group_sprite.png",
+      "file": "raiders.png",
+      "width": 76,
+      "height": 64,
+      "displayScale": 3,
+      "sha256": "fa0fbb256a58b322c3c4bf5905f0d0a9877757dab4c4b9480bc1db8bc69febd1"
+    },
+    {
+      "id": "goblin",
+      "name": "Goblin",
+      "sourceFile": "fullbody_small_sprite.png",
+      "file": "goblin.png",
+      "width": 69,
+      "height": 74,
+      "displayScale": 2,
+      "sha256": "75d47ae4e6eb9e0487eca528cf93e439201b0468e6f404d9f9219e2fcbfd2628"
+    },
+    {
+      "id": "rat",
+      "name": "Rat",
+      "sourceFile": "fullbody_oversized_sprite.png",
+      "file": "rat.png",
+      "width": 82,
+      "height": 75,
+      "displayScale": 1,
+      "sha256": "11ac76f9444cc593ae0f950a4fa41df819cd246a54f4f440b448f0dc35b7d06a"
+    },
+    {
+      "id": "jack-chistophe",
+      "name": "Jack Chistophe, Prêtre de l'Evangile de l'Eglise Ulmer Münster",
+      "sourceFile": "corrupted_elderly_sprite.png",
+      "file": "jack-chistophe.png",
+      "width": 94,
+      "height": 128,
+      "displayScale": 2,
+      "sha256": "d762908b3e019f574c6645210eba7a08399406714d824dc2016ade944f17e62e"
+    },
+    {
+      "id": "yhorm",
+      "name": "Yhorm le Géant",
+      "sourceFile": "towering_fallen_sprite.png",
+      "file": "yhorm.png",
+      "width": 117,
+      "height": 126,
+      "displayScale": 2,
+      "sha256": "815facecd164cb24f045699209100c759763cb560bae208a9934bd6bdf5b17db"
+    },
+    {
+      "id": "lothric-lorian",
+      "name": "Lothric, Prince cadet et Lorian, Prince aîné",
+      "sourceFile": "one_composite_sprite.png",
+      "file": "lothric-lorian.png",
+      "width": 100,
+      "height": 120,
+      "displayScale": 2,
+      "sha256": "c1ded0857d6b9eeb468d579101c3a097e2dd0b0fe4bb09f0cd85d720b7fccd8d"
+    },
+    {
+      "id": "ilyan",
+      "name": "Ilyan, L'indompteur sanguinaire de la Tricky Tower de Dieuv",
+      "sourceFile": "sinister_beastmaster_sprite.png",
+      "file": "ilyan.png",
+      "width": 124,
+      "height": 125,
+      "displayScale": 2,
+      "sha256": "03cc7fcf6c52c2db73d6784997b21492a53db0a62e4ef6c9e81beef2a6018b2c"
+    },
+    {
+      "id": "roi-sans-nom",
+      "name": "Le Roi sans Nom",
+      "sourceFile": "ancient_storm_sprite.png",
+      "file": "roi-sans-nom.png",
+      "width": 111,
+      "height": 124,
+      "displayScale": 2,
+      "sha256": "a650358eeb970e6717d1c96c76b24a1c54c6871104259d5c3e8f523957949b3a"
+    },
+    {
+      "id": "gardien-des-cendres",
+      "name": "Le Gardien des Cendres",
+      "sourceFile": "silent_ashcovered_sprite.png",
+      "file": "gardien-des-cendres.png",
+      "width": 106,
+      "height": 125,
+      "displayScale": 2,
+      "sha256": "b4a7749377bb01f02821affff90db05b1a31e5c86c3df6f057cc07b63efa4f88"
+    },
+    {
+      "id": "reine-des-mirages",
+      "name": "La Reine des Mirages",
+      "sourceFile": "eerie_desert_sprite.png",
+      "file": "reine-des-mirages.png",
+      "width": 92,
+      "height": 125,
+      "displayScale": 2,
+      "sha256": "8765f95825e609b2f74d69fbb0516de4b14f7d7eae3eee75f9e8a2c09c008c9d"
+    },
+    {
+      "id": "forgeron-infernal",
+      "name": "Le Forgeron infernal",
+      "sourceFile": "stocky_infernal_sprite.png",
+      "file": "forgeron-infernal.png",
+      "width": 121,
+      "height": 125,
+      "displayScale": 2,
+      "sha256": "2eed59df4087d91c713358452270dee566e98c197ab3502ed965cb8651495452"
+    },
+    {
+      "id": "prince-des-abysses",
+      "name": "Le Prince des Abysses",
+      "sourceFile": "gaunt_abyssal_sprite.png",
+      "file": "prince-des-abysses.png",
+      "width": 70,
+      "height": 128,
+      "displayScale": 2,
+      "sha256": "a126e23a7311a71612d39a1dddd0fe63e23c82db9663e7e4d8c39642e2d1066a"
+    },
+    {
+      "id": "azharkan",
+      "name": "Azharkan, le Roi démon",
+      "sourceFile": "imposing_demon_sprite.png",
+      "file": "azharkan.png",
+      "width": 106,
+      "height": 126,
+      "displayScale": 2,
+      "sha256": "6a82157ca966f4953d0e8d4ab5824da6e79fe9deda64b9514e773ac2322d37d6"
+    },
+    {
+      "id": "skadi",
+      "name": "Skadi, la Chasseresse blanche",
+      "sourceFile": "fierce_northern_sprite.png",
+      "file": "skadi.png",
+      "width": 88,
+      "height": 126,
+      "displayScale": 2,
+      "sha256": "1efdc8b9967cd2cdbe1bb38f5d37699f8205f14013cde97f0307e840eafb4ba5"
+    },
+    {
+      "id": "jarl-hrafn",
+      "name": "Jarl Hrafn, le Roi traître",
+      "sourceFile": "ruthless_northern_sprite.png",
+      "file": "jarl-hrafn.png",
+      "width": 113,
+      "height": 126,
+      "displayScale": 2,
+      "sha256": "daccf6b131e65fb77e4305c30f3bc195375504c11500052664b8d0208f9fd421"
+    },
+    {
+      "id": "nidhoggr",
+      "name": "Níðhöggr, le Ver des racines",
+      "sourceFile": "ancient_wingless_sprite.png",
+      "file": "nidhoggr.png",
+      "width": 120,
+      "height": 117,
+      "displayScale": 2,
+      "sha256": "44db1bd1b04ac12856890d5213391c098ca385526aac08be8cce48491c29f170"
+    },
+    {
+      "id": "fenrir",
+      "name": "Fenrir, le Loup du crépuscule",
+      "sourceFile": "enormous_scarred_sprite.png",
+      "file": "fenrir.png",
+      "width": 126,
+      "height": 125,
+      "displayScale": 2,
+      "sha256": "67f8495702774036ca10a3520d8741cf4c50980d794a9223c8588cee7bbcfc21"
+    },
+    {
+      "id": "eivor",
+      "name": "Eivor, le dernier Roi de Norvège",
+      "sourceFile": "aging_northern_sprite.png",
+      "file": "eivor.png",
+      "width": 81,
+      "height": 125,
+      "displayScale": 2,
+      "sha256": "703ab0fecd1a5b1cbefd67880f8ede2482e47f156bd4ea11ecb01d856de22afd"
+    }
+  ]
+}

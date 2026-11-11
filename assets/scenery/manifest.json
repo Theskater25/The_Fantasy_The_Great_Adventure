@@ -1,0 +1,182 @@
+{
+  "version": "2.4",
+  "source": "Planches PNG fournies par le joueur, conservees sans modification",
+  "atlases": {
+    "forest": {
+      "file": "forest-village.png",
+      "sha256": "c46b09089ff2e1ed19f39c9f3494d13c27247ed6e6cbb5f56b36a489c3429747",
+      "height": 160,
+      "width": 159
+    },
+    "ruins": {
+      "file": "ruins-north.png",
+      "sha256": "43334895ad3f57fa9d3281cfad6ff83e78fd76edc0fbd9f4c49a745b2b24aae4",
+      "height": 160,
+      "width": 154
+    }
+  },
+  "props": [
+    {
+      "id": "oak",
+      "atlas": "forest",
+      "x": 2,
+      "y": 2,
+      "width": 51,
+      "height": 54,
+      "visiblePixels": 1739
+    },
+    {
+      "id": "dead-tree",
+      "atlas": "forest",
+      "x": 62,
+      "y": 2,
+      "width": 38,
+      "height": 53,
+      "visiblePixels": 846
+    },
+    {
+      "id": "shrub",
+      "atlas": "forest",
+      "x": 111,
+      "y": 15,
+      "width": 46,
+      "height": 40,
+      "visiblePixels": 1183
+    },
+    {
+      "id": "moss-rock",
+      "atlas": "forest",
+      "x": 2,
+      "y": 62,
+      "width": 47,
+      "height": 39,
+      "visiblePixels": 1236
+    },
+    {
+      "id": "mushrooms",
+      "atlas": "forest",
+      "x": 60,
+      "y": 63,
+      "width": 40,
+      "height": 38,
+      "visiblePixels": 1025
+    },
+    {
+      "id": "fence",
+      "atlas": "forest",
+      "x": 112,
+      "y": 66,
+      "width": 45,
+      "height": 34,
+      "visiblePixels": 1034
+    },
+    {
+      "id": "gravestone",
+      "atlas": "forest",
+      "x": 8,
+      "y": 110,
+      "width": 37,
+      "height": 46,
+      "visiblePixels": 1112
+    },
+    {
+      "id": "well",
+      "atlas": "forest",
+      "x": 59,
+      "y": 107,
+      "width": 40,
+      "height": 50,
+      "visiblePixels": 1513
+    },
+    {
+      "id": "lantern",
+      "atlas": "forest",
+      "x": 118,
+      "y": 108,
+      "width": 29,
+      "height": 49,
+      "visiblePixels": 677
+    },
+    {
+      "id": "arch",
+      "atlas": "ruins",
+      "x": 3,
+      "y": 2,
+      "width": 45,
+      "height": 50,
+      "visiblePixels": 1370
+    },
+    {
+      "id": "column",
+      "atlas": "ruins",
+      "x": 62,
+      "y": 2,
+      "width": 31,
+      "height": 50,
+      "visiblePixels": 823
+    },
+    {
+      "id": "brazier",
+      "atlas": "ruins",
+      "x": 116,
+      "y": 10,
+      "width": 31,
+      "height": 38,
+      "visiblePixels": 717
+    },
+    {
+      "id": "altar",
+      "atlas": "ruins",
+      "x": 2,
+      "y": 62,
+      "width": 45,
+      "height": 35,
+      "visiblePixels": 1314
+    },
+    {
+      "id": "chest",
+      "atlas": "ruins",
+      "x": 58,
+      "y": 66,
+      "width": 39,
+      "height": 30,
+      "visiblePixels": 1057
+    },
+    {
+      "id": "banner",
+      "atlas": "ruins",
+      "x": 114,
+      "y": 51,
+      "width": 35,
+      "height": 53,
+      "visiblePixels": 1001
+    },
+    {
+      "id": "runestone",
+      "atlas": "ruins",
+      "x": 5,
+      "y": 104,
+      "width": 38,
+      "height": 52,
+      "visiblePixels": 1127
+    },
+    {
+      "id": "snow-pine",
+      "atlas": "ruins",
+      "x": 60,
+      "y": 100,
+      "width": 36,
+      "height": 57,
+      "visiblePixels": 1132
+    },
+    {
+      "id": "snow-rock",
+      "atlas": "ruins",
+      "x": 108,
+      "y": 109,
+      "width": 44,
+      "height": 46,
+      "visiblePixels": 1217
+    }
+  ]
+}

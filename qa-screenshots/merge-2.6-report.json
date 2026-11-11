@@ -1,0 +1,12 @@
+{
+  "campaignTransitions": [
+    2,
+    3
+  ],
+  "independentStorage": true,
+  "saveResume": true,
+  "offlineSprites": 20,
+  "offlineAtlases": 2,
+  "fileLaunch": true,
+  "errors": []
+}

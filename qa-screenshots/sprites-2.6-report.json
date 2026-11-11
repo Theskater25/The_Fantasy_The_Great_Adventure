@@ -1,0 +1,30 @@
+{
+  "mapping": {
+    "count": 20,
+    "unique": 20,
+    "localizedChecks": 100,
+    "failures": []
+  },
+  "responsiveRenders": 60,
+  "sceneryRenders": 21,
+  "sceneryProps": 18,
+  "combatAction": "passed",
+  "errors": [],
+  "screenshots": [
+    "sprites-2.6-raiders-1280.png",
+    "sprites-2.6-jack-chistophe-1280.png",
+    "sprites-2.6-azharkan-1280.png",
+    "sprites-2.6-fenrir-1280.png",
+    "sprites-2.6-jack-chistophe-375.png",
+    "sprites-2.6-jack-chistophe-844.png",
+    "scenery-2.6-village-1280.png",
+    "scenery-2.6-forest-1280.png",
+    "scenery-2.6-graveyard-1280.png",
+    "scenery-2.6-ruins-1280.png",
+    "scenery-2.6-forge-1280.png",
+    "scenery-2.6-fjord-1280.png",
+    "scenery-2.6-shrine-1280.png",
+    "scenery-2.6-graveyard-375.png",
+    "scenery-2.6-graveyard-844.png"
+  ]
+}

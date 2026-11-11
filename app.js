@@ -1,7 +1,7 @@
 /* The Fantasy V2 — moteur navigateur et interface */
 const CONTENT = window.TF_CONTENT;
 const TRANSLATIONS = window.TF_TRANSLATIONS || {};
-const SAVE_KEY = "the-fantasy-version-2-2-save";
+const SAVE_KEY = "the-fantasy-version-2-6-save";
 const STORY_VERSION = CONTENT.storyVersion;
 const CHAPTERS = CONTENT.chapters;
 const DECOR_ICONS = {
@@ -12,48 +12,33 @@ const DECOR_ICONS = {
   Donjon: "▥", Peur: "!", Grotte: "⌂", livre: "▤", Fantome: "◌", Feu: "♨", Rune: "✦", Secret: "?",
   Portail: "◎", Artefact: "✧",
 };
-const ENEMY_ASSETS = {
-  "Zombie": "assets/enemies/zombie-v3.svg",
-  "Squelette": "assets/enemies/skeleton-v3.svg",
-  "Groupe de pillard": "assets/enemies/raider-v3.svg",
-  "Goblin": "assets/enemies/goblin-v3.svg",
-  "Rat": "assets/enemies/rat-v3.svg",
-  "Jack Chistophe, Prêtre de l'Evangile de l'Eglise Ulmer Münster": "assets/enemies/jack-chistophe-v3.svg",
-  "Yhorm le Géant": "assets/enemies/yhorm-v3.svg",
-  "Lothric, Prince cadet et Lorian, Prince aîné": "assets/enemies/lothric-v3.svg",
-  "Ilyan, L'indompteur sanguinaire de la Tricky Tower de Dieuv": "assets/enemies/ilyan-v3.svg",
-  "Le Roi sans Nom": "assets/enemies/roi-sans-nom-v3.svg",
+// Sprites PNG fournis par le joueur : dimensions natives et zoom entier.
+const ENEMY_SPRITES = {
+  "Zombie": { id: "zombie", width: 71, height: 86, scale: 2 },
+  "Squelette": { id: "skeleton", width: 45, height: 64, scale: 2 },
+  "Groupe de pillard": { id: "raiders", width: 76, height: 64, scale: 3 },
+  "Goblin": { id: "goblin", width: 69, height: 74, scale: 2 },
+  "Rat": { id: "rat", width: 82, height: 75, scale: 1 },
+  "Jack Chistophe, Prêtre de l'Evangile de l'Eglise Ulmer Münster": { id: "jack-chistophe", width: 94, height: 128, scale: 2 },
+  "Yhorm le Géant": { id: "yhorm", width: 117, height: 126, scale: 2 },
+  "Lothric, Prince cadet et Lorian, Prince aîné": { id: "lothric-lorian", width: 100, height: 120, scale: 2 },
+  "Ilyan, L'indompteur sanguinaire de la Tricky Tower de Dieuv": { id: "ilyan", width: 124, height: 125, scale: 2 },
+  "Le Roi sans Nom": { id: "roi-sans-nom", width: 111, height: 124, scale: 2 },
+  "Le Gardien des Cendres": { id: "gardien-des-cendres", width: 106, height: 125, scale: 2 },
+  "La Reine des Mirages": { id: "reine-des-mirages", width: 92, height: 125, scale: 2 },
+  "Le Forgeron infernal": { id: "forgeron-infernal", width: 121, height: 125, scale: 2 },
+  "Le Prince des Abysses": { id: "prince-des-abysses", width: 70, height: 128, scale: 2 },
+  "Azharkan, le Roi démon": { id: "azharkan", width: 106, height: 126, scale: 2 },
+  "Skadi, la Chasseresse blanche": { id: "skadi", width: 88, height: 126, scale: 2 },
+  "Jarl Hrafn, le Roi traître": { id: "jarl-hrafn", width: 113, height: 126, scale: 2 },
+  "Níðhöggr, le Ver des racines": { id: "nidhoggr", width: 120, height: 117, scale: 2 },
+  "Fenrir, le Loup du crépuscule": { id: "fenrir", width: 126, height: 125, scale: 2 },
+  "Eivor, le dernier Roi de Norvège": { id: "eivor", width: 81, height: 125, scale: 2 },
 };
-const ENEMY_ART = {
-  zombie: ENEMY_ASSETS.Zombie,
-  skeleton: ENEMY_ASSETS.Squelette,
-  raider: ENEMY_ASSETS["Groupe de pillard"],
-  goblin: ENEMY_ASSETS.Goblin,
-  rat: ENEMY_ASSETS.Rat,
-  priest: ENEMY_ASSETS["Jack Chistophe, Prêtre de l'Evangile de l'Eglise Ulmer Münster"],
-  giant: ENEMY_ASSETS["Yhorm le Géant"],
-  princes: ENEMY_ASSETS["Lothric, Prince cadet et Lorian, Prince aîné"],
-  hunter: ENEMY_ASSETS["Ilyan, L'indompteur sanguinaire de la Tricky Tower de Dieuv"],
-  king: ENEMY_ASSETS["Le Roi sans Nom"],
-  ash: ENEMY_ASSETS["Ilyan, L'indompteur sanguinaire de la Tricky Tower de Dieuv"],
-  mirage: ENEMY_ASSETS["Lothric, Prince cadet et Lorian, Prince aîné"],
-  infernalSmith: ENEMY_ASSETS["Yhorm le Géant"],
-  abyssPrince: ENEMY_ASSETS["Jack Chistophe, Prêtre de l'Evangile de l'Eglise Ulmer Münster"],
-  demonKing: ENEMY_ASSETS["Le Roi sans Nom"],
-  frostArcher: ENEMY_ASSETS.Squelette,
-  clanChampion: ENEMY_ASSETS["Groupe de pillard"],
-  rootWyrm: ENEMY_ASSETS["Yhorm le Géant"],
-  stormSerpent: ENEMY_ASSETS["Ilyan, L'indompteur sanguinaire de la Tricky Tower de Dieuv"],
-  eivor: ENEMY_ASSETS["Le Roi sans Nom"],
-};
+const ENEMY_ASSETS = Object.fromEntries(
+  Object.entries(ENEMY_SPRITES).map(([name, sprite]) => [name, `assets/enemies/sprites/${sprite.id}.png`]),
+);
 
-const BOSS_ART = [
-  { test: /Jack Chistophe/, art: ENEMY_ART.priest },
-  { test: /Yhorm|Forgeron infernal|Gardien des Cendres|Níðhöggr/i, art: ENEMY_ART.giant },
-  { test: /Lothric|Lorian|Reine des Mirages|Prince des Abysses|Skadi/i, art: ENEMY_ART.princes },
-  { test: /Ilyan|Eivor|Jarl Hrafn|Fenrir/i, art: ENEMY_ART.hunter },
-  { test: /Roi sans Nom|Azharkan|roi du Nord/i, art: ENEMY_ART.king },
-];
 const TROPHY_TIERS = {
   bronze: { labelKey: "bronze", icon: "🥉" },
   silver: { labelKey: "silver", icon: "🥈" },
@@ -125,8 +110,8 @@ const AUDIO_AMBIENTS = {
 const AUDIO_SFX = {
   hit: "audio/u_xjrmmgxfru-hit-flesh-02-266309.mp3",
 };
-const SETTINGS_KEY = "the-fantasy-version-2-2-settings";
-const PROFILE_KEY = "the-fantasy-version-2-2-achievements";
+const SETTINGS_KEY = "the-fantasy-version-2-6-settings";
+const PROFILE_KEY = "the-fantasy-version-2-6-achievements";
 const MAX_RESTS_PER_CHAPTER = 3;
 const DEFAULT_SETTINGS = { language: "en", display: "standard", music: true, motion: true, volume: 70 };
 const UI_TEXT = {
@@ -306,14 +291,16 @@ function loadProfile() {
       allChapterCompletions: saved.allChapterCompletions && typeof saved.allChapterCompletions === "object" ? saved.allChapterCompletions : {},
       chapter2Routes: Array.isArray(saved.chapter2Routes) ? saved.chapter2Routes : [],
       skillMastery: saved.skillMastery && typeof saved.skillMastery === "object" ? saved.skillMastery : {},
+      trophyMilestones: saved.trophyMilestones && typeof saved.trophyMilestones === "object" ? saved.trophyMilestones : {},
       highestLevel: Number(saved.highestLevel) || 1,
       totalDeaths: Number(saved.totalDeaths) || 0,
     };
   } catch {
-    return { unlocked: [], completedChapters: [], noDeathChapters: [], defeatedBosses: [], uniqueEnemies: [], chapterClasses: {}, legacyChapterClasses: {}, rawChapterClasses: {}, chapterClassesByChapter: {}, chapterCompletions: {}, cleanChapterCompletions: {}, allChapterCompletions: {}, chapter2Routes: [], skillMastery: {}, highestLevel: 1, totalDeaths: 0 };
+    return { unlocked: [], completedChapters: [], noDeathChapters: [], defeatedBosses: [], uniqueEnemies: [], chapterClasses: {}, legacyChapterClasses: {}, rawChapterClasses: {}, chapterClassesByChapter: {}, chapterCompletions: {}, cleanChapterCompletions: {}, allChapterCompletions: {}, chapter2Routes: [], skillMastery: {}, trophyMilestones: {}, highestLevel: 1, totalDeaths: 0 };
   }
 }
 let profile = loadProfile();
+let trophyFilter = "main";
 function t(key) { return RPG_TEXT[settings.language]?.[key] || UI_TEXT[settings.language]?.[key] || RPG_TEXT.fr[key] || UI_TEXT.fr[key] || key; }
 function campaignText(key) { return CAMPAIGN_TEXT[settings.language]?.[key] || CAMPAIGN_TEXT.fr[key] || key; }
 function bossText(key) { return BOSS_COMBAT_TEXT[settings.language]?.[key] || BOSS_COMBAT_TEXT.fr[key] || key; }
@@ -453,57 +440,16 @@ function unlockAchievement(id) {
   return true;
 }
 function evaluateAchievements() {
-  const completed = new Set(profile.completedChapters);
-  const rawChapterClasses = profile.rawChapterClasses || {};
-  const chapterClasses = (chapter) => new Set([
-    ...(profile.chapterClasses[String(chapter)] || []),
-    ...(rawChapterClasses[String(chapter)] || []),
-  ]);
-  const defeatedBossNames = new Set(profile.defeatedBosses.map((name) => {
-    const match = Object.values(TRANSLATIONS).flatMap((translation) => translation.content?.bossNames || []).find((boss) => boss.target === name);
-    return match?.source || name;
-  }));
-  if ([...defeatedBossNames].some((name) => name.includes("Azharkan"))) unlockAchievement("demon-king");
-  if ([...defeatedBossNames].some((name) => name.includes("Eivor"))) unlockAchievement("nordic-king");
-  const namelessKing = CONTENT.bosses.find((boss) => boss.name.includes("Roi sans Nom"))?.name;
-  if (namelessKing && defeatedBossNames.has(namelessKing)) unlockAchievement("medieval-king");
-  if ([...defeatedBossNames].length >= 1) unlockAchievement("first-boss");
-  if ([...defeatedBossNames].length >= 5) unlockAchievement("five-bosses");
-  if ([...defeatedBossNames].length >= 10) unlockAchievement("ten-bosses");
-  if ([...defeatedBossNames].length >= 15) unlockAchievement("fifteen-bosses");
-  const chapterClassesByChapter = profile.chapterClassesByChapter || {};
-  const legacyChapterClasses = profile.legacyChapterClasses || {};
-  CONTENT.classes.forEach((heroClass) => {
-    const usedInCompletedChapter = profile.completedChapters.some((chapter) =>
-      (!heroClass.minChapter || chapter >= heroClass.minChapter)
-      && (chapterClassesByChapter[String(chapter)]?.includes(heroClass.id)
-        || rawChapterClasses[String(chapter)]?.includes(heroClass.id)
-        || legacyChapterClasses[String(chapter)]?.includes(heroClass.id)));
-    if (usedInCompletedChapter) unlockAchievement(`class-${heroClass.id}`);
-  });
-  const completedClassIds = (chapter) => new Set([
-    ...(rawChapterClasses[String(chapter)] || []),
-    ...(chapterClassesByChapter[String(chapter)] || []),
-    ...(completed.has(Number(chapter)) ? legacyChapterClasses[String(chapter)] || [] : []),
-  ]);
-  if (completedClassIds(1).size >= 10) unlockAchievement("village-classes");
-  if (completedClassIds(2).size >= 15) unlockAchievement("japan-classes");
-  if (completedClassIds(3).size >= 20) unlockAchievement("nordic-classes");
-
-  if (completed.has(1)) unlockAchievement("village-hero");
-  if (completed.has(2)) unlockAchievement("treasure-hunter");
-  if (completed.has(3)) unlockAchievement("eivor-legend");
-  if ([1, 2, 3].every((chapter) => completed.has(chapter))) unlockAchievement("trilogy-complete");
-  if ([1, 2, 3].every((chapter) => profile.noDeathChapters.includes(chapter))) unlockAchievement("trilogy-no-death");
-  if (profile.chapter2Routes.length >= 5) unlockAchievement("pathfinder");
-  if (profile.highestLevel >= 5) unlockAchievement("level-five");
-  if (profile.highestLevel >= 10) unlockAchievement("level-ten");
-  if (profile.highestLevel >= 12) unlockAchievement("level-twenty");
-  if (profile.highestLevel >= 15) unlockAchievement("level-fifty");
-  if (profile.highestLevel >= 20) unlockAchievement("level-one-hundred");
-  const regularTrophies = CONTENT.achievements.filter((achievement) => achievement.tier !== "platinum");
-  if (regularTrophies.length && regularTrophies.every((achievement) => profile.unlocked.includes(achievement.id))) unlockAchievement("platinum");
+  for (const achievement of CONTENT.achievements.filter((item) => item.tier !== "platinum")) {
+    if (window.TF_TROPHIES.progress(achievement, profile, CONTENT, TRANSLATIONS).reached) unlockAchievement(achievement.id);
+  }
+  const platinum = CONTENT.achievements.find((item) => item.id === "platinum");
+  if (platinum && window.TF_TROPHIES.progress(platinum, profile, CONTENT, TRANSLATIONS).reached) unlockAchievement(platinum.id);
 }
+function syncTrophyMilestones(snapshot = state) {
+  if (window.TF_TROPHIES.collectMilestones(profile, snapshot)) saveProfile();
+}
+
 function registerDeath() {
   if (state.gameOver) return;
   state.runDeaths += 1;
@@ -568,6 +514,7 @@ const state = {
   chapterRoutes: [],
   routeQuestStarted: false,
   routeQuestComplete: false,
+  sideQuestsCompleted: {},
   runDeaths: 0,
   log: [],
   completed: false,
@@ -581,6 +528,60 @@ const state = {
 const app = document.querySelector("#app");
 let inventoryOpen = false;
 let skillTreeOpen = false;
+let journalOpen = false;
+let journalTab = "quests";
+let tutorialOpen = false;
+
+let gameMenuOpen = false;
+let heroDetailsOpen = false;
+let mobileSkillBranch = "blade";
+let gameFocusReturn = null;
+const compactGameLayout = window.matchMedia("(max-width: 720px), (max-width: 980px) and (max-height: 520px)");
+compactGameLayout.addEventListener("change", () => {
+  if (state.screen === "game" && state.hero) renderGame();
+});
+function closeGamePanels() {
+  inventoryOpen = skillTreeOpen = journalOpen = tutorialOpen = gameMenuOpen = heroDetailsOpen = false;
+}
+function openGamePanel(panel) {
+  closeGamePanels();
+  if (panel === "menu") gameMenuOpen = true;
+  if (panel === "hero") heroDetailsOpen = true;
+  if (panel === "inventory") inventoryOpen = true;
+  if (panel === "skill") skillTreeOpen = true;
+  if (panel === "journal") { journalOpen = true; journalTab = "quests"; }
+  if (panel === "tutorial") tutorialOpen = true;
+  renderGame();
+}
+function dismissGamePanel() {
+  if (tutorialOpen) localStorage.setItem("the-fantasy-v26-guide-seen", "true");
+  gameFocusReturn = compactGameLayout.matches ? "[data-game-menu-open]" : inventoryOpen ? "[data-inventory-open]" : skillTreeOpen ? "[data-skill-open]" : journalOpen ? "[data-journal-open]" : "[data-tutorial-open]";
+  closeGamePanels();
+  renderGame();
+}
+function bindGameDialog() {
+  const backdrop = app.querySelector(".modal-backdrop");
+  if (!backdrop) {
+    if (gameFocusReturn) app.querySelector(gameFocusReturn)?.focus({ preventScroll: true });
+    gameFocusReturn = null;
+    return;
+  }
+  for (const child of app.querySelector("main").children) child.inert = child !== backdrop;
+  const dialog = backdrop.querySelector("[role=dialog]");
+  if (!dialog) return;
+  const focusable = () => [...dialog.querySelectorAll("button:not(:disabled), a[href], input, select, summary, [tabindex='0']")].filter((el) => el.getClientRects().length);
+  const target = gameFocusReturn && dialog.querySelector(gameFocusReturn);
+  (target || focusable()[0])?.focus({ preventScroll: true });
+  gameFocusReturn = null;
+  dialog.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") { event.preventDefault(); dismissGamePanel(); return; }
+    if (event.key !== "Tab") return;
+    const items = focusable();
+    if (event.shiftKey && document.activeElement === items[0]) { event.preventDefault(); items.at(-1)?.focus(); }
+    else if (!event.shiftKey && document.activeElement === items.at(-1)) { event.preventDefault(); items[0]?.focus(); }
+  });
+}
+
 
 function escapeHtml(value) {
   return String(value).replace(/[&<>"']/g, (char) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#039;" }[char]));
@@ -640,10 +641,63 @@ function itemEffectLabel(item) {
   if (item.effect === "mending") return t("effect_mending").replace("{value}", item.effectValue);
   return t("effect_none");
 }
+function sideQuestInfo() {
+  const chapter = Math.max(1, Math.min(3, Number(state.chapter) || 1));
+  const routes = Array.isArray(state.chapterRoutes) ? state.chapterRoutes : [];
+  const quest = V23_TEXT[settings.language]?.questList?.[chapter - 1] || V23_TEXT.fr.questList[chapter - 1];
+  let progress = 0; let total = 1;
+  if (chapter === 1) progress = Number(routes.includes("secret"));
+  if (chapter === 2) { progress = Math.min(5, routes.length); total = 5; }
+  if (chapter === 3) { const runicRoutes = ["runes", "valkyrie", "tempete"]; progress = runicRoutes.filter((route) => routes.includes(route)).length; total = runicRoutes.length; }
+  return { chapter, title: quest[0], description: quest[1], progress, total, complete: Boolean(state.sideQuestsCompleted?.[String(chapter)] || (chapter === 2 && state.routeQuestComplete)) };
+}
+function completeSideQuest(chapter) {
+  state.sideQuestsCompleted = state.sideQuestsCompleted && typeof state.sideQuestsCompleted === "object" ? state.sideQuestsCompleted : {};
+  const key = String(chapter);
+  if (state.sideQuestsCompleted[key] || !state.hero) return;
+  state.sideQuestsCompleted[key] = true;
+  state.hero.xp += 20;
+  const hasPotionSpace = (Number(state.hero.potions) || 0) < potionCapacity();
+  if (hasPotionSpace) state.hero.potions = (Number(state.hero.potions) || 0) + 1;
+  else { state.hero.baseMaxHp += 5; recalculateHeroStats(); state.hero.hp = Math.min(state.hero.maxHp, state.hero.hp + 5); }
+  addLog(v23(hasPotionSpace ? "questCompleted" : "questCompletedFull"), "achievement");
+  levelUp();
+}
+function checkSideQuestPath(path) {
+  if (state.chapter === 1 && path === "secret") completeSideQuest(1);
+  if (state.chapter === 3 && ["runes", "valkyrie", "tempete"].filter((route) => state.chapterRoutes.includes(route)).length >= 3) completeSideQuest(3);
+}
+function renderJournalOverlay() {
+  const quest = sideQuestInfo();
+  const tabNames = [...v23("tabs"), v23("mobileHistory")];
+  let body = "";
+  if (journalTab === "quests") {
+    const count = state.completed ? state.scenes.length : Math.min(state.scene, state.scenes.length);
+    const mainStatus = state.completed ? v23("complete") : v23("active");
+    const mainText = state.chapter === 2 ? t("treasureStatus") : state.chapter === 3 ? t("nordicStatus") : t("villageStatus");
+    const pathMap = state.chapter === 1 ? VILLAGE_PATHS : state.chapter === 2 ? TREASURE_PATHS : NORDIC_PATHS;
+    const pathName = localizedPath(pathMap, state.chapterPath) || state.chapterPath || "—";
+    body = `<section class="journal-quest-card journal-quest-card--main"><div class="journal-card-top"><span>✦ ${v23("mainQuest")}</span><b>${mainStatus}</b></div><p>${escapeHtml(mainText)}</p><div class="journal-progress"><span>${v23("progress")}</span><strong>${count} / ${state.scenes.length} ${t("steps")}</strong></div><div class="meter"><span style="width:${state.scenes.length ? Math.min(100, count / state.scenes.length * 100) : 0}%"></span></div><small>${v23("path")}: ${escapeHtml(pathName)}</small></section><section class="journal-quest-card ${quest.complete ? "is-complete" : ""}"><div class="journal-card-top"><span>◇ ${escapeHtml(quest.title)}</span><b>${quest.complete ? `✓ ${v23("complete")}` : v23("active")}</b></div><p>${escapeHtml(quest.description)}</p><div class="journal-progress"><span>${v23("progress")}</span><strong>${quest.progress} / ${quest.total}</strong></div><div class="meter"><span style="width:${Math.min(100, quest.progress / quest.total * 100)}%"></span></div><small>${v23("questReward")}</small></section>`;
+  } else if (journalTab === "decisions") {
+    const decisions = Object.entries(state.storyBranches || {}).sort((a, b) => Number(a[0]) - Number(b[0])).slice(-10).reverse();
+    body = decisions.length ? `<div class="journal-decision-list">${decisions.map(([number, choice]) => { const scene = state.scenes[Number(number) - 1]; return `<article class="journal-decision"><span>${t("step")} ${escapeHtml(number)}</span><strong>${choice === "yes" ? v23("choiceYes") : v23("choiceNo")}</strong><small>${escapeHtml(scene ? localizedEventField(scene, choice === "yes" ? "yes" : "no") : "")}</small></article>`; }).join("")}</div>` : `<p class="journal-empty">${v23("choicesNone")}</p>`;
+  } else if (journalTab === "history") {
+    body = `<div class="journal-history">${state.log.slice().reverse().join("")}</div>`;
+  } else {
+    const seen = new Set();
+    const entries = [...CONTENT.basicEnemies.map((enemy) => ({ ...enemy, type: "enemy" })), ...CONTENT.bosses, ...CONTENT.treasureBosses, ...CONTENT.nordicBosses].filter((enemy) => { if (seen.has(enemy.name)) return false; seen.add(enemy.name); return true; });
+    const knownCount = entries.filter((enemy) => profile.uniqueEnemies.includes(enemy.name)).length;
+    body = `<p class="journal-codex-count">${knownCount} / ${entries.length} ${v23("codexFound")}</p><div class="journal-codex-list">${entries.map((enemy) => { const known = profile.uniqueEnemies.includes(enemy.name); const isBoss = enemy.type === "boss"; return `<article class="journal-codex-entry ${known ? "is-known" : "is-unknown"}"><span>${known ? (isBoss ? "♛" : "✦") : "?"}</span><div><strong>${known ? escapeHtml(localizedEnemyName(enemy.name)) : v23("codexUnknown")}</strong><small>${isBoss ? v23("codexBoss") : v23("codexEnemy")}</small></div><b>${known ? "✓" : "🔒"}</b></article>`; }).join("")}</div>`;
+  }
+  return `<div class="modal-backdrop journal-backdrop"><section class="modal journal-modal" role="dialog" aria-modal="true" aria-label="${v23("journalTitle")}"><header class="inventory-heading"><div><div class="eyebrow">THE FANTASY · ${state.chapter}</div><h2><span class="modal-symbol" aria-hidden="true">📜</span> ${v23("journalTitle")}</h2></div><button class="btn btn--small" data-journal-close aria-label="${v23("close")}">✕</button></header><nav class="journal-tabs" aria-label="${v23("journalTitle")}">${tabNames.map((name, index) => `<button class="journal-tab ${journalTab === ["quests", "decisions", "codex", "history"][index] ? "is-active" : ""}" data-journal-tab="${["quests", "decisions", "codex", "history"][index]}">${name}</button>`).join("")}</nav><div class="journal-content">${body}</div><div class="modal-actions"><button class="btn btn--cyan" data-journal-close>${v23("close")}</button></div></section></div>`;
+}
+function renderTutorialOverlay() {
+  return `<div class="modal-backdrop tutorial-backdrop"><section class="modal tutorial-modal" role="dialog" aria-modal="true" aria-label="${v23("tutorial")}"><header class="inventory-heading"><div><div class="eyebrow">THE FANTASY · 2.6</div><h2>✦ ${v23("tutorial")}</h2></div><button class="btn btn--small" data-tutorial-close aria-label="${v23("close")}">✕</button></header><p class="tutorial-intro">${v23("tutorialIntro")}</p><article class="tutorial-tip"><strong>⚖ ${v23("tabs")[0]}</strong><p>${v23("tutorialChoice")}</p></article><article class="tutorial-tip"><strong>⚔ ${t("battleInProgress")}</strong><p>${v23("tutorialCombat")}</p></article><article class="tutorial-tip"><strong>📜 ${v23("journal")}</strong><p>${v23("tutorialJournal")}</p></article><div class="modal-actions"><button class="btn btn--cyan" data-tutorial-close>${v23("tutorialClose")}</button></div></section></div>`;
+}
 function renderInventoryOverlay() {
   const items = inventoryItems();
   const cards = items.map((item) => `<article class="inventory-item rarity--${item.rarity} ${item.equipped ? "is-equipped" : ""}"><div class="inventory-item-icon">${item.kind === "weapon" ? "⚔" : item.kind === "armor" ? "🛡" : "✧"}</div><div class="inventory-item-copy"><h3>${escapeHtml(inventoryItemName(item))}</h3><span>${t(`rarity_${item.rarity}`)} · ${item.equipped ? t("equipped") : t("inBackpack")}</span><small>${escapeHtml(itemEffectLabel(item))}</small></div><button class="btn ${item.equipped ? "" : "btn--cyan"}" data-inventory-toggle="${escapeHtml(item.id)}">${item.equipped ? t("unequip") : t("equip")}</button></article>`).join("");
-  return `<div class="modal-backdrop inventory-backdrop"><section class="modal inventory-modal" role="dialog" aria-modal="true" aria-label="${t("inventoryAria")}"><header class="inventory-heading"><div><div class="eyebrow">${t("equipment")}</div><h2>🎒 ${t("inventory")}</h2></div><button class="btn btn--small" data-inventory-close aria-label="${t("closeInventory")}">✕</button></header><p class="inventory-hint">${t("inventoryHint")}</p><div class="inventory-items">${cards || `<p class="inventory-empty">${t("inventoryEmpty")}</p>`}</div><div class="modal-actions"><button class="btn btn--cyan" data-inventory-close>${t("closeInventory")}</button></div></section></div>`;
+  return `<div class="modal-backdrop inventory-backdrop"><section class="modal inventory-modal" role="dialog" aria-modal="true" aria-label="${t("inventoryAria")}"><header class="inventory-heading"><div><div class="eyebrow">${t("equipment")}</div><h2><span class="modal-symbol" aria-hidden="true">🎒</span> ${t("inventory")}</h2></div><button class="btn btn--small" data-inventory-close aria-label="${t("closeInventory")}">✕</button></header><p class="inventory-hint">${t("inventoryHint")}</p><div class="inventory-items">${cards || `<p class="inventory-empty">${t("inventoryEmpty")}</p>`}</div><div class="modal-actions"><button class="btn btn--cyan" data-inventory-close>${t("closeInventory")}</button></div></section></div>`;
 }
 function renderSkillTreeOverlay() {
   const hero = state.hero;
@@ -687,19 +741,29 @@ function renderSkillTreeOverlay() {
       return `<button class="skill-node skill-node--${available ? "available" : "locked"}" data-skill-specialize="${branch.id}" data-skill-choice="${options[index]}" ${available ? "" : "disabled"}><span class="skill-node-rank">4</span><span class="skill-node-copy"><strong>${t("skillRank4")} · ${t(key)}</strong><small>${t(`${key}Desc`)}</small><em>${label}</em></span><span class="skill-node-action">${available ? t("skillLearn") : "🔒"}</span></button>`;
     }).join("") : "";
     const advancedNodes = state.chapter === 3 && specialization && rank >= 4 ? `${advancedNode(4)}${advancedNode(5)}` : "";
-    return `<section class="skill-branch skill-branch--${branch.id}"><h3><span>${branch.icon}</span>${t(branch.title)} <small>${rank}/5</small></h3><div class="skill-branch-nodes">${nodes}${choiceNodes}${advancedNodes}</div></section>`;
+    return `<section class="skill-branch skill-branch--${branch.id}" ${compactGameLayout.matches && mobileSkillBranch !== branch.id ? "hidden" : ""}><h3><span>${branch.icon}</span>${t(branch.title)} <small>${rank}/5</small></h3><div class="skill-branch-nodes">${nodes}${choiceNodes}${advancedNodes}</div></section>`;
   }).join("");
-  return `<div class="modal-backdrop skill-backdrop"><section class="modal skill-modal" role="dialog" aria-modal="true" aria-label="${t("skillTree")}"><header class="inventory-heading"><div><div class="eyebrow">${t("level")} ${hero.level}</div><h2>🌿 ${t("skillTree")}</h2></div><button class="btn btn--small" data-skill-close aria-label="${t("skillClose")}">✕</button></header><div class="skill-tree-summary"><strong>${t("skillRoot")}</strong><span>${t("skillCurrentChapter").replace("{chapter}", t(`skillChapter${state.chapter}`))}</span><span>${t("skillPoints").replace("{count}", hero.skillPoints)}</span></div><p class="inventory-hint">${t("skillTreeHint")} ${t("skillAdvancedHint")}</p><div class="skill-tree-branches">${cards}</div><div class="modal-actions"><button class="btn btn--cyan" data-skill-close>${t("skillClose")}</button></div></section></div>`;
+  return `<div class="modal-backdrop skill-backdrop"><section class="modal skill-modal" role="dialog" aria-modal="true" aria-label="${t("skillTree")}"><header class="inventory-heading"><div><div class="eyebrow">${t("level")} ${hero.level}</div><h2><span class="modal-symbol" aria-hidden="true">🌿</span> ${t("skillTree")}</h2></div><button class="btn btn--small" data-skill-close aria-label="${t("skillClose")}">✕</button></header><div class="skill-tree-summary"><strong>${t("skillRoot")}</strong><span>${t("skillCurrentChapter").replace("{chapter}", t(`skillChapter${state.chapter}`))}</span><span>${t("skillPoints").replace("{count}", hero.skillPoints)}</span></div><p class="inventory-hint">${compactGameLayout.matches ? v23("mobileSkillHint") : t("skillTreeHint") + " " + t("skillAdvancedHint")}</p>${compactGameLayout.matches ? `<nav class="skill-branch-tabs" aria-label="${t("skillTree")}">${branches.map((branch) => `<button class="btn" data-skill-branch="${branch.id}" aria-pressed="${mobileSkillBranch === branch.id}"><span aria-hidden="true">${branch.icon}</span> ${t(branch.title)}</button>`).join("")}</nav>` : ""}<div class="skill-tree-branches">${cards}</div><div class="modal-actions"><button class="btn btn--cyan" data-skill-close>${t("skillClose")}</button></div></section></div>`;
 }
 function getChapter(id) { const chapter = CHAPTERS.find((item) => item.id === Number(id)) || CHAPTERS[0]; return localizedChapter(chapter); }
 function getCurrentScene() { return state.scenes[state.scene] || null; }
 function translatedType(type) { return type === "boss" ? t("bossType") : t("enemyType"); }
 function enemyPortraitAsset(enemy) {
   const originalName = enemy.sourceName || enemy.name;
-  const art = ENEMY_ASSETS[originalName] || ENEMY_ASSETS[enemy.name] || BOSS_ART.find((entry) => entry.test(originalName))?.art;
+  const art = ENEMY_ASSETS[originalName] || ENEMY_ASSETS[enemy.name];
   if (art) return art;
-  if (enemy.asset) return ENEMY_ASSETS[enemy.asset.split("/").pop()?.replace(".svg", "")] || enemy.asset;
-  return ENEMY_ART.king;
+  // Older saves may contain a translated boss name without sourceName.
+  for (const translation of Object.values(TRANSLATIONS)) {
+    const boss = translation.content?.bossNames?.find((item) => item.target === originalName);
+    if (boss && ENEMY_ASSETS[boss.source]) return ENEMY_ASSETS[boss.source];
+  }
+  return enemy.asset || ENEMY_ASSETS["Le Roi sans Nom"];
+}
+function enemySpriteMarkup(enemy) {
+  const src = enemyPortraitAsset(enemy);
+  const sprite = Object.values(ENEMY_SPRITES).find((item) => src === `assets/enemies/sprites/${item.id}.png`)
+    || { id: "unknown", width: 128, height: 128, scale: 2 };
+  return `<div class="enemy-portrait" data-sprite="${sprite.id}" style="--sprite-width:${sprite.width}px;--sprite-scale:${sprite.scale};--sprite-mobile-scale:${sprite.id === "raiders" ? 2 : 1}"><span class="sprite-ground" aria-hidden="true"></span><img src="${escapeHtml(src)}" width="${sprite.width}" height="${sprite.height}" alt="${translatedType(enemy.type)} : ${escapeHtml(localizedEnemyName(enemy.name))}" loading="eager" draggable="false"></div>`;
 }
 function translatedDecor(decor) { return t(`decor_${decor}`) === `decor_${decor}` ? decor : t(`decor_${decor}`); }
 function getEnemyAsset(enemy) {
@@ -707,11 +771,7 @@ function getEnemyAsset(enemy) {
 }
 function getSceneText(scene) {
   const pathMap = state.chapter === 1 ? VILLAGE_PATHS : state.chapter === 2 ? TREASURE_PATHS : NORDIC_PATHS;
-  let text = localizedEventField(scene, "text");
-  if (scene?.number > 1 && (scene.number - 1) % 10 === 0) {
-    const choice = state.storyBranches?.[String(scene.number - 1)];
-    if (choice) text = t(`branch${state.chapter}${choice === "yes" ? "Yes" : "No"}`);
-  }
+  const text = localizedEventField(scene, "text");
   const pathKey = scene?.number > 1 ? state.chapterPath : scene?.yesPath;
   if (pathKey && pathMap[pathKey]) return localizedPath(pathMap, pathKey) + ". " + text;
   return text;
@@ -764,7 +824,7 @@ function render() {
 }
 
 function renderTitle() {
-  app.innerHTML = `<main class="screen screen--title"><section class="title-screen"><div class="title-rune">✦</div><div class="eyebrow">${t("titleSubtitle")}</div><h1>THE FANTASY</h1><h2>${t("greatAdventure")}</h2><div class="title-line"></div><nav class="title-menu"><button class="title-button title-button--primary" data-action="play">${t("play")}</button><button class="title-button" data-action="achievements">${t("achievements")}</button><button class="title-button" data-action="credits">${t("credits")}</button><button class="title-button" data-action="settings">${t("settings")}</button><button class="title-button title-button--danger" data-action="leave">${t("leave")}</button></nav><p class="title-version">VERSION 2.2 · RPG EDITION</p></section></main>`;
+  app.innerHTML = `<main class="screen screen--title"><section class="title-screen"><div class="title-rune">✦</div><div class="eyebrow">${t("titleSubtitle")}</div><h1>THE FANTASY</h1><h2>${t("greatAdventure")}</h2><div class="title-line"></div><nav class="title-menu"><button class="title-button title-button--primary" data-action="play">${t("play")}</button><button class="title-button" data-action="achievements">${t("achievements")}</button><button class="title-button" data-action="credits">${t("credits")}</button><button class="title-button" data-action="settings">${t("settings")}</button><button class="title-button title-button--danger" data-action="leave">${t("leave")}</button></nav><p class="title-version">VERSION 2.6 · PIXEL RPG</p></section></main>`;
   app.querySelector("[data-action=play]").addEventListener("click", () => { state.screen = "menu"; render(); });
   app.querySelector("[data-action=achievements]").addEventListener("click", () => { state.screen = "achievements"; render(); });
   app.querySelector("[data-action=credits]").addEventListener("click", () => { state.screen = "credits"; render(); });
@@ -772,19 +832,37 @@ function renderTitle() {
   app.querySelector("[data-action=leave]").addEventListener("click", () => window.close());
 }
 function renderCredits() {
-  app.innerHTML = `<main class="screen screen--subscreen"><section class="subscreen-card"><div class="eyebrow">THE FANTASY</div><h1>${t("credits")}</h1><div class="credit-block"><span>${t("developer")}</span><strong>Theskater25</strong><small>The Fantasy · The Great Adventure</small></div><div class="credit-block"><span>${t("version")}</span><strong>2.2 · Démo RPG</strong><small>${t("titleSubtitle")}</small></div><button class="btn btn--cyan" data-action="back">${t("back")}</button></section></main>`;
+  app.innerHTML = `<main class="screen screen--subscreen"><section class="subscreen-card"><div class="eyebrow">THE FANTASY</div><h1>${t("credits")}</h1><div class="credit-block"><span>${t("developer")}</span><strong>Theskater25</strong><small>The Fantasy · The Great Adventure</small></div><div class="credit-block"><span>${t("version")}</span><strong>2.6 · Pixel RPG</strong><small>${t("titleSubtitle")}</small></div><button class="btn btn--cyan" data-action="back">${t("back")}</button></section></main>`;
   app.querySelector("[data-action=back]").addEventListener("click", () => { state.screen = "title"; render(); });
 }
 
 function renderAchievements() {
+  syncTrophyMilestones();
+  evaluateAchievements();
   const unlocked = new Set(profile.unlocked);
-  const rows = CONTENT.achievements.map((sourceAchievement) => {
-    const achievement = localizedAchievement(sourceAchievement);
-    const tier = TROPHY_TIERS[achievement.tier] || TROPHY_TIERS.bronze;
-    return `<article class="achievement-row achievement-row--${achievement.tier} ${unlocked.has(achievement.id) ? "is-unlocked" : "is-locked"}"><div class="achievement-icon">${unlocked.has(achievement.id) ? achievement.icon : "?"}</div><div><div class="achievement-title-line"><h3>${achievement.title}</h3><span class="trophy-badge trophy-badge--${achievement.tier}">${tier.icon} ${t(tier.labelKey)}</span></div><p>${achievement.description}</p></div><span class="achievement-state">${unlocked.has(achievement.id) ? "✓" : "—"}</span></article>`;
+  const required = window.TF_TROPHIES.required(CONTENT);
+  const earned = required.filter((item) => unlocked.has(item.id)).length;
+  const filters = { main: "trophyMain", all: "trophyAll", locked: "trophyLocked", unlocked: "trophyUnlockedFilter", bonus: "trophyBonus" };
+  const visible = CONTENT.achievements.filter((item) => trophyFilter === "main" ? !item.optional : trophyFilter === "bonus" ? item.optional : trophyFilter === "locked" ? !unlocked.has(item.id) : trophyFilter === "unlocked" ? unlocked.has(item.id) : true);
+  const categories = { story: "trophyCategoryStory", combat: "trophyCategoryCombat", growth: "trophyCategoryGrowth", exploration: "trophyCategoryExploration", collection: "trophyCategoryCollection" };
+  const rows = Object.entries(categories).map(([category, label]) => {
+    const items = visible.filter((item) => item.category === category);
+    if (!items.length) return "";
+    return `<section class="trophy-group"><h2>${escapeHtml(t(label))}</h2>${items.map((source) => {
+      const achievement = localizedAchievement(source);
+      const tier = TROPHY_TIERS[source.tier] || TROPHY_TIERS.bronze;
+      const progress = window.TF_TROPHIES.progress(source, profile, CONTENT, TRANSLATIONS);
+      const isUnlocked = unlocked.has(source.id);
+      const value = isUnlocked ? progress.target : progress.current;
+      return `<article class="achievement-row achievement-row--${source.tier} ${isUnlocked ? "is-unlocked" : "is-locked"}"><div class="achievement-icon" aria-hidden="true">${achievement.icon}</div><div><div class="achievement-title-line"><h3>${escapeHtml(achievement.title)}</h3><span class="trophy-badge trophy-badge--${source.tier}">${tier.icon} ${t(tier.labelKey)}</span>${source.optional ? `<span class="trophy-optional">${t("trophyBonus")}</span>` : ""}</div><p>${escapeHtml(achievement.description)}</p><div class="trophy-progress"><progress value="${value}" max="${progress.target}" aria-label="${escapeHtml(achievement.title + " · " + t("trophyProgress"))}"></progress><span>${value} / ${progress.target}</span></div></div><span class="achievement-state" aria-label="${t(isUnlocked ? "trophyUnlockedFilter" : "trophyLocked")}">${isUnlocked ? "✓" : "○"}</span></article>`;
+    }).join("")}</section>`;
   }).join("");
-  const tierSummary = Object.entries(TROPHY_TIERS).map(([tierKey, tier]) => { const total = CONTENT.achievements.filter((achievement) => achievement.tier === tierKey).length; const got = CONTENT.achievements.filter((achievement) => achievement.tier === tierKey && unlocked.has(achievement.id)).length; return `${tier.icon} ${got}/${total} ${t(tier.labelKey)}`; }).join(" · ");
-  app.innerHTML = `<main class="screen screen--subscreen"><section class="subscreen-card achievements-card"><div class="eyebrow">THE FANTASY</div><h1>${t("achievements")}</h1><p class="achievement-count">${unlockedTrophyCount()} / ${CONTENT.achievements.length} ${t("trophiesUnlocked")}<br><span class="achievement-tier-summary">${tierSummary}</span></p><div class="achievement-list">${rows}</div><button class="btn btn--cyan" data-action="back">${t("back")}</button></section></main>`;
+  app.innerHTML = `<main class="screen screen--subscreen"><section class="subscreen-card achievements-card"><div class="eyebrow">THE FANTASY · 2.6</div><h1>${t("achievements")}</h1><div class="trophy-summary"><div><strong>${earned} / ${required.length}</strong><span>${t("trophyMain")} · ${t("platinum")}</span></div><div><strong>${unlockedTrophyCount()} / ${CONTENT.achievements.length}</strong><span>${t("trophiesUnlocked")}</span></div></div><p class="trophy-hint">${t("trophyHint")}</p><nav class="trophy-filters" aria-label="${t("achievements")}">${Object.entries(filters).map(([key, label]) => `<button class="btn btn--small" data-trophy-filter="${key}" aria-pressed="${trophyFilter === key}">${t(label)}</button>`).join("")}</nav><div class="achievement-list">${rows || `<p>${t("trophyEmpty")}</p>`}</div><button class="btn btn--cyan" data-action="back">${t("back")}</button></section></main>`;
+  app.querySelectorAll("[data-trophy-filter]").forEach((button) => button.addEventListener("click", () => {
+    trophyFilter = button.dataset.trophyFilter;
+    renderAchievements();
+    app.querySelector(`[data-trophy-filter="${trophyFilter}"]`)?.focus();
+  }));
   app.querySelector("[data-action=back]").addEventListener("click", () => { state.screen = "title"; render(); });
 }
 
@@ -830,14 +908,15 @@ function renderMenu() {
 }
 
 function renderSelect() {
+  const draftName = document.querySelector("#hero-name")?.value ?? localStorage.getItem("fantasy-v26-name") ?? "";
   const chapter = getChapter(state.chapter);
   const availableClasses = classesForChapter(chapter).map(localizedClass);
   app.innerHTML = `<main class="screen screen--select">
     <header class="select-header"><div><div class="eyebrow">${chapter.kicker}</div><h1>${chapter.title}</h1><p class="select-subtitle">${chapter.tone}</p></div><button class="btn" data-action="back">${t("backToMenu")}</button></header>
-    <section class="class-section"><div class="eyebrow class-section-label">${t("classesChapter")}</div><div class="select-grid">${availableClasses.map((heroClass) => `<button class="class-card ${state.selectedClass === heroClass.id ? "is-selected" : ""}" data-class="${heroClass.id}">
+    <section class="class-section"><div class="eyebrow class-section-label">${t("classesChapter")}</div><div class="select-grid">${availableClasses.map((heroClass) => `<button class="class-card ${state.selectedClass === heroClass.id ? "is-selected" : ""}" data-class="${heroClass.id}" aria-pressed="${state.selectedClass === heroClass.id}">
       <div class="class-portrait" style="--accent:${heroClass.accent}">${heroClass.icon}</div><div class="class-name">${heroClass.name}</div><div class="class-stats"><span>${t("hp")} ${heroClass.hp}</span><span>${t("atk")} ${heroClass.attack}</span></div><div class="class-skill">${heroClass.skill}</div><small class="class-effect">${heroClass.skillText}</small>${heroClass.origin ? `<small class="class-origin">${heroClass.origin}</small>` : ""}
       </button>`).join("")}</div></section>
-    <footer class="select-footer"><input class="name-input" id="hero-name" maxlength="24" placeholder="${t("heroNamePlaceholder")}" value="${escapeHtml(localStorage.getItem("fantasy-v22-name") || "")}" /><button class="btn btn--cyan" data-action="start">${t("startChapter")} →</button></footer>
+    <footer class="select-footer"><input class="name-input" id="hero-name" maxlength="24" aria-label="${t("heroNamePlaceholder")}" autocomplete="nickname" placeholder="${t("heroNamePlaceholder")}" value="${escapeHtml(draftName)}" /><button class="btn btn--cyan" data-action="start">${t("startChapter")} →</button></footer>
   </main>`;
   app.querySelectorAll("[data-class]").forEach((card) => card.addEventListener("click", () => { state.selectedClass = card.dataset.class; renderSelect(); }));
   app.querySelector("[data-action=back]").addEventListener("click", () => { state.screen = "menu"; render(); });
@@ -867,37 +946,70 @@ function startNewGame() {
   const masteredSkills = profile.skillMastery?.[heroClass.id] || {};
   const startingSkills = Object.fromEntries(["blade", "guardian", "alchemy"].map((branch) => [branch, Math.min(chapterId, 3, Math.max(0, Number(masteredSkills[branch]) || 0))]));
   state.hero = { name, classId: heroClass.id, level: 1, xp: 0, hp: heroClass.hp, maxHp: heroClass.hp, baseMaxHp: heroClass.hp, attack: heroClass.attack, baseAttack: heroClass.attack, defeated: [], potions: 2, inventory: [], equipment: { weapon: 0, armor: 0, relic: 0 }, skillPoints: 0, skills: startingSkills, specializations: {} };
-  state.battle = null; state.enemy = null; state.scene = 0; state.chapter = chapterId; state.chapterPath = state.chapter === 1 ? "village" : state.chapter === 2 ? "frontiere" : state.chapter === 3 ? "fjord" : null; state.chapterRoutes = []; state.routeQuestStarted = false; state.routeQuestComplete = false; state.storyBranches = {}; state.finalChoice = null; state.runDeaths = 0; state.restCount = 0; state.endingReason = null; state.scenes = createScenes(getChapter(state.chapter)); state.log = []; state.completed = false; state.gameOver = false;
+  state.battle = null; state.enemy = null; state.scene = 0; state.chapter = chapterId; state.chapterPath = state.chapter === 1 ? "village" : state.chapter === 2 ? "frontiere" : state.chapter === 3 ? "fjord" : null; state.chapterRoutes = []; state.routeQuestStarted = false; state.routeQuestComplete = false; state.sideQuestsCompleted = {}; state.storyBranches = {}; state.finalChoice = null; state.runDeaths = 0; state.restCount = 0; state.endingReason = null; state.scenes = createScenes(getChapter(state.chapter)); state.log = []; state.completed = false; state.gameOver = false;
   recalculateHeroStats();
-  inventoryOpen = false; skillTreeOpen = false; localStorage.setItem("fantasy-v22-name", name); addLog(`${t("youAre")} ${name}, ${localizedHeroClass.name}. ${t("adventureBegins")}`, "system"); state.screen = "game"; saveGame(); renderGame();
+  closeGamePanels(); mobileSkillBranch = "blade"; journalTab = "quests"; tutorialOpen = localStorage.getItem("the-fantasy-v26-guide-seen") !== "true"; localStorage.setItem("fantasy-v26-name", name); addLog(`${t("youAre")} ${name}, ${localizedHeroClass.name}. ${t("adventureBegins")}`, "system"); state.screen = "game"; saveGame(); renderGame();
 }
 
-function renderGame() {
-  const chapter = getChapter(state.chapter); const heroClass = localizedClass(getClass(state.hero.classId)); const current = getCurrentScene(); const displayScene = state.battle?.kind === "boss" && state.scene > 0 ? state.scenes[state.scene - 1] : current; const enemy = state.enemy;
-  const hpPct = Math.max(0, Math.min(100, (state.hero.hp / state.hero.maxHp) * 100)); const enemyPct = enemy ? Math.max(0, Math.min(100, enemy.hp / enemy.maxHp * 100)) : 0; const progress = state.scenes.length ? Math.min(state.scene, state.scenes.length) : 0;
-  const intent = state.battle ? getEnemyIntent() : null;
-  const equipment = state.hero.equipment || { weapon: 0, armor: 0, relic: 0 };
+function renderHeroPanel() {
+  const heroClass = localizedClass(getClass(state.hero.classId));
+  const hpPct = Math.max(0, Math.min(100, state.hero.hp / state.hero.maxHp * 100));
+  const equipment = state.hero.equipment || {};
   const weaponLabel = equipment.weapon ? t("lootWeapon").replace("{bonus}", equipment.weapon) : t("noneYet");
   const armorLabel = equipment.armor ? t("lootArmor").replace("{bonus}", equipment.armor) : t("noneYet");
   const relicLabel = equipment.relic ? t("routeRelic") : t("noneYet");
   const routeQuestMarkup = state.chapter === 2 && state.routeQuestStarted ? `<div class="route-quest"><b>${t("routeQuest")}</b><span>${state.routeQuestComplete ? t("routeQuestComplete") : t("routeQuestProgress").replace("{count}", Math.min(5, state.chapterRoutes.length))}</span></div>` : "";
+  return `<div class="hero-card"><div class="hero-top"><div class="hero-avatar" style="--hero-accent:${heroClass.accent}">${heroClass.icon}</div><div><h2>${escapeHtml(state.hero.name)}</h2><div class="hero-class">${heroClass.name} · ${t("level")} ${state.hero.level}</div></div></div><div class="stat-block"><div class="stat-line"><span>${t("hp")}</span><strong>${state.hero.hp} / ${state.hero.maxHp}</strong></div><div class="meter"><span class="bar-health" style="width:${hpPct}%"></span></div><div class="stat-line"><span>${t("atk")}</span><strong>${state.hero.attack}</strong></div><div class="stat-line"><span>${t("experience")}</span><strong>${state.hero.xp} XP</strong></div></div><div class="equipment-list"><b>${t("equipment")}</b><span>${t("weapon")}: ${weaponLabel}</span><span>${t("armor")}: ${armorLabel}</span><span>✧ ${relicLabel}</span><span>🧪 ${t("potion")}: ${state.hero.potions ?? 0}</span></div>${routeQuestMarkup}<div class="ability"><b>${heroClass.skill}</b><small>${heroClass.skillText}</small></div></div><div class="defeated-panel"><h3>${t("enemiesDefeated")}</h3><div class="defeated-list">${state.hero.defeated.length ? state.hero.defeated.slice().reverse().map((item) => `<div class="defeated-item"><span>${escapeHtml(localizedEnemyName(item.name))}</span><span>${translatedType(item.type)}</span></div>`).join("") : `<div class="defeated-item"><span>${t("noneYet")}</span><span>—</span></div>`}</div></div>`;
+}
+
+function renderGameMenu() {
+  return `<div class="modal-backdrop game-menu-backdrop"><section class="modal game-menu-modal" role="dialog" aria-modal="true" aria-label="${v23("mobileMenuTitle")}"><header class="inventory-heading"><div><div class="eyebrow">${getChapter(state.chapter).kicker}</div><h2>${v23("mobileMenuTitle")}</h2></div><button class="btn btn--small" data-panel-close aria-label="${v23("close")}">✕</button></header><nav class="game-menu-grid" aria-label="${v23("mobileMenuTitle")}"><button class="btn" data-hero-open><span aria-hidden="true">♙</span>${v23("mobileHero")}</button><button class="btn" data-inventory-open><span aria-hidden="true">🎒</span>${t("inventory")}<small>${inventoryItems().length}</small></button><button class="btn" data-skill-open><span aria-hidden="true">✦</span>${v23("mobileSkills")}<small>${state.hero.skillPoints}</small></button><button class="btn" data-journal-open><span aria-hidden="true">📜</span>${v23("journal")}</button></nav><div class="game-menu-secondary"><button class="btn" data-tutorial-open>ⓘ ${v23("tutorialHelp")}</button>${document.fullscreenEnabled ? `<button class="btn" data-action="fullscreen">⛶ ${t("fullscreen")}</button>` : ""}</div><button class="btn btn--danger" data-action="menu">${t("leaveGame")}</button></section></div>`;
+}
+
+function renderHeroOverlay() {
+  return `<div class="modal-backdrop hero-backdrop"><section class="modal hero-modal" role="dialog" aria-modal="true" aria-label="${t("heroSheet")}"><header class="inventory-heading"><h2>${t("heroSheet")}</h2><button class="btn btn--small" data-panel-close aria-label="${v23("close")}">✕</button></header>${renderHeroPanel()}</section></div>`;
+}
+
+function renderGame() {
+  const compact = compactGameLayout.matches;
+  const chapter = getChapter(state.chapter);
+  const heroClass = localizedClass(getClass(state.hero.classId));
+  const current = getCurrentScene();
+  const displayScene = state.battle?.kind === "boss" && state.scene > 0 ? state.scenes[state.scene - 1] : current;
+  const enemy = state.enemy;
+  const arenaTheme = window.TF_SCENERY.themeFor(state.chapter, displayScene?.decor);
+  const hpPct = Math.max(0, Math.min(100, state.hero.hp / state.hero.maxHp * 100));
+  const enemyPct = enemy ? Math.max(0, Math.min(100, enemy.hp / enemy.maxHp * 100)) : 0;
+  const progress = state.scenes.length ? Math.min(state.scene, state.scenes.length) : 0;
+  const intent = state.battle ? getEnemyIntent() : null;
   const storyEnding = state.gameOver && state.endingReason === "rest" ? t("restEndingText") : state.gameOver ? t("gameOverText") : getStoryEndingText();
-  const currentSceneMarkup = state.completed || state.gameOver ? `<div class="scene-card scene-card--ending" id="current-scene"><div class="scene-meta"><span>${state.gameOver ? (state.endingReason === "rest" ? t("restEndingTitle") : t("gameOverTitle")) : t("heroesBook")}</span></div><p>${escapeHtml(storyEnding)}</p></div>` : displayScene ? `<div class="scene-card" id="current-scene"><div class="scene-meta"><span>${state.battle?.kind === "boss" ? `${t("bossType")} · ${t("step")} ` : `${t("step")} `}${displayScene.number} / ${state.scenes.length}</span><span>${DECOR_ICONS[displayScene.decor] || "✦"} ${escapeHtml(state.battle ? localizedEnemyDecor(displayScene.decor) : translatedDecor(displayScene.decor))}</span></div><p>${escapeHtml(getSceneText(displayScene))}</p></div>` : "";
-  app.innerHTML = `<main class="screen screen--game"><header class="game-header"><div><div class="eyebrow">${chapter.kicker}</div><h1>${chapter.title}</h1></div><div class="header-actions"><span class="eyebrow">${t("level")} ${state.hero.level}</span><button class="btn btn--small btn--cyan" data-inventory-open aria-expanded="${inventoryOpen}">🎒 ${t("inventory")} · ${inventoryItems().length}</button><button class="btn btn--small" data-skill-open aria-expanded="${skillTreeOpen}">🌿 ${t("skillTree")} · ${state.hero.skillPoints}</button>${document.fullscreenEnabled ? `<button class="btn btn--small" data-action="fullscreen">⛶ ${t("fullscreen")}</button>` : ""}<button class="btn btn--small btn--danger" data-action="menu">${t("leaveGame")}</button></div></header>
-    <section class="game-layout"><article class="panel story-panel"><div class="panel-heading"><h2>${t("adventureJournal")}</h2><span class="eyebrow">${progress} / ${state.scenes.length} ${t("steps")}</span></div><div class="story-log" id="story-log">${state.log.join("")}${currentSceneMarkup}${enemy ? `<div class="enemy-stage"><div class="enemy-portrait"><img src="${escapeHtml(getEnemyAsset(enemy))}" alt="Portrait de ${escapeHtml(enemy.name)}" loading="eager"></div><div class="enemy-readout"><div class="eyebrow">${enemy.type === "boss" ? t("majorEncounter") : t("encounter")}</div><h3>${escapeHtml(localizedEnemyName(enemy.name))}</h3><p>${translatedType(enemy.type)} · ${t("hp")} ${enemy.hp}/${enemy.maxHp} · ${t("atk")} ${enemy.attack}</p><div class="enemy-intent"><span>${t("enemyIntent")}</span><strong>${intent.label}${intent.damage ? ` · ${intent.damage} ${t("damageShort")}` : ""}</strong></div><div class="meter"><span style="width:${enemyPct}%"></span></div></div></div>` : ""}</div><div class="combat-footer"><div class="prompt" id="prompt">${getPrompt()}</div><div class="action-list" id="actions">${getActions()}</div></div></article>
-      <aside class="panel side-panel"><div class="panel-heading"><h2>${t("heroSheet")}</h2><span class="eyebrow">${heroClass.name}</span></div><div class="hero-card"><div class="hero-top"><div class="hero-avatar" style="--hero-accent:${heroClass.accent}">${heroClass.icon}</div><div><h2>${escapeHtml(state.hero.name)}</h2><div class="hero-class">${heroClass.name} · ${t("level")} ${state.hero.level}</div></div></div><div class="stat-block"><div class="stat-line"><span>${t("hp")}</span><strong>${state.hero.hp} / ${state.hero.maxHp}</strong></div><div class="meter"><span class="bar-health" style="width:${hpPct}%"></span></div><div class="stat-line"><span>${t("atk")}</span><strong>${state.hero.attack}</strong></div><div class="stat-line"><span>${t("experience")}</span><strong>${state.hero.xp} XP</strong></div></div><div class="equipment-list"><b>${t("equipment")}</b><span>${t("weapon")}: ${weaponLabel}</span><span>${t("armor")}: ${armorLabel}</span><span>✧ ${relicLabel}</span><span>🧪 ${t("potion")}: ${state.hero.potions ?? 0}</span></div>${routeQuestMarkup}<div class="ability"><b>${heroClass.skill}</b><small>${heroClass.skillText}</small></div></div><div class="defeated-panel"><h3>${t("enemiesDefeated")}</h3><div class="defeated-list">${state.hero.defeated.length ? state.hero.defeated.slice().reverse().map((item) => `<div class="defeated-item"><span>${escapeHtml(localizedEnemyName(item.name))}</span><span>${translatedType(item.type)}</span></div>`).join("") : `<div class="defeated-item"><span>${t("noneYet")}</span><span>—</span></div>`}</div></div></aside></section><footer class="game-status"><span>${state.gameOver ? (state.endingReason === "rest" ? t("restEndingTitle") : t("heroFallen")) : state.completed ? t("chapterFinishedStatus") : state.battle ? `${t("battleInProgress")} · ${t("turn")} ${state.battle.turn}.` : state.chapter === 2 ? t("treasureStatus") : state.chapter === 3 ? t("nordicStatus") : t("villageStatus")}</span></footer>${inventoryOpen ? renderInventoryOverlay() : ""}${skillTreeOpen ? renderSkillTreeOverlay() : ""}</main>`;
-  const log = document.querySelector("#story-log"); if (log) { log.scrollTop = log.scrollHeight; document.querySelector("#current-scene")?.scrollIntoView({ block: "end" }); } bindGameActions(); syncAudio();
+  const outcomes = displayScene && !state.battle && !state.completed && !state.gameOver ? `<div class="choice-outcomes"><div><b>${t("yes")}</b><p>${escapeHtml(localizedEventField(displayScene, "yes"))}</p></div><div><b>${t("no")}</b><p>${escapeHtml(localizedEventField(displayScene, "no"))}</p></div></div>` : "";
+  const currentSceneMarkup = state.completed || state.gameOver ? `<div class="scene-card scene-card--ending" id="current-scene"><div class="scene-meta"><span>${state.gameOver ? (state.endingReason === "rest" ? t("restEndingTitle") : t("gameOverTitle")) : t("heroesBook")}</span></div><p>${escapeHtml(storyEnding)}</p></div>` : displayScene ? `<div class="scene-card" id="current-scene"><div class="scene-meta"><span>${t("step")} ${displayScene.number} / ${state.scenes.length}</span><span>${DECOR_ICONS[displayScene.decor] || "✦"} ${escapeHtml(state.battle ? localizedEnemyDecor(displayScene.decor) : translatedDecor(displayScene.decor))}</span></div><p>${escapeHtml(getSceneText(displayScene))}</p>${compact && outcomes ? `<details class="choice-disclosure"><summary>${v23("mobileOutcomes")}</summary>${outcomes}</details>` : outcomes}</div>` : "";
+  const intentMarkup = intent ? `<div class="enemy-intent"><span>${t("enemyIntent")}</span><strong>${intent.label}${intent.damage ? ` · ${intent.damage} ${t("damageShort")}` : ""}</strong></div>` : "";
+  const enemyMarkup = enemy ? `<div class="enemy-stage enemy-stage--${enemy.type}" data-environment="${arenaTheme}">${window.TF_SCENERY.render(arenaTheme)}${enemySpriteMarkup(enemy)}<div class="enemy-readout"><div class="eyebrow">${enemy.type === "boss" ? t("majorEncounter") : t("encounter")}</div><h3>${escapeHtml(localizedEnemyName(enemy.name))}</h3><p>${t("hp")} ${enemy.hp} / ${enemy.maxHp} · ${t("atk")} ${enemy.attack}</p><div class="meter" role="progressbar" aria-label="${t("hp")} ${escapeHtml(localizedEnemyName(enemy.name))}" aria-valuemin="0" aria-valuemax="${enemy.maxHp}" aria-valuenow="${enemy.hp}"><span style="width:${enemyPct}%"></span></div>${enemy.type === "boss" ? `<span class="boss-phase-tag">${state.battle.phase >= 2 ? v23("bossPhase") : "PHASE I"}</span>` : ""}${compact ? "" : intentMarkup}</div></div>` : "";
+  const recent = state.log.filter((entry) => !entry.includes("story-entry--narrative")).slice(-2).join("");
+  const compactStory = `${enemy ? enemyMarkup : currentSceneMarkup}${recent ? `<div class="recent-feedback" aria-label="${v23("mobileRecent")}" role="status">${recent}</div>` : ""}${enemy && currentSceneMarkup ? `<details class="scene-context"><summary>${v23("mobileContext")}</summary>${currentSceneMarkup}</details>` : ""}`;
+  const desktopActions = `<div class="header-actions"><span class="eyebrow">${t("level")} ${state.hero.level}</span><button class="btn btn--small" data-journal-open aria-expanded="${journalOpen}">📜 ${v23("journal")}</button><button class="btn btn--small" data-tutorial-open>ⓘ ${v23("tutorialHelp")}</button><button class="btn btn--small btn--cyan" data-inventory-open aria-expanded="${inventoryOpen}">🎒 ${t("inventory")} · ${inventoryItems().length}</button><button class="btn btn--small" data-skill-open aria-expanded="${skillTreeOpen}">🌿 ${t("skillTree")} · ${state.hero.skillPoints}</button>${document.fullscreenEnabled ? `<button class="btn btn--small" data-action="fullscreen">⛶ ${t("fullscreen")}</button>` : ""}<button class="btn btn--small btn--danger" data-action="menu">${t("leaveGame")}</button></div>`;
+  const mobileHud = `<section class="mobile-hud" aria-label="${t("heroSheet")}"><button class="mobile-hero-button" data-hero-open aria-label="${t("heroSheet")}"><span aria-hidden="true">${heroClass.icon}</span><span>${t("level")} <b>${state.hero.level}</b></span></button><div class="mobile-health"><div><span>${t("hp")}</span><strong>${state.hero.hp} / ${state.hero.maxHp}</strong></div><div class="meter"><span class="bar-health" style="width:${hpPct}%"></span></div></div><button class="mobile-talents-button" data-skill-open aria-label="${t("skillTree")} · ${t("skillPoints").replace("{count}", state.hero.skillPoints)}"><span aria-hidden="true">✦</span><b>${state.hero.skillPoints}</b></button></section>`;
+  app.innerHTML = `<main class="screen screen--game ${compact ? "is-compact" : ""} ${enemy ? "is-battle" : ""}" data-chapter="${state.chapter}"><header class="game-header"><div class="game-heading"><div class="eyebrow">${chapter.kicker}</div><h1>${chapter.title}</h1></div>${compact ? `<button class="btn game-menu-button" data-game-menu-open aria-expanded="${gameMenuOpen}"><span aria-hidden="true">☰</span> ${v23("mobileMenu")}</button>` : desktopActions}</header>${compact ? mobileHud : ""}<section class="game-layout"><article class="panel story-panel">${compact ? "" : `<div class="panel-heading"><h2>${t("adventureJournal")}</h2><span class="eyebrow">${progress} / ${state.scenes.length} ${t("steps")}</span></div>`}<div class="story-log" id="story-log">${compact ? compactStory : state.log.join("") + currentSceneMarkup + enemyMarkup}</div><div class="combat-footer">${compact ? intentMarkup : ""}<div class="prompt" id="prompt">${getPrompt()}${compact && state.battle ? ` <span>· ${t("turn")} ${state.battle.turn}</span>` : ""}</div><div class="action-list" id="actions">${getActions()}</div></div></article>${compact ? "" : `<aside class="panel side-panel"><div class="panel-heading"><h2>${t("heroSheet")}</h2><span class="eyebrow">${heroClass.name}</span></div>${renderHeroPanel()}</aside>`}</section>${compact ? "" : `<footer class="game-status"><span>${state.gameOver ? (state.endingReason === "rest" ? t("restEndingTitle") : t("heroFallen")) : state.completed ? t("chapterFinishedStatus") : state.battle ? `${t("battleInProgress")} · ${t("turn")} ${state.battle.turn}.` : state.chapter === 2 ? t("treasureStatus") : state.chapter === 3 ? t("nordicStatus") : t("villageStatus")}</span></footer>`}${inventoryOpen ? renderInventoryOverlay() : ""}${skillTreeOpen ? renderSkillTreeOverlay() : ""}${journalOpen ? renderJournalOverlay() : ""}${tutorialOpen ? renderTutorialOverlay() : ""}${gameMenuOpen ? renderGameMenu() : ""}${heroDetailsOpen ? renderHeroOverlay() : ""}</main>`;
+  // Phone: show the current scene first; the full history lives in the journal.
+  if (!compact) (app.querySelector(".enemy-stage") || app.querySelector("#current-scene"))?.scrollIntoView({ block: "end", behavior: "instant" });
+  bindGameActions();
+  bindGameDialog();
+  syncAudio();
 }
 
 function getPrompt() { if (state.gameOver) return t("sealed"); if (state.completed) return t("finished"); if (state.battle) return t("action"); return t("decision"); }
 
+function bossPhaseActive(battle) {
+  return battle?.kind === "boss" && battle.phase >= 2 && battle.turn > (Number(battle.phaseStartedTurn) || 0);
+}
 function getEnemyIntent() {
   const battle = state.battle;
   if (!battle || !state.enemy) return null;
   if (battle.enemyFrozen > 0) return { label: t("intentFrozen"), damage: 0 };
   if (battle.enemyStun > 0) return { label: t("intentStunned"), damage: 0 };
-  const heavy = battle.turn % 3 === 0;
-  if (battle.kind === "boss" && battle.adaptation === "mirror" && battle.mirrorGuard) return { label: bossText("bossGuardIntent"), damage: 0 };
+  const heavy = battle.turn % (bossPhaseActive(battle) ? 2 : 3) === 0;
   if (battle.kind === "boss" && battle.adaptation === "hex" && heavy) return { label: bossText("bossCorruptIntent"), damage: predictedIncomingDamage(Math.ceil(state.enemy.attack * 1.75), battle), heavy: true };
   const incoming = Math.ceil(state.enemy.attack * (heavy ? 1.75 : 1));
   const piercing = battle.kind === "boss" && battle.adaptation === "breaker" && heavy;
@@ -918,18 +1030,18 @@ function predictedIncomingDamage(incoming, battle, piercing = false) {
 function getActions() {
   if (state.gameOver || state.completed) {
     const nextChapter = Number(state.chapter) + 1;
-    if (state.completed && nextChapter <= 3 && isChapterUnlocked(nextChapter)) return `<button class='btn btn--cyan' data-action='campaign' onclick='window.__tfAction("campaign")'>${campaignText("continueCampaign")}</button><button class='btn' data-action='finish' onclick='window.__tfAction("finish")'>${t("backToMenu")}</button>`;
-    return "<button class='btn btn--cyan' data-action='finish' onclick='window.__tfAction(\"finish\")'>" + t("backToMenu") + "</button>";
+    if (state.completed && nextChapter <= 3 && isChapterUnlocked(nextChapter)) return `<button class='btn btn--cyan' data-action='campaign'>${campaignText("continueCampaign")}</button><button class='btn' data-action='finish'>${t("backToMenu")}</button>`;
+    return "<button class='btn btn--cyan' data-action='finish'>" + t("backToMenu") + "</button>";
   }
   if (!state.battle) {
     const restAtLimit = state.restCount >= MAX_RESTS_PER_CHAPTER;
     const restLabel = restAtLimit ? t("restExhausted") : `${t("rest")} · ${state.restCount}/${MAX_RESTS_PER_CHAPTER}`;
     const restHint = restAtLimit ? t("restExhaustedHint") : t("restHint");
     const restDisabled = restAtLimit ? 'aria-disabled="true"' : "";
-    return `<button class="btn btn--cyan" data-action="yes" onclick="window.__tfAction('yes')">${t("yes")}</button><button class="btn" data-action="no" onclick="window.__tfAction('no')">${t("no")}</button><button class="btn btn--rest" data-action="rest" ${restDisabled} title="${escapeHtml(restHint)}" aria-label="${escapeHtml(restHint)}" onclick="window.__tfAction('rest')">⛺ ${escapeHtml(restLabel)}</button>`;
+    return `<button class="btn btn--cyan" data-action="yes">${t("yes")}</button><button class="btn" data-action="no">${t("no")}</button><button class="btn btn--rest" data-action="rest" ${restDisabled} title="${escapeHtml(restHint)}" aria-label="${escapeHtml(restHint)}">⛺ ${escapeHtml(restLabel)}</button>`;
   }
-  if (state.battle) return "<button class='btn btn--cyan' data-action='attack' onclick='window.__tfAction(\"attack\")'>" + t("attack") + "</button><button class='btn' data-action='defend' onclick='window.__tfAction(\"defend\")'>" + t("defend") + "</button><button class='btn' data-action='skill' onclick='window.__tfAction(\"skill\")'>" + localizedClass(getClass(state.hero.classId)).skill + "</button><button class='btn btn--potion' data-action='potion' " + ((state.hero.potions <= 0 || state.hero.hp >= state.hero.maxHp) ? "disabled" : "") + " onclick='window.__tfAction(\"potion\")'>🧪 " + t("potionUses").replace("{count}", state.hero.potions || 0) + "</button>";
-  return "<button class='btn btn--cyan' data-action='yes' onclick='window.__tfAction(\"yes\")'>" + t("yes") + "</button><button class='btn' data-action='no' onclick='window.__tfAction(\"no\")'>" + t("no") + "</button>";
+  if (state.battle) return `<button class="btn btn--cyan" data-action="attack">${t("attack")}</button><button class="btn" data-action="defend">${t("defend")}</button><button class="btn" data-action="skill" ${state.battle.skillUsed ? "disabled" : ""}>${localizedClass(getClass(state.hero.classId)).skill}${state.battle.skillUsed ? `<small>${v23("mobileUsed")}</small>` : ""}</button><button class="btn btn--potion" data-action="potion" ${(state.hero.potions <= 0 || state.hero.hp >= state.hero.maxHp) ? "disabled" : ""}>🧪 ${t("potionUses").replace("{count}", state.hero.potions || 0)}</button>`;
+  return "<button class='btn btn--cyan' data-action='yes'>" + t("yes") + "</button><button class='btn' data-action='no'>" + t("no") + "</button>";
 }
 function bindGameActions() {
   document.querySelector("[data-action=fullscreen]")?.addEventListener("click", () => document.documentElement.requestFullscreen?.());
@@ -947,10 +1059,23 @@ function bindGameActions() {
   document.querySelectorAll("[data-action=campaign], [data-action=finish]").forEach((button) => {
     button.addEventListener("click", () => window.__tfAction(button.dataset.action));
   });
-  document.querySelector("[data-action=menu]")?.addEventListener("click", () => confirmInline(t("exitConfirm"), () => { saveGame(); state.screen = "menu"; render(); }));
-  document.querySelector("[data-inventory-open]")?.addEventListener("click", () => { inventoryOpen = !inventoryOpen; renderGame(); });
-  document.querySelector("[data-skill-open]")?.addEventListener("click", () => { skillTreeOpen = !skillTreeOpen; renderGame(); });
-  document.querySelectorAll("[data-skill-close]").forEach((button) => button.addEventListener("click", () => { skillTreeOpen = false; renderGame(); }));
+  document.querySelector("[data-action=menu]")?.addEventListener("click", () => { closeGamePanels(); renderGame(); confirmInline(t("exitConfirm"), () => { saveGame(); state.screen = "menu"; render(); }); });
+
+  for (const [selector, panel] of [["[data-game-menu-open]", "menu"], ["[data-hero-open]", "hero"], ["[data-journal-open]", "journal"], ["[data-inventory-open]", "inventory"], ["[data-skill-open]", "skill"], ["[data-tutorial-open]", "tutorial"]]) {
+    app.querySelectorAll(selector).forEach((button) => button.addEventListener("click", () => openGamePanel(panel)));
+  }
+  app.querySelectorAll("[data-panel-close], [data-journal-close], [data-inventory-close], [data-skill-close], [data-tutorial-close]").forEach((button) => button.addEventListener("click", dismissGamePanel));
+  app.querySelectorAll(".modal-backdrop").forEach((backdrop) => backdrop.addEventListener("click", (event) => { if (event.target === event.currentTarget) dismissGamePanel(); }));
+  app.querySelectorAll("[data-journal-tab]").forEach((button) => button.addEventListener("click", () => {
+    journalTab = button.dataset.journalTab;
+    gameFocusReturn = '[data-journal-tab="' + journalTab + '"]';
+    renderGame();
+  }));
+  app.querySelectorAll("[data-skill-branch]").forEach((button) => button.addEventListener("click", () => {
+    mobileSkillBranch = button.dataset.skillBranch;
+    gameFocusReturn = '[data-skill-branch="' + mobileSkillBranch + '"]';
+    renderGame();
+  }));
   document.querySelectorAll("[data-skill-upgrade]").forEach((button) => button.addEventListener("click", () => {
     const branch = button.dataset.skillUpgrade;
     const rank = Number(button.dataset.skillRank);
@@ -970,8 +1095,6 @@ function bindGameActions() {
     state.hero.skills[branch] = 4;
     recalculateHeroStats(); rememberSkillMastery(); saveGame(); renderGame();
   }));
-  document.querySelector(".skill-backdrop")?.addEventListener("click", (event) => { if (event.target === event.currentTarget) { skillTreeOpen = false; renderGame(); } });
-  document.querySelectorAll("[data-inventory-close]").forEach((button) => button.addEventListener("click", () => { inventoryOpen = false; renderGame(); }));
   document.querySelectorAll("[data-inventory-toggle]").forEach((button) => button.addEventListener("click", () => {
     const item = inventoryItems().find((entry) => entry.id === button.dataset.inventoryToggle);
     if (!item) return;
@@ -980,9 +1103,6 @@ function bindGameActions() {
     saveGame();
     renderGame();
   }));
-  document.querySelector(".inventory-backdrop")?.addEventListener("click", (event) => {
-    if (event.target === event.currentTarget) { inventoryOpen = false; renderGame(); }
-  });
 }
 function addLog(text, kind = "") { state.log.push(`<p class="story-entry ${kind ? `story-entry--${kind}` : ""}">${escapeHtml(text)}</p>`); }
 function archiveCurrentScene(action) {
@@ -998,15 +1118,17 @@ function archiveCurrentScene(action) {
       state.chapterRoutes = Array.isArray(state.chapterRoutes) ? state.chapterRoutes : [];
       if (!state.chapterRoutes.includes(selectedPath)) {
         state.chapterRoutes.push(selectedPath);
+        checkSideQuestPath(selectedPath);
         if (state.chapter === 2) {
           if (!state.routeQuestStarted) { state.routeQuestStarted = true; addLog(t("routeQuestStart"), "narrative"); }
           if (state.chapterRoutes.length >= 5 && !state.routeQuestComplete) {
             state.routeQuestComplete = true;
-            if (!inventoryItems().some((item) => item.kind === "relic")) {
+            if (!inventoryItems().some((item) => item.id === "runic-compass-" + state.chapter)) {
               state.hero.inventory.push({ id: "runic-compass-" + state.chapter, kind: "relic", bonus: 2, equipped: true, rarity: "rare", effect: "mending", effectValue: 4 });
               recalculateHeroStats();
             }
             addLog(t("routeQuestComplete"), "achievement");
+            completeSideQuest(2);
           }
         }
       }
@@ -1074,7 +1196,12 @@ function startBattle(kind) {
     template = localizedEnemyTemplate(bossList[bossIndex]); scale = 1 + (completedSteps / state.scenes.length) * 0.5;
   }
   else { template = localizedEnemyTemplate(CONTENT.basicEnemies[Math.floor(Math.random() * CONTENT.basicEnemies.length)]); scale = 1 + (completedSteps / state.scenes.length) * 0.35; }
-  state.enemy = { ...template, hp: Math.ceil(template.hp * scale), maxHp: Math.ceil(template.hp * scale), attack: Math.max(1, Math.ceil(template.attack * scale)) };
+  // Boss HP stays at its authored baseline: progression scaling made late
+  // bosses outgrow the player's chapter gear and limited potion supply.
+  const bossScale = kind === "boss" ? Math.min(1, scale) : scale;
+  // Preserve the early bosses' intended attacks, but soften stronger bosses.
+  const attackScale = kind === "boss" ? (template.attack <= 7 ? 1 : 0.7) : scale;
+  state.enemy = { ...template, hp: Math.ceil(template.hp * bossScale), maxHp: Math.ceil(template.hp * bossScale), attack: Math.max(1, Math.ceil(template.attack * attackScale)) };
   const skills = state.hero.skills || {};
   const buildScores = {
     mirror: (Number(skills.blade) || 0) * 2 + equippedEffectTotal("crit") / 12 + Math.max(0, state.hero.attack - state.hero.baseAttack) / 7,
@@ -1082,7 +1209,7 @@ function startBattle(kind) {
     hex: (Number(skills.alchemy) || 0) * 2 + (potionCapacity() - 3) * 2 + equippedEffectTotal("mending") / 10,
   };
   const adaptation = kind === "boss" ? Object.entries(buildScores).sort((a, b) => b[1] - a[1])[0][0] : null;
-  state.battle = { kind, turn: 1, skillUsed: false, enemyFrozen: 0, enemyStun: 0, playerInvincible: 0, playerAtkMult: 1, playerBuffAtk: 0, playerDefReducePct: 0, playerDefReduceTurns: 0, adaptation, mirrorGuard: adaptation === "mirror", potionWeakened: false };
+  state.battle = { kind, turn: 1, phase: kind === "boss" ? 1 : 0, phaseStartedTurn: 0, skillUsed: false, enemyFrozen: 0, enemyStun: 0, playerInvincible: 0, playerAtkMult: 1, playerBuffAtk: 0, playerDefReducePct: 0, playerDefReduceTurns: 0, adaptation, mirrorGuard: adaptation === "mirror", potionWeakened: false };
   addLog(`${kind === "boss" ? t("majorEncounter") : t("encounter")} : ${localizedEnemyName(state.enemy.name)} (${t("hp")} ${state.enemy.hp}, ${t("atk")} ${state.enemy.attack}).`, "battle");
   if (kind === "boss") addLog(campaignText(adaptation === "mirror" ? "bossCounterMirror" : adaptation === "breaker" ? "bossCounterBreaker" : "bossCounterHex"), "achievement");
 }
@@ -1184,6 +1311,13 @@ function combatAction(action) {
   if (damage > 0 && criticalHit && battle.kind === "boss" && battle.mirrorGuard) { damage = Math.ceil(damage * 0.65); battle.mirrorGuard = false; addLog(bossText("bossAdaptGuard"), "system"); }
   const effectiveDamage = damage > 0 ? Math.min(enemy.hp, damage) : 0;
   if (damage) { enemy.hp -= damage; playSfx("hit"); }
+  if (battle.kind === "boss" && battle.phase === 1 && enemy.hp > 0 && enemy.hp <= Math.ceil(enemy.maxHp * 0.5)) {
+    battle.phase = 2;
+    battle.phaseStartedTurn = battle.turn;
+    enemy.attack = Math.ceil(enemy.attack * 1.15);
+    if (battle.adaptation === "mirror") battle.mirrorGuard = true;
+    addLog(v23("bossPhaseStart"), "achievement");
+  }
   if (action === "attack" && (Number(state.hero.skills?.blade) || 0) >= 3 && damage > 0) {
     const bladeRank = Number(state.hero.skills?.blade) || 0;
     const lifeSteal = state.hero.specializations?.blade === "lifetaker" && bladeRank >= 5 ? 0.2 : state.hero.specializations?.blade === "lifetaker" && bladeRank >= 4 ? 0.15 : 0.1;
@@ -1196,7 +1330,7 @@ function combatAction(action) {
   if (battle.enemyFrozen > 0) { addLog(t("enemyFrozen"), "system"); battle.enemyFrozen -= 1; }
   else if (battle.enemyStun > 0) { addLog(t("enemyStunned"), "system"); battle.enemyStun -= 1; }
   else {
-    const heavyAttack = battle.turn % 3 === 0;
+    const heavyAttack = battle.turn % (bossPhaseActive(battle) ? 2 : 3) === 0;
     let received = heavyAttack ? Math.ceil(enemy.attack * 1.75) : enemy.attack;
     if (heavyAttack) addLog(t("enemyHeavyAttack"), "battle");
     if (battle.playerInvincible > 0) addLog(t("invincible"), "system");
@@ -1267,7 +1401,7 @@ function normalizeHeroProgress(hero) {
   hero.hp = Math.min(hero.hp, hero.maxHp);
 }
 function levelUp() { while (state.hero.xp >= totalXpForLevel(state.hero.level + 1)) { state.hero.level += 1; state.hero.baseMaxHp += 5; state.hero.baseAttack += 1; state.hero.skillPoints = (Number(state.hero.skillPoints) || 0) + 1; recalculateHeroStats(); state.hero.hp = Math.min(state.hero.maxHp, state.hero.hp + 5); addLog("✨ " + t("levelUp").replace("{level}", state.hero.level) + ` · ${t("skillPoints").replace("{count}", state.hero.skillPoints)}`, "system"); } if (state.hero.level > profile.highestLevel) { profile.highestLevel = state.hero.level; saveProfile(); evaluateAchievements(); } }
-function saveGame() { state.storyVersion = STORY_VERSION; localStorage.setItem(SAVE_KEY, JSON.stringify(state)); }
+function saveGame() { state.storyVersion = STORY_VERSION; syncTrophyMilestones(); evaluateAchievements(); localStorage.setItem(SAVE_KEY, JSON.stringify(state)); }
 function continueSave() {
   const raw = localStorage.getItem(SAVE_KEY); if (!raw) { alertInline(t("noSave")); return; }
   try {
@@ -1289,11 +1423,13 @@ function continueSave() {
     state.chapterRoutes = Array.isArray(state.chapterRoutes) ? [...new Set(state.chapterRoutes.filter((route) => typeof route === "string"))] : [];
     state.routeQuestStarted = Boolean(state.routeQuestStarted);
     state.routeQuestComplete = Boolean(state.routeQuestComplete);
+    state.sideQuestsCompleted = state.sideQuestsCompleted && typeof state.sideQuestsCompleted === "object" ? state.sideQuestsCompleted : {};
+    if (state.battle) state.battle.phase = Number(state.battle.phase) || (state.battle.kind === "boss" ? 1 : 0);
     if (state.chapter === 2 && !state.chapterRoutes.length && state.chapterPath) state.chapterRoutes.push(state.chapterPath);
     if (state.chapter === 1 && (state.scenes.length !== CONTENT.storyEvents.length || !state.scenes[0]?.yes)) state.scenes = createScenes(getChapter(1));
     if (state.chapter === 2 && state.scenes.length !== CONTENT.treasureEvents.length) state.scenes = createScenes(getChapter(2));
     if (state.chapter === 3 && state.scenes.length !== CONTENT.nordicEvents.length) state.scenes = createScenes(getChapter(3));
-    inventoryOpen = false; state.screen = "game"; renderGame();
+    inventoryOpen = false; skillTreeOpen = false; journalOpen = false; tutorialOpen = false; state.screen = "game"; syncTrophyMilestones(); evaluateAchievements(); renderGame();
   }
   catch { alertInline(t("invalidSave")); }
 }
@@ -1319,10 +1455,17 @@ window.TF_TRANSLATIONS = TRANSLATIONS;
 window.renderGame = renderGame;
 if ("serviceWorker" in navigator && location.protocol !== "file:") {
   window.addEventListener("load", () => {
-    navigator.serviceWorker.register("./service-worker.js", { scope: "./" }).catch(() => {});
+    navigator.serviceWorker.register("./service-worker.js?v=20261111-v26-merge-r1", { scope: "./" }).catch(() => {});
   }, { once: true });
 }
 state.screen = "title";
+// Recover only facts present in a compatible save; never infer missing quests.
+try {
+  const previousSave = JSON.parse(localStorage.getItem(SAVE_KEY) || "null");
+  if (previousSave?.storyVersion === STORY_VERSION && previousSave.hero) syncTrophyMilestones(previousSave);
+} catch { /* An invalid save must not prevent the title from loading. */ }
+syncTrophyMilestones();
+evaluateAchievements();
 render();
 
 

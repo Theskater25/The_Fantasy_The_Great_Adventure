@@ -1,0 +1,13 @@
+{
+  "cache": {
+    "keys": [
+      "the-fantasy-v23-shell-20261111-mobile-r3"
+    ],
+    "css": true,
+    "controlled": true,
+    "cssLink": "mobile.css?v=20261111-v23-mobile-r3"
+  },
+  "offlineSceneAdvanced": true,
+  "languages": 6,
+  "errors": []
+}

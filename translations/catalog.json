@@ -161,7 +161,20 @@
       "restEndingText": "Vous n'avez pas pris l'aventure au sérieux. Le temps a passé pendant vos repos et le boss a dominé le royaume.",
       "restExhausted": "Repos épuisés",
       "restExhaustedHint": "Vous avez utilisé vos trois repos. Le prochain mettra fin à l'aventure après confirmation.",
-      "restExhaustedConfirm": "Vous avez utilisé vos trois repos. Camper encore une fois mettra fin à cette aventure. Continuer ?"
+      "restExhaustedConfirm": "Vous avez utilisé vos trois repos. Camper encore une fois mettra fin à cette aventure. Continuer ?",
+      "trophyMain": "Principaux",
+      "trophyBonus": "Bonus de classes",
+      "trophyAll": "Tous",
+      "trophyLocked": "À obtenir",
+      "trophyUnlockedFilter": "Débloqués",
+      "trophyHint": "Le platine demande les 24 objectifs principaux. Les 23 défis de classes sont facultatifs. Les trophées déjà gagnés restent acquis.",
+      "trophyEmpty": "Aucun trophée dans ce filtre.",
+      "trophyCategoryStory": "Campagne",
+      "trophyCategoryCombat": "Combats",
+      "trophyCategoryGrowth": "Progression du héros",
+      "trophyCategoryExploration": "Exploration",
+      "trophyCategoryCollection": "Collection de classes",
+      "trophyProgress": "Progression"
     },
     "de": {
       "chooseNotAct": "Du entscheidest dich, nicht zu handeln.",
@@ -295,7 +308,20 @@
       "restEndingText": "Du hast das Abenteuer nicht ernst genommen. Während du rastetest, verging die Zeit und der Boss eroberte das Reich.",
       "restExhausted": "Rasten aufgebraucht",
       "restExhaustedHint": "Du hast alle drei Rastpausen genutzt. Eine weitere Rast beendet nach Bestätigung das Abenteuer.",
-      "restExhaustedConfirm": "Du hast alle Rastpausen genutzt. Wenn du erneut rastest, endet dieses Abenteuer. Fortfahren?"
+      "restExhaustedConfirm": "Du hast alle Rastpausen genutzt. Wenn du erneut rastest, endet dieses Abenteuer. Fortfahren?",
+      "trophyMain": "Haupttrophäen",
+      "trophyBonus": "Klassenboni",
+      "trophyAll": "Alle",
+      "trophyLocked": "Noch offen",
+      "trophyUnlockedFilter": "Freigeschaltet",
+      "trophyHint": "Platin erfordert die 24 Hauptziele. Die 23 Klassenherausforderungen sind optional. Bereits verdiente Trophäen bleiben erhalten.",
+      "trophyEmpty": "Keine Trophäen für diesen Filter.",
+      "trophyCategoryStory": "Kampagne",
+      "trophyCategoryCombat": "Kämpfe",
+      "trophyCategoryGrowth": "Heldenfortschritt",
+      "trophyCategoryExploration": "Erkundung",
+      "trophyCategoryCollection": "Klassensammlung",
+      "trophyProgress": "Fortschritt"
     },
     "es": {
       "chooseNotAct": "Decides no actuar.",
@@ -429,7 +455,20 @@
       "restEndingText": "No te tomaste la aventura en serio. Pasó el tiempo mientras descansabas y el jefe conquistó el reino.",
       "restExhausted": "Descansos agotados",
       "restExhaustedHint": "Has usado tus tres descansos. Otro descanso terminará la aventura tras confirmarlo.",
-      "restExhaustedConfirm": "Ya has usado todos tus descansos. Acampar una vez más terminará esta aventura. ¿Continuar?"
+      "restExhaustedConfirm": "Ya has usado todos tus descansos. Acampar una vez más terminará esta aventura. ¿Continuar?",
+      "trophyMain": "Principales",
+      "trophyBonus": "Bonos de clases",
+      "trophyAll": "Todos",
+      "trophyLocked": "Por conseguir",
+      "trophyUnlockedFilter": "Desbloqueados",
+      "trophyHint": "El platino requiere los 24 objetivos principales. Los 23 desafíos de clases son opcionales. Los trofeos obtenidos se conservan.",
+      "trophyEmpty": "No hay trofeos para este filtro.",
+      "trophyCategoryStory": "Campaña",
+      "trophyCategoryCombat": "Combates",
+      "trophyCategoryGrowth": "Progreso del héroe",
+      "trophyCategoryExploration": "Exploración",
+      "trophyCategoryCollection": "Colección de clases",
+      "trophyProgress": "Progreso"
     },
     "pl": {
       "chooseNotAct": "Decydujesz się nie działać.",
@@ -563,7 +602,20 @@
       "restEndingText": "Nie potraktowałeś przygody poważnie. Podczas twojego odpoczynku minął czas, a boss podbił królestwo.",
       "restExhausted": "Brak odpoczynków",
       "restExhaustedHint": "Wykorzystano wszystkie trzy odpoczynki. Kolejny zakończy przygodę po potwierdzeniu.",
-      "restExhaustedConfirm": "Wykorzystano wszystkie odpoczynki. Kolejne rozbicie obozu zakończy tę przygodę. Kontynuować?"
+      "restExhaustedConfirm": "Wykorzystano wszystkie odpoczynki. Kolejne rozbicie obozu zakończy tę przygodę. Kontynuować?",
+      "trophyMain": "Główne",
+      "trophyBonus": "Bonusy klas",
+      "trophyAll": "Wszystkie",
+      "trophyLocked": "Do zdobycia",
+      "trophyUnlockedFilter": "Odblokowane",
+      "trophyHint": "Platyna wymaga 24 głównych celów. 23 wyzwania klas są opcjonalne. Zdobyte trofea pozostają odblokowane.",
+      "trophyEmpty": "Brak trofeów dla tego filtra.",
+      "trophyCategoryStory": "Kampania",
+      "trophyCategoryCombat": "Walka",
+      "trophyCategoryGrowth": "Rozwój bohatera",
+      "trophyCategoryExploration": "Eksploracja",
+      "trophyCategoryCollection": "Kolekcja klas",
+      "trophyProgress": "Postęp"
     },
     "en": {
       "chooseNotAct": "You choose not to act.",
@@ -697,7 +749,20 @@
       "restEndingText": "You did not take the adventure seriously. Time passed while you rested, and the boss conquered the realm.",
       "restExhausted": "Resting exhausted",
       "restExhaustedHint": "You have used your three rests. Resting again will end the adventure after confirmation.",
-      "restExhaustedConfirm": "You have used all your rests. Making camp one more time will end this adventure. Continue?"
+      "restExhaustedConfirm": "You have used all your rests. Making camp one more time will end this adventure. Continue?",
+      "trophyMain": "Main trophies",
+      "trophyBonus": "Class bonuses",
+      "trophyAll": "All",
+      "trophyLocked": "To unlock",
+      "trophyUnlockedFilter": "Unlocked",
+      "trophyHint": "Platinum requires the 24 main objectives. The 23 class challenges are optional. Previously earned trophies stay unlocked.",
+      "trophyEmpty": "No trophies match this filter.",
+      "trophyCategoryStory": "Campaign",
+      "trophyCategoryCombat": "Combat",
+      "trophyCategoryGrowth": "Hero progression",
+      "trophyCategoryExploration": "Exploration",
+      "trophyCategoryCollection": "Class collection",
+      "trophyProgress": "Progress"
     },
     "zh-CN": {
       "play": "çŽ©",
@@ -831,7 +896,20 @@
       "settingsSaved": "设置已保存。",
       "restExhausted": "休息次数已用完",
       "restExhaustedHint": "已使用三次休息。再次休息需确认，并会结束冒险。",
-      "restExhaustedConfirm": "你已用完所有休息次数。再次扎营将结束本次冒险。是否继续？"
+      "restExhaustedConfirm": "你已用完所有休息次数。再次扎营将结束本次冒险。是否继续？",
+      "trophyMain": "主要奖杯",
+      "trophyBonus": "职业奖励",
+      "trophyAll": "全部",
+      "trophyLocked": "待解锁",
+      "trophyUnlockedFilter": "已解锁",
+      "trophyHint": "白金奖杯需要完成24项主要目标。23项职业挑战为可选内容。已获得的奖杯会保留。",
+      "trophyEmpty": "没有符合此筛选条件的奖杯。",
+      "trophyCategoryStory": "战役",
+      "trophyCategoryCombat": "战斗",
+      "trophyCategoryGrowth": "英雄成长",
+      "trophyCategoryExploration": "探索",
+      "trophyCategoryCollection": "职业收藏",
+      "trophyProgress": "进度"
     }
   },
   "chapters": {
@@ -10211,28 +10289,28 @@
   "achievements": {
     "platinum": {
       "fr": {
-        "title": "LÃ©gende ultime",
-        "description": "DÃ©bloquer tous les autres trophÃ©es de The Fantasy."
+        "title": "Légende ultime",
+        "description": "Débloquer tous les trophées principaux. Les défis de classes sont facultatifs."
       },
       "zh-CN": {
-        "title": "ç»ˆæžä¼ å¥‡",
-        "description": "è§£é”ã€Šå¹»æƒ³ã€‹ä¸­çš„æ‰€æœ‰å…¶ä»–å¥–æ¯ã€‚"
+        "title": "终极传奇",
+        "description": "解锁所有主要奖杯。职业挑战为可选内容。"
       },
       "en": {
         "title": "Ultimate Legend",
-        "description": "Unlock all other trophies in The Fantasy."
+        "description": "Unlock all main trophies. Class challenges are optional."
       },
       "de": {
         "title": "Ultimative Legende",
-        "description": "Schalte alle anderen TrophÃ¤en in The Fantasy frei."
+        "description": "Schalte alle Haupttrophäen frei. Klassenherausforderungen sind optional."
       },
       "es": {
         "title": "Leyenda definitiva",
-        "description": "Desbloquea todos los demÃ¡s trofeos en The Fantasy."
+        "description": "Desbloquea todos los trofeos principales. Los desafíos de clases son opcionales."
       },
       "pl": {
-        "title": "Ostateczna Legenda",
-        "description": "Odblokuj wszystkie pozostaÅ‚e trofea w The Fantasy."
+        "title": "Ostateczna legenda",
+        "description": "Odblokuj wszystkie główne trofea. Wyzwania klas są opcjonalne."
       }
     },
     "first-boss": {
@@ -10249,7 +10327,7 @@
         "description": "Defeat your first boss."
       },
       "de": {
-        "title": "Erstes kÃ¶nigliches Blut",
+        "title": "Erstes königliches Blut",
         "description": "Besiege deinen ersten Boss."
       },
       "es": {
@@ -10257,14 +10335,14 @@
         "description": "Derrota a tu primer jefe."
       },
       "pl": {
-        "title": "Pierwsza krÃ³lewska krew",
+        "title": "Pierwsza królewska krew",
         "description": "Pokonaj swojego pierwszego bossa."
       }
     },
     "five-bosses": {
       "fr": {
         "title": "Briseur de couronnes",
-        "description": "Vaincre cinq boss diffÃ©rents."
+        "description": "Vaincre cinq boss différents."
       },
       "zh-CN": {
         "title": "çš‡å† ç ´åè€…",
@@ -10276,7 +10354,7 @@
       },
       "de": {
         "title": "Kronenbrecher",
-        "description": "Besiege fÃ¼nf verschiedene Bosse."
+        "description": "Besiege fünf verschiedene Bosse."
       },
       "es": {
         "title": "Rompedor de coronas",
@@ -10284,13 +10362,13 @@
       },
       "pl": {
         "title": "Åamacz Korony",
-        "description": "Pokonaj piÄ™ciu rÃ³Å¼nych bossÃ³w."
+        "description": "Pokonaj pięciu różnych bossów."
       }
     },
     "ten-bosses": {
       "fr": {
-        "title": "DÃ©cimateur de couronnes",
-        "description": "Vaincre dix boss diffÃ©rents."
+        "title": "Décimateur de couronnes",
+        "description": "Vaincre dix boss différents."
       },
       "zh-CN": {
         "title": "çš‡å† æ¯ç­è€…",
@@ -10310,13 +10388,13 @@
       },
       "pl": {
         "title": "Decydator korony",
-        "description": "Pokonaj dziesiÄ™ciu rÃ³Å¼nych bossÃ³w."
+        "description": "Pokonaj dziesięciu różnych bossów."
       }
     },
     "fifteen-bosses": {
       "fr": {
         "title": "Annihilateur de couronnes",
-        "description": "Vaincre quinze boss diffÃ©rents."
+        "description": "Vaincre quinze boss différents."
       },
       "zh-CN": {
         "title": "çš‡å† æ­¼ç­è€…",
@@ -10328,7 +10406,7 @@
       },
       "de": {
         "title": "Kronenvernichter",
-        "description": "Besiege fÃ¼nfzehn verschiedene Bosse."
+        "description": "Besiege fünfzehn verschiedene Bosse."
       },
       "es": {
         "title": "Aniquilador de coronas",
@@ -10336,7 +10414,7 @@
       },
       "pl": {
         "title": "Niszczyciel Korony",
-        "description": "Pokonaj piÄ™tnastu rÃ³Å¼nych bossÃ³w."
+        "description": "Pokonaj piętnastu różnych bossów."
       }
     },
     "medieval-king": {
@@ -10353,22 +10431,22 @@
         "description": "Defeat the Nameless King."
       },
       "de": {
-        "title": "Der namenlose KÃ¶nig gerÃ¤t in Vergessenheit",
-        "description": "Besiege den namenlosen KÃ¶nig."
+        "title": "Der namenlose König gerät in Vergessenheit",
+        "description": "Besiege den namenlosen König."
       },
       "es": {
         "title": "El Rey Sin Nombre cae en el olvido",
         "description": "Derrota al Rey Sin Nombre."
       },
       "pl": {
-        "title": "Bezimienny KrÃ³l odchodzi w zapomnienie",
-        "description": "Pokonaj Bezimiennego KrÃ³la."
+        "title": "Bezimienny Król odchodzi w zapomnienie",
+        "description": "Pokonaj Bezimiennego Króla."
       }
     },
     "demon-king": {
       "fr": {
-        "title": "Le Roi dÃ©mon tombe",
-        "description": "Vaincre Azharkan, le Roi dÃ©mon."
+        "title": "Le Roi démon tombe",
+        "description": "Vaincre Azharkan, le Roi démon."
       },
       "zh-CN": {
         "title": "é­”çŽ‹é™¨è½",
@@ -10379,22 +10457,22 @@
         "description": "Defeat Azharkan, the Demon King."
       },
       "de": {
-        "title": "Der DÃ¤monenkÃ¶nig fÃ¤llt",
-        "description": "Besiege Azharkan, den DÃ¤monenkÃ¶nig."
+        "title": "Der Dämonenkönig fällt",
+        "description": "Besiege Azharkan, den Dämonenkönig."
       },
       "es": {
         "title": "El Rey Demonio cae",
         "description": "Derrota a Azharkan, el Rey Demonio."
       },
       "pl": {
-        "title": "Upadek KrÃ³la DemonÃ³w",
-        "description": "Pokonaj Azharkana, KrÃ³la DemonÃ³w."
+        "title": "Upadek Króla Demonów",
+        "description": "Pokonaj Azharkana, Króla Demonów."
       }
     },
     "nordic-king": {
       "fr": {
-        "title": "Le dernier Jarl de NorvÃ¨ge",
-        "description": "Vaincre Eivor, le dernier Roi de NorvÃ¨ge."
+        "title": "Le dernier Jarl de Norvège",
+        "description": "Vaincre Eivor, le dernier Roi de Norvège."
       },
       "zh-CN": {
         "title": "æŒªå¨æœ€åŽä¸€ä½é¢†ä¸»",
@@ -10406,20 +10484,20 @@
       },
       "de": {
         "title": "Der letzte Jarl von Norwegen",
-        "description": "Besiege Eivor, den letzten KÃ¶nig von Norwegen."
+        "description": "Besiege Eivor, den letzten König von Norwegen."
       },
       "es": {
-        "title": "El Ãºltimo Jarl de Noruega",
-        "description": "Derrota a Eivor, el Ãºltimo rey de Noruega."
+        "title": "El último Jarl de Noruega",
+        "description": "Derrota a Eivor, el último rey de Noruega."
       },
       "pl": {
         "title": "Ostatni Jarl Norwegii",
-        "description": "Pokonaj Eivora, ostatniego krÃ³la Norwegii."
+        "description": "Pokonaj Eivora, ostatniego króla Norwegii."
       }
     },
     "village-hero": {
       "fr": {
-        "title": "HÃ©ros du Village oubliÃ©",
+        "title": "Héros du Village oublié",
         "description": "Terminer le chapitre I."
       },
       "zh-CN": {
@@ -10432,11 +10510,11 @@
       },
       "de": {
         "title": "Helden des vergessenen Dorfes",
-        "description": "SchlieÃŸe Kapitel I ab."
+        "description": "Schließe Kapitel I ab."
       },
       "es": {
-        "title": "HÃ©roes del pueblo olvidado",
-        "description": "Completa el CapÃ­tulo I."
+        "title": "Héroes del pueblo olvidado",
+        "description": "Completa el Capítulo I."
       },
       "pl": {
         "title": "Bohaterowie Zapomnianej Wioski",
@@ -10445,7 +10523,7 @@
     },
     "treasure-hunter": {
       "fr": {
-        "title": "Chercheur de trÃ©sor",
+        "title": "Chercheur de trésor",
         "description": "Terminer le chapitre II."
       },
       "zh-CN": {
@@ -10458,20 +10536,20 @@
       },
       "de": {
         "title": "Schatzsucher",
-        "description": "SchlieÃŸe Kapitel II ab."
+        "description": "Schließe Kapitel II ab."
       },
       "es": {
         "title": "buscador de tesoros",
-        "description": "Completa el CapÃ­tulo II."
+        "description": "Completa el Capítulo II."
       },
       "pl": {
-        "title": "Poszukiwacz skarbÃ³w",
+        "title": "Poszukiwacz skarbów",
         "description": "UkoÅ„cz rozdziaÅ‚ II."
       }
     },
     "eivor-legend": {
       "fr": {
-        "title": "La lÃ©gende d'Eivor",
+        "title": "La légende d'Eivor",
         "description": "Terminer le chapitre III."
       },
       "zh-CN": {
@@ -10484,11 +10562,11 @@
       },
       "de": {
         "title": "Die Legende von Eivor",
-        "description": "SchlieÃŸe Kapitel III ab."
+        "description": "Schließe Kapitel III ab."
       },
       "es": {
         "title": "La leyenda de Eivor",
-        "description": "Completa el CapÃ­tulo III."
+        "description": "Completa el Capítulo III."
       },
       "pl": {
         "title": "Legenda Eivora",
@@ -10509,12 +10587,12 @@
         "description": "Complete all three chapters."
       },
       "de": {
-        "title": "Das groÃŸe Abenteuer",
-        "description": "SchlieÃŸe alle drei Kapitel ab."
+        "title": "Das große Abenteuer",
+        "description": "Schließe alle drei Kapitel ab."
       },
       "es": {
         "title": "La gran aventura",
-        "description": "Completa los tres capÃ­tulos."
+        "description": "Completa los tres capítulos."
       },
       "pl": {
         "title": "Wielka przygoda",
@@ -10536,11 +10614,11 @@
       },
       "de": {
         "title": "Der Unsterbliche",
-        "description": "SchlieÃŸe jedes Kapitel ab, ohne zu sterben."
+        "description": "Schließe jedes Kapitel ab, ohne zu sterben."
       },
       "es": {
         "title": "el inmortal",
-        "description": "Completa cada capÃ­tulo sin morir."
+        "description": "Completa cada capítulo sin morir."
       },
       "pl": {
         "title": "NieÅ›miertelny",
@@ -10549,111 +10627,111 @@
     },
     "village-classes": {
       "fr": {
-        "title": "Dix visages du destin",
-        "description": "Terminer le chapitre I avec chacune des dix classes originales."
+        "title": "Trois visages du destin",
+        "description": "Terminer le chapitre I avec trois classes différentes (défi bonus)."
       },
       "zh-CN": {
-        "title": "å‘½è¿çš„åå¼ é¢å­”",
-        "description": "ä½¿ç”¨åä¸ªåŽŸå§‹è¯¾ç¨‹ä¸­çš„æ¯ä¸€ä¸ªå®Œæˆç¬¬ä¸€ç« ã€‚"
+        "title": "命运的三张面孔",
+        "description": "使用三种不同职业完成第一章（额外挑战）。"
       },
       "en": {
-        "title": "Ten faces of destiny",
-        "description": "Complete Chapter I with each of the ten original classes."
+        "title": "Three Faces of Destiny",
+        "description": "Complete Chapter I with three different classes (bonus challenge)."
       },
       "de": {
-        "title": "Zehn Gesichter des Schicksals",
-        "description": "SchlieÃŸe Kapitel I mit jeder der zehn Originalklassen ab."
+        "title": "Drei Gesichter des Schicksals",
+        "description": "Schließe Kapitel I mit drei verschiedenen Klassen ab (Bonus-Herausforderung)."
       },
       "es": {
-        "title": "Diez caras del destino",
-        "description": "Completa el CapÃ­tulo I con cada una de las diez clases originales."
+        "title": "Tres rostros del destino",
+        "description": "Completa el capítulo I con tres clases distintas (desafío adicional)."
       },
       "pl": {
-        "title": "DziesiÄ™Ä‡ twarzy przeznaczenia",
-        "description": "UkoÅ„cz RozdziaÅ‚ I kaÅ¼dÄ… z dziesiÄ™ciu oryginalnych klas."
+        "title": "Trzy oblicza losu",
+        "description": "Ukończ rozdział I trzema różnymi klasami (wyzwanie dodatkowe)."
       }
     },
     "japan-classes": {
       "fr": {
-        "title": "MaÃ®tre des voies",
-        "description": "Terminer le chapitre II avec les quinze classes disponibles."
+        "title": "Maître des voies",
+        "description": "Terminer le chapitre II avec trois classes différentes (défi bonus)."
       },
       "zh-CN": {
-        "title": "é“æ³•å¤§å¸ˆ",
-        "description": "å®Œæˆç¬¬äºŒç« æ‰€æœ‰åäº”ä¸ªå¯ç”¨è¯¾ç¨‹ã€‚"
+        "title": "道路大师",
+        "description": "使用三种不同职业完成第二章（额外挑战）。"
       },
       "en": {
-        "title": "Master of the Ways",
-        "description": "Complete Chapter II with all fifteen available classes."
+        "title": "Master of Paths",
+        "description": "Complete Chapter II with three different classes (bonus challenge)."
       },
       "de": {
         "title": "Meister der Wege",
-        "description": "SchlieÃŸe Kapitel II mit allen fÃ¼nfzehn verfÃ¼gbaren Klassen ab."
+        "description": "Schließe Kapitel II mit drei verschiedenen Klassen ab (Bonus-Herausforderung)."
       },
       "es": {
-        "title": "Maestro de los caminos",
-        "description": "Completa el CapÃ­tulo II con las quince clases disponibles."
+        "title": "Maestro de caminos",
+        "description": "Completa el capítulo II con tres clases distintas (desafío adicional)."
       },
       "pl": {
-        "title": "Mistrz sposobÃ³w",
-        "description": "UkoÅ„cz RozdziaÅ‚ II wszystkimi piÄ™tnastoma dostÄ™pnymi klasami."
+        "title": "Mistrz ścieżek",
+        "description": "Ukończ rozdział II trzema różnymi klasami (wyzwanie dodatkowe)."
       }
     },
     "nordic-classes": {
       "fr": {
         "title": "Corbeau du Nord",
-        "description": "Terminer le chapitre III avec les vingt classes disponibles."
+        "description": "Terminer le chapitre III avec trois classes différentes (défi bonus)."
       },
       "zh-CN": {
-        "title": "åŒ—æ–¹ä¹Œé¸¦",
-        "description": "å®Œæˆç¬¬ä¸‰ç« æ‰€æœ‰äºŒåä¸ªå¯ç”¨ç±»åˆ«ã€‚"
+        "title": "北境渡鸦",
+        "description": "使用三种不同职业完成第三章（额外挑战）。"
       },
       "en": {
-        "title": "Northern Raven",
-        "description": "Complete Chapter III with all twenty available classes."
+        "title": "Raven of the North",
+        "description": "Complete Chapter III with three different classes (bonus challenge)."
       },
       "de": {
-        "title": "NÃ¶rdlicher Rabe",
-        "description": "SchlieÃŸe Kapitel III mit allen zwanzig verfÃ¼gbaren Klassen ab."
+        "title": "Rabe des Nordens",
+        "description": "Schließe Kapitel III mit drei verschiedenen Klassen ab (Bonus-Herausforderung)."
       },
       "es": {
         "title": "Cuervo del Norte",
-        "description": "Completa el CapÃ­tulo III con las veinte clases disponibles."
+        "description": "Completa el capítulo III con tres clases distintas (desafío adicional)."
       },
       "pl": {
-        "title": "PÃ³Å‚nocny Kruk",
-        "description": "UkoÅ„cz RozdziaÅ‚ III wszystkimi dwudziestoma dostÄ™pnymi klasami."
+        "title": "Kruk Północy",
+        "description": "Ukończ rozdział III trzema różnymi klasami (wyzwanie dodatkowe)."
       }
     },
     "pathfinder": {
       "fr": {
         "title": "Marcheur des chemins",
-        "description": "Terminer le chapitre II en ayant explorÃ© cinq routes diffÃ©rentes."
+        "description": "Explorer cinq routes différentes au chapitre II et le terminer. Progression cumulée entre les parties."
       },
       "zh-CN": {
         "title": "è¡Œè€…",
-        "description": "æŽ¢ç´¢äº”æ¡ä¸åŒçš„è·¯çº¿ï¼Œå®Œæˆç¬¬äºŒç« ã€‚"
+        "description": "探索第二章的五条不同路线并完成该章。进度可在多次游戏间累计。"
       },
       "en": {
         "title": "Pathwalker",
-        "description": "Complete Chapter II having explored five different routes."
+        "description": "Explore five different routes in Chapter II and complete it. Progress carries over between playthroughs."
       },
       "de": {
         "title": "Weggeher",
-        "description": "SchlieÃŸe Kapitel II ab, nachdem du fÃ¼nf verschiedene Routen erkundet hast."
+        "description": "Erkunde fünf verschiedene Wege in Kapitel II und schließe es ab. Fortschritt zählt über mehrere Durchläufe."
       },
       "es": {
         "title": "Caminante",
-        "description": "Completa el CapÃ­tulo II habiendo explorado cinco rutas diferentes."
+        "description": "Explora cinco rutas diferentes en el capítulo II y complétalo. El progreso se acumula entre partidas."
       },
       "pl": {
         "title": "ÅšcieÅ¼karz",
-        "description": "UkoÅ„cz rozdziaÅ‚ II po zbadaniu piÄ™ciu rÃ³Å¼nych tras."
+        "description": "Odkryj pięć różnych tras w rozdziale II i ukończ go. Postęp sumuje się między rozgrywkami."
       }
     },
     "level-five": {
       "fr": {
-        "title": "Aventurier dÃ©butant",
+        "title": "Aventurier débutant",
         "description": "Atteindre le niveau 5 au cours d une campagne."
       },
       "zh-CN": {
@@ -10665,7 +10743,7 @@
         "description": "Reach level 5 during a campaign."
       },
       "de": {
-        "title": "AnfÃ¤nger-Abenteurer",
+        "title": "Anfänger-Abenteurer",
         "description": "Erreiche während einer Kampagne Stufe 5."
       },
       "es": {
@@ -10673,13 +10751,13 @@
         "description": "Alcanza el nivel 5 durante una campaña."
       },
       "pl": {
-        "title": "PoczÄ…tkujÄ…cy poszukiwacz przygÃ³d",
+        "title": "Początkujący poszukiwacz przygód",
         "description": "Osiągnij poziom 5 podczas kampanii."
       }
     },
     "level-ten": {
       "fr": {
-        "title": "Aventurier confirmÃ©",
+        "title": "Aventurier confirmé",
         "description": "Atteindre le niveau 10 au cours d une campagne."
       },
       "zh-CN": {
@@ -10699,7 +10777,7 @@
         "description": "Alcanza el nivel 10 durante una campaña."
       },
       "pl": {
-        "title": "DoÅ›wiadczony poszukiwacz przygÃ³d",
+        "title": "Doświadczony poszukiwacz przygód",
         "description": "Osiągnij poziom 10 podczas kampanii."
       }
     },
@@ -10725,13 +10803,13 @@
         "description": "Alcanza el nivel 12 durante una campaña."
       },
       "pl": {
-        "title": "PodrÃ³Å¼nik Å›wiata",
+        "title": "Podróżnik świata",
         "description": "Osiągnij poziom 12 podczas kampanii."
       }
     },
     "level-fifty": {
       "fr": {
-        "title": "HÃ©ros lÃ©gendaire",
+        "title": "Héros légendaire",
         "description": "Atteindre le niveau 15 au cours d une campagne."
       },
       "zh-CN": {
@@ -10743,11 +10821,11 @@
         "description": "Reach level 15 during a campaign."
       },
       "de": {
-        "title": "LegendÃ¤rer Held",
+        "title": "Legendärer Held",
         "description": "Erreiche während einer Kampagne Stufe 15."
       },
       "es": {
-        "title": "HÃ©roe legendario",
+        "title": "Héroe legendario",
         "description": "Alcanza el nivel 15 durante una campaña."
       },
       "pl": {
@@ -10758,547 +10836,703 @@
     "level-one-hundred": {
       "fr": {
         "title": "Champion mythique",
-        "description": "Atteindre le niveau 20 au cours d une campagne."
+        "description": "Atteindre le niveau 18 au cours d'une campagne."
       },
       "zh-CN": {
         "title": "ç¥žè¯å† å†›",
-        "description": "在战役中达到 20 级。"
+        "description": "在战役中达到18级。"
       },
       "en": {
         "title": "Mythic Champion",
-        "description": "Reach level 20 during a campaign."
+        "description": "Reach level 18 during a campaign."
       },
       "de": {
         "title": "Mythischer Champion",
-        "description": "Erreiche während einer Kampagne Stufe 20."
+        "description": "Erreiche Stufe 18 während einer Kampagne."
       },
       "es": {
-        "title": "CampeÃ³n mÃ­tico",
-        "description": "Alcanza el nivel 20 durante una campaña."
+        "title": "Campeón mítico",
+        "description": "Alcanza el nivel 18 durante una campaña."
       },
       "pl": {
         "title": "Mityczny czempion",
-        "description": "Osiągnij poziom 20 podczas kampanii."
+        "description": "Osiągnij poziom 18 podczas kampanii."
       }
     },
     "class-sorcier": {
       "fr": {
         "title": "Voie du Sorcier",
-        "description": "Terminer une aventure avec la classe Sorcier."
+        "description": "Terminer un chapitre avec la classe Sorcier."
       },
       "zh-CN": {
         "title": "å·«å¸ˆä¹‹è·¯",
-        "description": "ä¸Žå·«å¸ˆèŒä¸šä¸€èµ·å®Œæˆå†’é™©ã€‚"
+        "description": "使用å‘å¯¼职业完成一个章节。"
       },
       "en": {
         "title": "Path of the Sorcerer",
-        "description": "Complete an adventure with the Wizard class."
+        "description": "Complete a chapter with the Wizard class."
       },
       "de": {
         "title": "Pfad des Zauberers",
-        "description": "SchlieÃŸe ein Abenteuer mit der Zaubererklasse ab."
+        "description": "Schließe ein Kapitel mit der Klasse Zauberer ab."
       },
       "es": {
         "title": "Camino del hechicero",
-        "description": "Completa una aventura con la clase Mago."
+        "description": "Completa un capítulo con la clase Asistente."
       },
       "pl": {
         "title": "ÅšcieÅ¼ka Czarownika",
-        "description": "UkoÅ„cz przygodÄ™ z klasÄ… Czarodzieja."
+        "description": "Ukończ rozdział klasą Czarodziej."
       }
     },
     "class-archer": {
       "fr": {
         "title": "Voie de l'Archer",
-        "description": "Terminer une aventure avec la classe Archer."
+        "description": "Terminer un chapitre avec la classe Archer."
       },
       "zh-CN": {
         "title": "å¼“ç®­æ‰‹ä¹‹è·¯",
-        "description": "ä¸Žå¼“ç®­æ‰‹èŒä¸šä¸€èµ·å®Œæˆå†’é™©ã€‚"
+        "description": "使用å¼“ç®­æ‰‹职业完成一个章节。"
       },
       "en": {
         "title": "Path of the Archer",
-        "description": "Complete an adventure with the Archer class."
+        "description": "Complete a chapter with the Archer class."
       },
       "de": {
-        "title": "Pfad des BogenschÃ¼tzen",
-        "description": "SchlieÃŸe ein Abenteuer mit der BogenschÃ¼tzenklasse ab."
+        "title": "Pfad des Bogenschützen",
+        "description": "Schließe ein Kapitel mit der Klasse BogenschÃ¼tze ab."
       },
       "es": {
         "title": "Camino del Arquero",
-        "description": "Completa una aventura con la clase Archer."
+        "description": "Completa un capítulo con la clase arquero."
       },
       "pl": {
         "title": "ÅšcieÅ¼ka Åucznika",
-        "description": "UkoÅ„cz przygodÄ™ z klasÄ… Åucznika."
+        "description": "Ukończ rozdział klasą Åucznik."
       }
     },
     "class-chevalier": {
       "fr": {
         "title": "Voie du Chevalier",
-        "description": "Terminer une aventure avec la classe Chevalier."
+        "description": "Terminer un chapitre avec la classe Chevalier."
       },
       "zh-CN": {
         "title": "éª‘å£«ä¹‹è·¯",
-        "description": "ä¸Žéª‘å£«èŒä¸šä¸€èµ·å®Œæˆå†’é™©ã€‚"
+        "description": "使用éª‘å£«职业完成一个章节。"
       },
       "en": {
         "title": "Way of the Knight",
-        "description": "Complete an adventure with the Knight class."
+        "description": "Complete a chapter with the Knight class."
       },
       "de": {
         "title": "Weg des Ritters",
-        "description": "SchlieÃŸe ein Abenteuer mit der Ritterklasse ab."
+        "description": "Schließe ein Kapitel mit der Klasse Ritter ab."
       },
       "es": {
         "title": "Camino del Caballero",
-        "description": "Completa una aventura con la clase Caballero."
+        "description": "Completa un capítulo con la clase caballero."
       },
       "pl": {
         "title": "Droga Rycerza",
-        "description": "UkoÅ„cz przygodÄ™ klasÄ… Rycerza."
+        "description": "Ukończ rozdział klasą Rycerz."
       }
     },
     "class-barbare": {
       "fr": {
         "title": "Voie du Barbare",
-        "description": "Terminer une aventure avec la classe Barbare."
+        "description": "Terminer un chapitre avec la classe Barbare."
       },
       "zh-CN": {
         "title": "é‡Žè›®äººä¹‹é“",
-        "description": "ä¸Žé‡Žè›®äººèŒä¸šä¸€èµ·å®Œæˆå†’é™©ã€‚"
+        "description": "使用é‡Žè›®äºº职业完成一个章节。"
       },
       "en": {
         "title": "Way of the Barbarian",
-        "description": "Complete an adventure with the Barbarian class."
+        "description": "Complete a chapter with the Barbarian class."
       },
       "de": {
         "title": "Weg des Barbaren",
-        "description": "SchlieÃŸe ein Abenteuer mit der Barbarenklasse ab."
+        "description": "Schließe ein Kapitel mit der Klasse Barbar ab."
       },
       "es": {
-        "title": "Camino del BÃ¡rbaro",
-        "description": "Completa una aventura con la clase BÃ¡rbaro."
+        "title": "Camino del Bárbaro",
+        "description": "Completa un capítulo con la clase bÃ¡rbaro."
       },
       "pl": {
         "title": "Droga BarbarzyÅ„cy",
-        "description": "UkoÅ„cz przygodÄ™ z klasÄ… BarbarzyÅ„cy."
+        "description": "Ukończ rozdział klasą BarbarzyÅ„ca."
       }
     },
     "class-assassin": {
       "fr": {
         "title": "Voie de l'Assassin",
-        "description": "Terminer une aventure avec la classe Assassin."
+        "description": "Terminer un chapitre avec la classe Assassin."
       },
       "zh-CN": {
         "title": "åˆºå®¢ä¹‹è·¯",
-        "description": "ä¸Žåˆºå®¢èŒä¸šä¸€èµ·å®Œæˆå†’é™©ã€‚"
+        "description": "使用åˆºå®¢职业完成一个章节。"
       },
       "en": {
         "title": "Path of the Assassin",
-        "description": "Complete an adventure with the Assassin class."
+        "description": "Complete a chapter with the Assassin class."
       },
       "de": {
         "title": "Pfad des Assassinen",
-        "description": "SchlieÃŸe ein Abenteuer mit der Assassinen-Klasse ab."
+        "description": "Schließe ein Kapitel mit der Klasse AttentÃ¤ter ab."
       },
       "es": {
         "title": "Camino del asesino",
-        "description": "Completa una aventura con la clase Asesino."
+        "description": "Completa un capítulo con la clase Asesino."
       },
       "pl": {
-        "title": "ÅšcieÅ¼ka ZabÃ³jcy",
-        "description": "UkoÅ„cz przygodÄ™ klasÄ… ZabÃ³jcy."
+        "title": "Ścieżka Zabójcy",
+        "description": "Ukończ rozdział klasą ZabÃ³jca."
       }
     },
     "class-artificier": {
       "fr": {
         "title": "Voie de l'Artificier",
-        "description": "Terminer une aventure avec la classe Artificier."
+        "description": "Terminer un chapitre avec la classe Artificier."
       },
       "zh-CN": {
         "title": "æŠ€å¸ˆä¹‹è·¯",
-        "description": "ä¸Žå·¥åŒ èŒä¸šä¸€èµ·å®Œæˆå†’é™©ã€‚"
+        "description": "使用æŠ€å¸ˆ职业完成一个章节。"
       },
       "en": {
         "title": "Path of the Artificer",
-        "description": "Complete an adventure with the Artificer class."
+        "description": "Complete a chapter with the Artificer class."
       },
       "de": {
         "title": "Pfad des Kunsthandwerkers",
-        "description": "SchlieÃŸe ein Abenteuer mit der Artificer-Klasse ab."
+        "description": "Schließe ein Kapitel mit der Klasse KÃ¼nstler ab."
       },
       "es": {
-        "description": "Completa una aventura con la clase ArtÃ­fice.",
-        "title": "Camino del artÃ­fice"
+        "description": "Completa un capítulo con la clase ArtÃ­fice.",
+        "title": "Camino del artífice"
       },
       "pl": {
         "title": "ÅšcieÅ¼ka rzemieÅ›lnika",
-        "description": "UkoÅ„cz przygodÄ™ z klasÄ… RzemieÅ›lnika."
+        "description": "Ukończ rozdział klasą RzemieÅ›lnik."
       }
     },
     "class-bard": {
       "fr": {
-        "title": "Voie du Bard",
-        "description": "Terminer une aventure avec la classe Bard."
+        "title": "Voie du Barde",
+        "description": "Terminer un chapitre avec la classe Barde."
       },
       "zh-CN": {
         "title": "åŸæ¸¸è¯—äººä¹‹é“",
-        "description": "ä¸ŽåŸæ¸¸è¯—äººèŒä¸šä¸€èµ·å®Œæˆå†’é™©ã€‚"
+        "description": "使用åŸæ¸¸è¯—äºº职业完成一个章节。"
       },
       "en": {
         "title": "Way of the Bard",
-        "description": "Complete an adventure with the Bard class."
+        "description": "Complete a chapter with the Bard class."
       },
       "de": {
         "title": "Weg des Barden",
-        "description": "SchlieÃŸe ein Abenteuer mit der Bardenklasse ab."
+        "description": "Schließe ein Kapitel mit der Klasse Barde ab."
       },
       "es": {
         "title": "Camino del Bardo",
-        "description": "Completa una aventura con la clase Bardo."
+        "description": "Completa un capítulo con la clase bardo."
       },
       "pl": {
         "title": "Droga Barda",
-        "description": "UkoÅ„cz przygodÄ™ z klasÄ… Barda."
+        "description": "Ukończ rozdział klasą Bard."
       }
     },
     "class-moine": {
       "fr": {
         "title": "Voie du Moine",
-        "description": "Terminer une aventure avec la classe Moine."
+        "description": "Terminer un chapitre avec la classe Moine."
       },
       "zh-CN": {
         "title": "å’Œå°šä¹‹è·¯",
-        "description": "ä¸Žæ­¦åƒ§èŒä¸šä¸€èµ·å®Œæˆå†’é™©ã€‚"
+        "description": "使用å’Œå°š职业完成一个章节。"
       },
       "en": {
         "title": "Monk's Way",
-        "description": "Complete an adventure with the Monk class."
+        "description": "Complete a chapter with the Monk class."
       },
       "de": {
-        "title": "MÃ¶nchsweg",
-        "description": "SchlieÃŸe ein Abenteuer mit der MÃ¶nch-Klasse ab."
+        "title": "Mönchsweg",
+        "description": "Schließe ein Kapitel mit der Klasse MÃ¶nch ab."
       },
       "es": {
         "title": "Camino del monje",
-        "description": "Completa una aventura con la clase Monje."
+        "description": "Completa un capítulo con la clase monje."
       },
       "pl": {
         "title": "Droga mnicha",
-        "description": "UkoÅ„cz przygodÄ™ klasÄ… Mnicha."
+        "description": "Ukończ rozdział klasą Mnich."
       }
     },
     "class-necromancien": {
       "fr": {
-        "title": "Voie du NÃ©cromancien",
-        "description": "Terminer une aventure avec la classe NÃ©cromancien."
+        "title": "Voie du Nécromancien",
+        "description": "Terminer un chapitre avec la classe Nécromancien."
       },
       "zh-CN": {
         "title": "æ­»çµæ³•å¸ˆä¹‹è·¯",
-        "description": "ä¸Žæ­»çµæ³•å¸ˆèŒä¸šä¸€èµ·å®Œæˆå†’é™©ã€‚"
+        "description": "使用æ­»çµæ³•å¸ˆ职业完成一个章节。"
       },
       "en": {
         "title": "Path of the Necromancer",
-        "description": "Complete an adventure with the Necromancer class."
+        "description": "Complete a chapter with the Necromancer class."
       },
       "de": {
         "title": "Pfad des Nekromanten",
-        "description": "SchlieÃŸe ein Abenteuer mit der Nekromanten-Klasse ab."
+        "description": "Schließe ein Kapitel mit der Klasse Nekromant ab."
       },
       "es": {
         "title": "Camino del Nigromante",
-        "description": "Completa una aventura con la clase Nigromante."
+        "description": "Completa un capítulo con la clase nigromante."
       },
       "pl": {
         "title": "ÅšcieÅ¼ka Nekromanty",
-        "description": "UkoÅ„cz przygodÄ™ z klasÄ… Nekromanty."
+        "description": "Ukończ rozdział klasą Nekromanta."
       }
     },
     "class-bouffon": {
       "fr": {
         "title": "Voie du Bouffon du Roi",
-        "description": "Terminer une aventure avec la classe Bouffon du Roi."
+        "description": "Terminer un chapitre avec la classe Bouffon du Roi."
       },
       "zh-CN": {
         "title": "å›½çŽ‹å°ä¸‘ä¹‹è·¯",
-        "description": "ä¸Žå›½çŽ‹å°ä¸‘èŒä¸šä¸€èµ·å®Œæˆå†’é™©ã€‚"
+        "description": "使用å›½çŽ‹çš„å°ä¸‘职业完成一个章节。"
       },
       "en": {
         "title": "Way of the King's Jester",
-        "description": "Complete an adventure with the King's Jester class."
+        "description": "Complete a chapter with the Jester of the King class."
       },
       "de": {
-        "title": "Weg des KÃ¶nigsnarren",
-        "description": "SchlieÃŸe ein Abenteuer mit der King's Jester-Klasse ab."
+        "title": "Weg des Königsnarren",
+        "description": "Schließe ein Kapitel mit der Klasse Narr des KÃ¶nigs ab."
       },
       "es": {
-        "title": "Camino del bufÃ³n del rey",
-        "description": "Completa una aventura con la clase King's Jester."
+        "title": "Camino del bufón del rey",
+        "description": "Completa un capítulo con la clase bufÃ³n del rey."
       },
       "pl": {
-        "title": "Droga krÃ³lewskiego bÅ‚azna",
-        "description": "UkoÅ„cz przygodÄ™ z klasÄ… KrÃ³lewskiego BÅ‚azna."
+        "title": "Droga królewskiego błazna",
+        "description": "Ukończ rozdział klasą BÅ‚azen KrÃ³la."
       }
     },
     "class-samurai": {
       "fr": {
         "title": "Lame du Samurai",
-        "description": "Terminer une aventure avec la classe Samurai."
+        "description": "Terminer un chapitre avec la classe Samouraï."
       },
       "zh-CN": {
         "title": "æ­¦å£«åˆ€",
-        "description": "ä¸Žæ­¦å£«é˜¶çº§ä¸€èµ·å®Œæˆå†’é™©ã€‚"
+        "description": "使用æ­¦å£«职业完成一个章节。"
       },
       "en": {
         "title": "Samurai Blade",
-        "description": "Complete an adventure with the Samurai class."
+        "description": "Complete a chapter with the Samurai class."
       },
       "de": {
         "title": "Samurai-Klinge",
-        "description": "SchlieÃŸe ein Abenteuer mit der Samurai-Klasse ab."
+        "description": "Schließe ein Kapitel mit der Klasse Samurai ab."
       },
       "es": {
-        "title": "Espada samurÃ¡i",
-        "description": "Completa una aventura con la clase Samurai."
+        "title": "Espada samurái",
+        "description": "Completa un capítulo con la clase SamurÃ¡i."
       },
       "pl": {
         "title": "Samurajskie ostrze",
-        "description": "UkoÅ„cz przygodÄ™ z klasÄ… SamurajÃ³w."
+        "description": "Ukończ rozdział klasą Samuraj."
       }
     },
     "class-shinobi": {
       "fr": {
         "title": "Ombre du Shinobi",
-        "description": "Terminer une aventure avec la classe Shinobi."
+        "description": "Terminer un chapitre avec la classe Shinobi."
       },
       "zh-CN": {
         "title": "å¿è€…ä¹‹å½±",
-        "description": "ä¸Žå¿è€…é˜¶çº§ä¸€èµ·å®Œæˆå†’é™©ã€‚"
+        "description": "使用å¿职业完成一个章节。"
       },
       "en": {
         "title": "Shadow of the Shinobi",
-        "description": "Complete an adventure with the Shinobi class."
+        "description": "Complete a chapter with the Shinobi class."
       },
       "de": {
         "title": "Schatten des Shinobi",
-        "description": "SchlieÃŸe ein Abenteuer mit der Shinobi-Klasse ab."
+        "description": "Schließe ein Kapitel mit der Klasse Shinobi ab."
       },
       "es": {
         "title": "La sombra del shinobi",
-        "description": "Completa una aventura con la clase Shinobi."
+        "description": "Completa un capítulo con la clase Shinobi."
       },
       "pl": {
         "title": "CieÅ„ Shinobi",
-        "description": "UkoÅ„cz przygodÄ™ z klasÄ… Shinobi."
+        "description": "Ukończ rozdział klasą Shinobiego."
       }
     },
     "class-onmyoji": {
       "fr": {
         "title": "Esprit de l'Onmyoji",
-        "description": "Terminer une aventure avec la classe Onmyoji."
+        "description": "Terminer un chapitre avec la classe Onmyoji."
       },
       "zh-CN": {
         "title": "é˜´é˜³å¸ˆä¹‹é­‚",
-        "description": "ä¸Žé˜´é˜³å¸ˆèŒä¸šä¸€èµ·å®Œæˆå†’é™©ã€‚"
+        "description": "使用é˜´é˜³å¸ˆ职业完成一个章节。"
       },
       "en": {
         "title": "Spirit of Onmyoji",
-        "description": "Complete an adventure with the Onmyoji class."
+        "description": "Complete a chapter with the Onmyoji class."
       },
       "de": {
         "title": "Geist von Onmyoji",
-        "description": "SchlieÃŸe ein Abenteuer mit der Onmyoji-Klasse ab."
+        "description": "Schließe ein Kapitel mit der Klasse Onmyoji ab."
       },
       "es": {
-        "title": "EspÃ­ritu de Onmyoji",
-        "description": "Completa una aventura con la clase Onmyoji."
+        "title": "Espíritu de Onmyoji",
+        "description": "Completa un capítulo con la clase onmyoji."
       },
       "pl": {
         "title": "Duch Onmyoji",
-        "description": "UkoÅ„cz przygodÄ™ z klasÄ… Onmyoji."
+        "description": "Ukończ rozdział klasą Onmyoji."
       }
     },
     "class-miko": {
       "fr": {
-        "title": "LumiÃ¨re de la Miko",
-        "description": "Terminer une aventure avec la classe Miko."
+        "title": "Lumière de la Miko",
+        "description": "Terminer un chapitre avec la classe Miko."
       },
       "zh-CN": {
         "title": "å·«å¥³ä¹‹å…‰",
-        "description": "ä¸Ž Miko èŒä¸šä¸€èµ·å®Œæˆå†’é™©ã€‚"
+        "description": "使用å·«å¥³职业完成一个章节。"
       },
       "en": {
         "title": "Light of the Miko",
-        "description": "Complete an adventure with the Miko class."
+        "description": "Complete a chapter with the Miko class."
       },
       "de": {
         "title": "Licht der Miko",
-        "description": "SchlieÃŸe ein Abenteuer mit der Miko-Klasse ab."
+        "description": "Schließe ein Kapitel mit der Klasse Miko ab."
       },
       "es": {
         "title": "Luz de la Miko",
-        "description": "Completa una aventura con la clase Miko."
+        "description": "Completa un capítulo con la clase Miko."
       },
       "pl": {
         "title": "ÅšwiatÅ‚o Miko",
-        "description": "UkoÅ„cz przygodÄ™ z klasÄ… Miko."
+        "description": "Ukończ rozdział klasą Miko."
       }
     },
     "class-ronin": {
       "fr": {
         "title": "Dernier duel du RÅnin",
-        "description": "Terminer une aventure avec la classe RÅnin."
+        "description": "Terminer un chapitre avec la classe RÅnin."
       },
       "zh-CN": {
         "title": "æµªäººçš„æœ€åŽå†³æ–—",
-        "description": "ä¸Žæµªäººç­ä¸€èµ·å®Œæˆå†’é™©ã€‚"
+        "description": "使用æµªäºº职业完成一个章节。"
       },
       "en": {
         "title": "RÅnin's Last Duel",
-        "description": "Complete an adventure with the RÅnin class."
+        "description": "Complete a chapter with the Ronin class."
       },
       "de": {
         "title": "RÅnins letztes Duell",
-        "description": "SchlieÃŸe ein Abenteuer mit der RÅnin-Klasse ab."
+        "description": "Schließe ein Kapitel mit der Klasse Ronin ab."
       },
       "es": {
-        "title": "El Ãºltimo duelo de RÅnin",
-        "description": "Completa una aventura con la clase RÅnin."
+        "title": "El último duelo de Rōnin",
+        "description": "Completa un capítulo con la clase ronin."
       },
       "pl": {
         "title": "Ostatni pojedynek RÅnina",
-        "description": "UkoÅ„cz przygodÄ™ z klasÄ… RÅnin."
+        "description": "Ukończ rozdział klasą Ronina."
       }
     },
     "class-berserker": {
       "fr": {
         "title": "Rage du Berserker",
-        "description": "Terminer une aventure avec la classe Berserker."
+        "description": "Terminer un chapitre avec la classe Berserker."
       },
       "zh-CN": {
         "title": "ç‹‚æˆ˜å£«ä¹‹æ€’",
-        "description": "ä¸Žç‹‚æˆ˜å£«èŒä¸šä¸€èµ·å®Œæˆå†’é™©ã€‚"
+        "description": "使用ç‹‚æˆ˜å£«职业完成一个章节。"
       },
       "en": {
         "title": "Berserker's Rage",
-        "description": "Complete an adventure with the Berserker class."
+        "description": "Complete a chapter with the Berserker class."
       },
       "de": {
         "title": "Wut des Berserkers",
-        "description": "SchlieÃŸe ein Abenteuer mit der Berserker-Klasse ab."
+        "description": "Schließe ein Kapitel mit der Klasse Berserker ab."
       },
       "es": {
         "title": "La furia del berserker",
-        "description": "Completa una aventura con la clase Berserker."
+        "description": "Completa un capítulo con la clase berserker."
       },
       "pl": {
         "title": "WÅ›ciekÅ‚oÅ›Ä‡ Berserkera",
-        "description": "UkoÅ„cz przygodÄ™ z klasÄ… Berserkera."
+        "description": "Ukończ rozdział klasą Berserker."
       }
     },
     "class-huskarl": {
       "fr": {
-        "title": "Bouclier du HÃºskarl",
-        "description": "Terminer une aventure avec la classe HÃºskarl."
+        "title": "Bouclier du Húskarl",
+        "description": "Terminer un chapitre avec la classe Húskarl."
       },
       "zh-CN": {
         "title": "æŠ¤å«è€…ä¹‹ç›¾",
-        "description": "ä¸Ž HÃºskarl çº§ä¸€èµ·å®Œæˆå†’é™©ã€‚"
+        "description": "使用å“ˆæ–¯å¡å°”职业完成一个章节。"
       },
       "en": {
         "title": "Shield of the Huskarl",
-        "description": "Complete an adventure with the HÃºskarl class."
+        "description": "Complete a chapter with the Huskarl class."
       },
       "de": {
         "title": "Schild des Huskarl",
-        "description": "SchlieÃŸe ein Abenteuer mit der HÃºskarl-Klasse ab."
+        "description": "Schließe ein Kapitel mit der Klasse Huskarl ab."
       },
       "es": {
         "title": "Escudo del Huscarl",
-        "description": "Completa una aventura con la clase HÃºskarl."
+        "description": "Completa un capítulo con la clase huscarl."
       },
       "pl": {
         "title": "Tarcza Huskarla",
-        "description": "UkoÅ„cz przygodÄ™ z klasÄ… HÃºskarl."
+        "description": "Ukończ rozdział klasą Huskarl."
       }
     },
     "class-valkyrie": {
       "fr": {
         "title": "Ailes de la Valkyrie",
-        "description": "Terminer une aventure avec la classe Valkyrie."
+        "description": "Terminer un chapitre avec la classe Valkyrie."
       },
       "zh-CN": {
         "title": "ç“¦å°”åŸºé‡Œä¹‹ç¿¼",
-        "description": "ä¸Žç“¦å°”åŸºé‡Œçº§ä¸€èµ·å®Œæˆå†’é™©ã€‚"
+        "description": "使用ç“¦å°”åŸºé‡Œ职业完成一个章节。"
       },
       "en": {
         "title": "Wings of the Valkyrie",
-        "description": "Complete an adventure with the Valkyrie class."
+        "description": "Complete a chapter with the Valkyrie class."
       },
       "de": {
-        "title": "FlÃ¼gel der WalkÃ¼re",
-        "description": "SchlieÃŸe ein Abenteuer mit der WalkÃ¼re-Klasse ab."
+        "title": "Flügel der Walküre",
+        "description": "Schließe ein Kapitel mit der Klasse WalkÃ¼re ab."
       },
       "es": {
         "title": "Alas de la Valquiria",
-        "description": "Completa una aventura con la clase Valkyrie."
+        "description": "Completa un capítulo con la clase valquiria."
       },
       "pl": {
         "title": "SkrzydÅ‚a Walkirii",
-        "description": "UkoÅ„cz przygodÄ™ z klasÄ… Walkiria."
+        "description": "Ukończ rozdział klasą Walkiria."
       }
     },
     "class-seidr": {
       "fr": {
-        "title": "ProphÃ©tie de la VÃ¶lva",
-        "description": "Terminer une aventure avec la classe VÃ¶lva SeiÃ°r."
+        "title": "Prophétie de la Völva",
+        "description": "Terminer un chapitre avec la classe Völva Seiðr."
       },
       "zh-CN": {
         "title": "ä¼å°”ç“¦æ²³çš„é¢„è¨€",
-        "description": "ä¸Ž VÃ¶lva SeiÃ°r ç­çº§ä¸€èµ·å®Œæˆå†’é™©ã€‚"
+        "description": "使用æ²ƒå°”ç“¦Â·å¡žå¾·å°”职业完成一个章节。"
       },
       "en": {
-        "title": "Prophecy of the VÃ¶lva",
-        "description": "Complete an adventure with the VÃ¶lva SeiÃ°r class."
+        "title": "Prophecy of the Völva",
+        "description": "Complete a chapter with the Völva Seiðr class."
       },
       "de": {
-        "title": "Prophezeiung der VÃ¶lva",
-        "description": "SchlieÃŸe ein Abenteuer mit der VÃ¶lva SeiÃ°r-Klasse ab."
+        "title": "Prophezeiung der Völva",
+        "description": "Schließe ein Kapitel mit der Klasse VÃ¶lva SeiÃ°r ab."
       },
       "es": {
-        "title": "ProfecÃ­a de la VÃ¶lva",
-        "description": "Completa una aventura con la clase VÃ¶lva SeiÃ°r."
+        "title": "Profecía de la Völva",
+        "description": "Completa un capítulo con la clase VÃ¶lva SeiÃ°r."
       },
       "pl": {
-        "title": "Proroctwo VÃ¶lvy",
-        "description": "UkoÅ„cz przygodÄ™ z klasÄ… VÃ¶lva SeiÃ°r."
+        "title": "Proroctwo Völvy",
+        "description": "Ukończ rozdział klasą VÃ¶lva SeiÃ°r."
       }
     },
     "class-skald": {
       "fr": {
         "title": "Saga du Skald",
-        "description": "Terminer une aventure avec la classe Skald."
+        "description": "Terminer un chapitre avec la classe Skald."
       },
       "zh-CN": {
         "title": "è¯—äººä¼ å¥‡",
-        "description": "ä¸Ž Skald èŒä¸šä¸€èµ·å®Œæˆå†’é™©ã€‚"
+        "description": "使用æ–¯å¡å°”å¾·职业完成一个章节。"
       },
       "en": {
         "title": "Saga of the Skald",
-        "description": "Complete an adventure with the Skald class."
+        "description": "Complete a chapter with the Skald class."
       },
       "de": {
         "title": "Saga vom Skalden",
-        "description": "SchlieÃŸe ein Abenteuer mit der Skald-Klasse ab."
+        "description": "Schließe ein Kapitel mit der Klasse Skald ab."
       },
       "es": {
         "title": "Saga de los escaldos",
-        "description": "Completa una aventura con la clase Skald."
+        "description": "Completa un capítulo con la clase escaldo."
       },
       "pl": {
         "title": "Saga Skalda",
-        "description": "UkoÅ„cz przygodÄ™ z klasÄ… Skald."
+        "description": "Ukończ rozdział klasą Skald."
+      }
+    },
+    "equipped-adventurer": {
+      "fr": {
+        "title": "Prêt pour l'aventure",
+        "description": "Équiper cinq objets en même temps, de n'importe quel type."
+      },
+      "en": {
+        "title": "Ready for Adventure",
+        "description": "Equip five items at the same time, of any type."
+      },
+      "de": {
+        "title": "Bereit fürs Abenteuer",
+        "description": "Rüste gleichzeitig fünf Gegenstände beliebiger Art aus."
+      },
+      "es": {
+        "title": "Listo para la aventura",
+        "description": "Equipa cinco objetos al mismo tiempo, de cualquier tipo."
+      },
+      "pl": {
+        "title": "Gotowy na przygodę",
+        "description": "Wyposaż jednocześnie pięć przedmiotów dowolnego rodzaju."
+      },
+      "zh-CN": {
+        "title": "整装待发",
+        "description": "同时装备五件任意类型的物品。"
+      }
+    },
+    "first-skill": {
+      "fr": {
+        "title": "Premier talent",
+        "description": "Débloquer une capacité dans l'arbre de compétences."
+      },
+      "en": {
+        "title": "First Talent",
+        "description": "Unlock an ability in the skill tree."
+      },
+      "de": {
+        "title": "Erstes Talent",
+        "description": "Schalte eine Fähigkeit im Fähigkeitenbaum frei."
+      },
+      "es": {
+        "title": "Primer talento",
+        "description": "Desbloquea una capacidad en el árbol de habilidades."
+      },
+      "pl": {
+        "title": "Pierwszy talent",
+        "description": "Odblokuj zdolność w drzewku umiejętności."
+      },
+      "zh-CN": {
+        "title": "初露锋芒",
+        "description": "在技能树中解锁一项能力。"
+      }
+    },
+    "first-specialization": {
+      "fr": {
+        "title": "Une voie choisie",
+        "description": "Choisir une spécialisation au chapitre III."
+      },
+      "en": {
+        "title": "A Chosen Path",
+        "description": "Choose a specialization in Chapter III."
+      },
+      "de": {
+        "title": "Ein gewählter Weg",
+        "description": "Wähle in Kapitel III eine Spezialisierung."
+      },
+      "es": {
+        "title": "Un camino elegido",
+        "description": "Elige una especialización en el capítulo III."
+      },
+      "pl": {
+        "title": "Wybrana ścieżka",
+        "description": "Wybierz specjalizację w rozdziale III."
+      },
+      "zh-CN": {
+        "title": "选定道路",
+        "description": "在第三章选择一项专精。"
+      }
+    },
+    "first-ultimate": {
+      "fr": {
+        "title": "Maîtrise ultime",
+        "description": "Débloquer l'ultime d'une voie de compétences."
+      },
+      "en": {
+        "title": "Ultimate Mastery",
+        "description": "Unlock the ultimate rank of one skill branch."
+      },
+      "de": {
+        "title": "Ultimative Meisterschaft",
+        "description": "Schalte den höchsten Rang eines Fähigkeitszweigs frei."
+      },
+      "es": {
+        "title": "Maestría definitiva",
+        "description": "Desbloquea el rango definitivo de una rama de habilidades."
+      },
+      "pl": {
+        "title": "Pełne mistrzostwo",
+        "description": "Odblokuj ostatnią rangę jednej gałęzi umiejętności."
+      },
+      "zh-CN": {
+        "title": "终极精通",
+        "description": "解锁一条技能分支的终极等级。"
+      }
+    },
+    "first-side-quest": {
+      "fr": {
+        "title": "Un coup de main",
+        "description": "Accomplir une quête secondaire."
+      },
+      "en": {
+        "title": "A Helping Hand",
+        "description": "Complete a side quest."
+      },
+      "de": {
+        "title": "Eine helfende Hand",
+        "description": "Schließe eine Nebenquest ab."
+      },
+      "es": {
+        "title": "Una mano amiga",
+        "description": "Completa una misión secundaria."
+      },
+      "pl": {
+        "title": "Pomocna dłoń",
+        "description": "Ukończ zadanie poboczne."
+      },
+      "zh-CN": {
+        "title": "伸出援手",
+        "description": "完成一项支线任务。"
+      }
+    },
+    "all-side-quests": {
+      "fr": {
+        "title": "Allié des trois royaumes",
+        "description": "Accomplir la quête secondaire de chacun des trois chapitres, en une ou plusieurs parties."
+      },
+      "en": {
+        "title": "Ally of Three Kingdoms",
+        "description": "Complete each chapter's side quest, across one or more playthroughs."
+      },
+      "de": {
+        "title": "Verbündeter dreier Reiche",
+        "description": "Schließe die Nebenquest jedes der drei Kapitel ab, in einem oder mehreren Durchläufen."
+      },
+      "es": {
+        "title": "Aliado de tres reinos",
+        "description": "Completa la misión secundaria de cada capítulo, en una o varias partidas."
+      },
+      "pl": {
+        "title": "Sojusznik trzech królestw",
+        "description": "Ukończ zadanie poboczne każdego rozdziału, podczas jednej lub kilku rozgrywek."
+      },
+      "zh-CN": {
+        "title": "三国之友",
+        "description": "在一次或多次游戏中完成三个章节各自的支线任务。"
       }
     }
   },

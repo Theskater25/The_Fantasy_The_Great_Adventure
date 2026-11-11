@@ -1,0 +1,137 @@
+{
+  "checks": [
+    {
+      "name": "title",
+      "viewport": "390x844",
+      "actions": 0,
+      "intentVisible": false
+    },
+    {
+      "name": "settings",
+      "viewport": "390x844",
+      "actions": 0,
+      "intentVisible": false
+    },
+    {
+      "name": "chapters",
+      "viewport": "390x844",
+      "actions": 0,
+      "intentVisible": false
+    },
+    {
+      "name": "hero-selection",
+      "viewport": "390x844",
+      "actions": 0,
+      "intentVisible": false
+    },
+    {
+      "name": "scene-390",
+      "viewport": "390x844",
+      "actions": 3,
+      "intentVisible": false
+    },
+    {
+      "name": "menu-390",
+      "viewport": "390x844",
+      "actions": 3,
+      "intentVisible": false
+    },
+    {
+      "name": "hero-details",
+      "viewport": "390x844",
+      "actions": 3,
+      "intentVisible": false
+    },
+    {
+      "name": "skills-390",
+      "viewport": "390x844",
+      "actions": 3,
+      "intentVisible": false
+    },
+    {
+      "name": "history-390",
+      "viewport": "390x844",
+      "actions": 3,
+      "intentVisible": false
+    },
+    {
+      "name": "scene-320",
+      "viewport": "320x568",
+      "actions": 3,
+      "intentVisible": false
+    },
+    {
+      "name": "boss-320",
+      "viewport": "320x568",
+      "actions": 4,
+      "intentVisible": true
+    },
+    {
+      "name": "boss-390",
+      "viewport": "390x844",
+      "actions": 4,
+      "intentVisible": true
+    },
+    {
+      "name": "boss-430",
+      "viewport": "430x932",
+      "actions": 4,
+      "intentVisible": true
+    },
+    {
+      "name": "boss-844",
+      "viewport": "844x390",
+      "actions": 4,
+      "intentVisible": true
+    },
+    {
+      "name": "boss-667",
+      "viewport": "667x375",
+      "actions": 4,
+      "intentVisible": true
+    },
+    {
+      "name": "boss-phase-2",
+      "viewport": "390x844",
+      "actions": 4,
+      "intentVisible": true
+    },
+    {
+      "name": "inventory-390",
+      "viewport": "390x844",
+      "actions": 3,
+      "intentVisible": false
+    },
+    {
+      "name": "desktop-return",
+      "viewport": "1280x800",
+      "actions": 3,
+      "intentVisible": false
+    },
+    {
+      "name": "skills-320",
+      "viewport": "320x568",
+      "actions": 3,
+      "intentVisible": false
+    },
+    {
+      "name": "trophies-320",
+      "viewport": "320x568",
+      "actions": 0,
+      "intentVisible": false
+    },
+    {
+      "name": "german-scene-320",
+      "viewport": "320x568",
+      "actions": 3,
+      "intentVisible": false
+    },
+    {
+      "name": "german-skills-320",
+      "viewport": "320x568",
+      "actions": 3,
+      "intentVisible": false
+    }
+  ],
+  "errors": []
+}

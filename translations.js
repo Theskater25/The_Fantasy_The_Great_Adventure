@@ -385,7 +385,7 @@ window.TF_TRANSLATIONS = {
     language.paths=language.paths || {};
   }
   // English includes every event in the existing original translation arrays already.
-  en.content.achievements=source.achievements.map((achievement,index)=>({id:achievement.id,title:en.content.achievements[index][0],description:en.content.achievements[index][1]}));
+  en.content.achievements=source.achievements.map((achievement,index)=>({id:achievement.id,title:en.content.achievements[index]?.[0] || achievement.title,description:en.content.achievements[index]?.[1] || achievement.description}));
   en.chapters=Object.fromEntries(source.chapters.map((chapter,index)=>[chapter.id,{...chapter,...en.content.chapters[index]}]));
   en.events={
     1:source.storyEvents.map((event,index)=>en.events[1]?.[index]||[event.text,event.yes,event.no]),

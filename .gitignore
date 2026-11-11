@@ -1,0 +1,12 @@
+# Réglages locaux et dépendances de développement
+.vscode/
+node_modules/
+.env
+.env.*
+!.env.example
+*.log
+Thumbs.db
+.DS_Store
+
+# Captures intermédiaires de contrôles échoués
+qa-screenshots/*failure*.png
