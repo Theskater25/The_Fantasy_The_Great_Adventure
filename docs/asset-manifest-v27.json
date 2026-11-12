@@ -1,0 +1,285 @@
+{
+  "version": "2.7",
+  "sources": [
+    {
+      "file": "assets/heroes/chevalier.png",
+      "source": "a_fullbody_sprite.png",
+      "sha256": "1c9aaedc54a93ffcad209507692d70026c5fbc1e409c93951c4902642b035c86",
+      "bytes": 5707,
+      "license": "User-created with SpriteLab"
+    },
+    {
+      "file": "assets/heroes/sorcier.png",
+      "source": "a_fullbody_sprite (1).png",
+      "sha256": "45318e7ca4c3fceb61aeb722daf00343ca6ef8d2b9d506ef33931a14da720aeb",
+      "bytes": 5897,
+      "license": "User-created with SpriteLab"
+    },
+    {
+      "file": "assets/heroes/archer.png",
+      "source": "a_fullbody_sprite (2).png",
+      "sha256": "3a8ee8e6770382401b6ebb1a1193f9fd502c4fc45d0e3e617cc0763815af5514",
+      "bytes": 5120,
+      "license": "User-created with SpriteLab"
+    },
+    {
+      "file": "assets/heroes/barbare.png",
+      "source": "a_fullbody_sprite (3).png",
+      "sha256": "ce20d71afe3231b88844d413d956487924adcfeb65c08b5d21607d22c2399a39",
+      "bytes": 8378,
+      "license": "User-created with SpriteLab"
+    },
+    {
+      "file": "assets/heroes/assassin.png",
+      "source": "a_fullbody_sprite (4).png",
+      "sha256": "0f1e834e29a15cc757be0d6868bc434f81cd87f7d6a85b62f349292091d4d4df",
+      "bytes": 4568,
+      "license": "User-created with SpriteLab"
+    },
+    {
+      "file": "assets/heroes/artificier.png",
+      "source": "a_fullbody_sprite (5).png",
+      "sha256": "b43dc45ffa56f59053fe5253a363d5d561d98d4b6383d0288585e52f4f25b8b5",
+      "bytes": 6654,
+      "license": "User-created with SpriteLab"
+    },
+    {
+      "file": "assets/heroes/bard.png",
+      "source": "a_fullbody_sprite (6).png",
+      "sha256": "05fb4ce63d64836a41b9cc74c42bcb800adbcd9a036239410e47f07ebf35d905",
+      "bytes": 5259,
+      "license": "User-created with SpriteLab"
+    },
+    {
+      "file": "assets/heroes/moine.png",
+      "source": "a_fullbody_sprite (7).png",
+      "sha256": "c8edb6984a5091b50248d5589433e5e294782c992e5017626f8361a2712deb87",
+      "bytes": 4769,
+      "license": "User-created with SpriteLab"
+    },
+    {
+      "file": "assets/heroes/necromancien.png",
+      "source": "a_fullbody_sprite (8).png",
+      "sha256": "588b7ce7a9e24b4bb1f093c793c05c9b1ac99450cfde9adc19bfd83162799969",
+      "bytes": 6646,
+      "license": "User-created with SpriteLab"
+    },
+    {
+      "file": "assets/heroes/bouffon.png",
+      "source": "a_fullbody_sprite (9).png",
+      "sha256": "cc139556c898897477998677069de9bfdcf83c42473f86c080c5c5bca3e8aa84",
+      "bytes": 8180,
+      "license": "User-created with SpriteLab"
+    },
+    {
+      "file": "assets/heroes/samurai.png",
+      "source": "a_fullbody_sprite (10).png",
+      "sha256": "7adf581dc01c60b30b7f978064aafeac97f7cbd42418794346290d3dba5dad3a",
+      "bytes": 5142,
+      "license": "User-created with SpriteLab"
+    },
+    {
+      "file": "assets/heroes/shinobi.png",
+      "source": "a_fullbody_sprite (11).png",
+      "sha256": "91b160b80f7bd38859f4736997679c78d3499b697597e7fab58bfdee0fdec4f9",
+      "bytes": 4688,
+      "license": "User-created with SpriteLab"
+    },
+    {
+      "file": "assets/heroes/onmyoji.png",
+      "source": "a_fullbody_sprite (12).png",
+      "sha256": "cd393f675dcae17574b4d54a3d40ddccaa2151194f59d4f19bd9f25ce225a086",
+      "bytes": 5539,
+      "license": "User-created with SpriteLab"
+    },
+    {
+      "file": "assets/heroes/miko.png",
+      "source": "a_fullbody_sprite (13).png",
+      "sha256": "620b9ee3ce3670d08c2ac7ef5c7314bb48f99d29070d9d4f67839900474c6b0e",
+      "bytes": 5010,
+      "license": "User-created with SpriteLab"
+    },
+    {
+      "file": "assets/heroes/ronin.png",
+      "source": "a_fullbody_sprite (14).png",
+      "sha256": "354857b98dfd60771d0df29aca42b0fa2144caf87d16c723b149a5e7db9f5325",
+      "bytes": 5736,
+      "license": "User-created with SpriteLab"
+    },
+    {
+      "file": "assets/heroes/berserker.png",
+      "source": "a_fullbody_sprite (16).png",
+      "sha256": "57b1a49b80144b5ff4ed059b592efa2e047814ebac7d20d931f38d1644340d94",
+      "bytes": 6098,
+      "license": "User-created with SpriteLab"
+    },
+    {
+      "file": "assets/heroes/huskarl.png",
+      "source": "a_fullbody_sprite (17).png",
+      "sha256": "174117eb58fc1774d294969fda0a84e2a6d11698f5a1fcc1437d1d142dc972f3",
+      "bytes": 5443,
+      "license": "User-created with SpriteLab"
+    },
+    {
+      "file": "assets/heroes/valkyrie.png",
+      "source": "a_fullbody_sprite (18).png",
+      "sha256": "91811406cb1580b63012d7204b5e663694034804e946c5713ba5786717a5f463",
+      "bytes": 6864,
+      "license": "User-created with SpriteLab"
+    },
+    {
+      "file": "assets/heroes/seidr.png",
+      "source": "a_fullbody_sprite (19).png",
+      "sha256": "0ae05ce5b9ef8fa37549f2d27e400ddfb99bcca9856630ebcd79665cfd58c929",
+      "bytes": 6675,
+      "license": "User-created with SpriteLab"
+    },
+    {
+      "file": "assets/heroes/skald.png",
+      "source": "a_fullbody_sprite (20).png",
+      "sha256": "9fe288d60a900c3cfdef51c9a054ad32609260dbd7aef7f08f8f98a06dee365c",
+      "bytes": 6593,
+      "license": "User-created with SpriteLab"
+    },
+    {
+      "file": "assets/atlases/weapons.png",
+      "source": "nine_distinct_sprite (2).png",
+      "sha256": "a2b9d5adac86d692931e557e5131fa4fe76b110c73203da74b6eb792a728a078",
+      "bytes": 8962,
+      "license": "User-created with SpriteLab"
+    },
+    {
+      "file": "assets/atlases/equipment.png",
+      "source": "nine_distinct_sprite (3).png",
+      "sha256": "06b6b1b191d26191c60de744f5f62f36597667b326ae56b7478168e3f15218d1",
+      "bytes": 18133,
+      "license": "User-created with SpriteLab"
+    },
+    {
+      "file": "assets/atlases/forge.png",
+      "source": "nine_distinct_sprite (4).png",
+      "sha256": "d51963b10cdde44c6ca23319b0a2102d522ec360c2251a1ec9e22f0dae54605d",
+      "bytes": 10933,
+      "license": "User-created with SpriteLab"
+    },
+    {
+      "file": "assets/atlases/adventure.png",
+      "source": "nine_distinct_sprite (5).png",
+      "sha256": "a3eb379fc77aaecb9649c9353a647e8f94f4ba3ee1100f4ef06babb0c62c479a",
+      "bytes": 19493,
+      "license": "User-created with SpriteLab"
+    },
+    {
+      "file": "assets/atlases/village.png",
+      "source": "nine_distinct_sprite (6).png",
+      "sha256": "7c848b725ca1f7038759030c1aea95c1892e46bc9d68169affd1ba16e00fa5bf",
+      "bytes": 20619,
+      "license": "User-created with SpriteLab"
+    },
+    {
+      "file": "assets/backgrounds/v27/forest.png",
+      "source": "craftpix-net-154389-forest-and-trees-free-pixel-backgrounds.zip::4/2304x1296.png",
+      "sha256": "ac4afad9e34afae4e05f91374e55f8cdb111d275708b79d83fc0ad3b495f266b",
+      "bytes": 55891,
+      "license": "CraftPix Freebie License — https://craftpix.net/file-licenses/"
+    },
+    {
+      "file": "assets/backgrounds/v27/courtyard.png",
+      "source": "craftpix-net-418404-free-castle-interior-pixel-game-backgrounds.zip::PNG/background 1/Preview 1.png",
+      "sha256": "a3784d1bb3b16cb0eec2c60256999c1b07a27a61e66ddd15ba9b52ceae5fcff7",
+      "bytes": 146380,
+      "license": "CraftPix Freebie License — https://craftpix.net/file-licenses/"
+    },
+    {
+      "file": "assets/backgrounds/v27/castle.png",
+      "source": "craftpix-net-418404-free-castle-interior-pixel-game-backgrounds.zip::PNG/background 4/Preview 4.png",
+      "sha256": "8ee19f151011be992012b3517d611a60468ad7a5f899857dce41bc26c126c7f2",
+      "bytes": 141742,
+      "license": "CraftPix Freebie License — https://craftpix.net/file-licenses/"
+    },
+    {
+      "file": "assets/backgrounds/v27/cave.png",
+      "source": "craftpix-net-433169-free-crystal-cave-pixel-art-backgrounds.zip::PNG/background 1/Preview 1.png",
+      "sha256": "6d0b9b6365ab8a01888d0bf6f86ae9cc5231f2e3b223c970095cf808ca3a6ea8",
+      "bytes": 52753,
+      "license": "CraftPix Freebie License — https://craftpix.net/file-licenses/"
+    },
+    {
+      "file": "assets/backgrounds/v27/ice-cave.png",
+      "source": "craftpix-net-433169-free-crystal-cave-pixel-art-backgrounds.zip::PNG/background 4/Preview 4.png",
+      "sha256": "884401025acc9a74daa71d8eac48d4e576262796d4fedaa118edf267d883cddc",
+      "bytes": 59870,
+      "license": "CraftPix Freebie License — https://craftpix.net/file-licenses/"
+    },
+    {
+      "file": "assets/backgrounds/v27/moor.png",
+      "source": "craftpix-net-514191-4-free-seamless-nature-pixel-backgrounds.zip::nature 1/orig.png",
+      "sha256": "6c85e46e68828b8ddfb44dfa0d6c33f01472cc1d9b9d633331d1e98ebd005523",
+      "bytes": 14138,
+      "license": "CraftPix Freebie License — https://craftpix.net/file-licenses/"
+    },
+    {
+      "file": "assets/backgrounds/v27/mountain.png",
+      "source": "craftpix-net-773023-free-mountain-backgrounds-pixel-art.zip::m1/PRE_ORIG_SIZE.png",
+      "sha256": "91093ca97feabe6f212e394384699b039416a19bcf357290695837c0cc582eac",
+      "bytes": 21568,
+      "license": "CraftPix Freebie License — https://craftpix.net/file-licenses/"
+    },
+    {
+      "file": "assets/backgrounds/v27/snow.png",
+      "source": "craftpix-net-773023-free-mountain-backgrounds-pixel-art.zip::m6/PRE_ORIG_SIZE.png",
+      "sha256": "9b44aa6fc0fe2e9496322fdf1928ad596f97cb138833ca457a9b9a76151e0347",
+      "bytes": 15884,
+      "license": "CraftPix Freebie License — https://craftpix.net/file-licenses/"
+    },
+    {
+      "file": "assets/backgrounds/v27/ruins.png",
+      "source": "craftpix-net-776320-free-pixel-art-fantasy-2d-battlegrounds.zip::PNG/Battleground1/Bright/Battleground1.png",
+      "sha256": "8cb6c9e2d9aa9dcc716485b7753de5563c55a6c2c4ea6e9710f7acb32b2a1641",
+      "bytes": 272220,
+      "license": "CraftPix Freebie License — https://craftpix.net/file-licenses/"
+    },
+    {
+      "file": "assets/backgrounds/v27/graveyard.png",
+      "source": "craftpix-net-776320-free-pixel-art-fantasy-2d-battlegrounds.zip::PNG/Battleground4/Bright/Battleground4.png",
+      "sha256": "8f7f030e0ebc197c7cc771082a64aa06be6e85862a90cf31102a062f76acec11",
+      "bytes": 140741,
+      "license": "CraftPix Freebie License — https://craftpix.net/file-licenses/"
+    },
+    {
+      "file": "assets/backgrounds/v27/valley.png",
+      "source": "craftpix-net-823949-free-nature-backgrounds-pixel-art.zip::nature_4/orig.png",
+      "sha256": "56cdbe8e53bdc3fa276f8604ab472b6e4c8df31fbcd3955a5a5778884855a913",
+      "bytes": 26934,
+      "license": "CraftPix Freebie License — https://craftpix.net/file-licenses/"
+    },
+    {
+      "file": "assets/backgrounds/v27/aurora.png",
+      "source": "craftpix-net-823949-free-nature-backgrounds-pixel-art.zip::nature_6/orig.png",
+      "sha256": "446c66c042376cb353d868cabd935e38a8133be4b7317365aa1828d2e44536bd",
+      "bytes": 23740,
+      "license": "CraftPix Freebie License — https://craftpix.net/file-licenses/"
+    },
+    {
+      "file": "assets/backgrounds/v27/lava.png",
+      "source": "Legacy Collection.zip::Legacy Collection/Assets/Gothicvania/Environments/lava-background/PNG/lava-background-preview.png",
+      "sha256": "ba5613680bf377681df7e150cf0d3e3d5bbe83f0323dad3cd96a890c824f547d",
+      "bytes": 15133,
+      "license": "CC0 — Luis Zuno (Ansimuz)"
+    },
+    {
+      "file": "assets/backgrounds/v27/mist.png",
+      "source": "Legacy Collection.zip::Legacy Collection/Assets/Gothicvania/Environments/mist-forest-background/mist-forest-background-preview.png",
+      "sha256": "bd34aaf6f45c67678fc565dcec93853cdaac53b88f7a957ec6904e90d2109398",
+      "bytes": 20610,
+      "license": "CC0 — Luis Zuno (Ansimuz)"
+    }
+  ],
+  "duplicates": [
+    {
+      "kept": "a_fullbody_sprite (14).png",
+      "duplicate": "a_fullbody_sprite (15).png",
+      "reason": "identical SHA256"
+    }
+  ]
+}
