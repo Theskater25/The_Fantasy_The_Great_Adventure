@@ -1,0 +1,221 @@
+/* Version 2.4 — hand-built pixel RPG look, layered over the preserved V2 layout. */
+:root {
+  --sky: #22334b;
+  --sky-light: #5c91bb;
+  --field: #263b35;
+  --field-light: #4d7750;
+  --ink: #f4e6bd;
+  --muted: #b5c4c2;
+  --gold: #e2b866;
+  --gold-bright: #ffe097;
+  --cyan: #9bd8cc;
+  --cyan-dark: #477e82;
+  --panel: #172236;
+  --panel-soft: #28354a;
+  --border: #82694e;
+  --danger: #ca6857;
+  --success: #82bb72;
+  --shadow: 5px 6px 0 rgba(8, 13, 22, .4);
+  font-family: "Courier New", ui-monospace, monospace;
+  background: #172236;
+}
+
+body { background: #172236; }
+.app-shell {
+  background:
+    linear-gradient(180deg, rgba(23,34,54,.08) 0 56%, rgba(18,34,33,.42) 56% 100%),
+    repeating-linear-gradient(90deg, transparent 0 31px, rgba(255,255,255,.018) 31px 32px),
+    linear-gradient(180deg, #406f94 0%, #a8c5bc 56%, #405f46 56.2%, #1e332f 100%);
+}
+.app-shell::before {
+  inset: 0 0 34%; opacity: .55; mask-image: none;
+  background:
+    radial-gradient(ellipse, #fff4cf 0 1px, transparent 2px) 0 0 / 29px 27px,
+    linear-gradient(180deg, transparent, rgba(10,20,33,.18));
+}
+.app-shell::after { display: none; }
+.screen { position: relative; }
+h1, h2, h3, .brand h1, .title-screen h1, .title-screen h2,
+.chapter-card h2, .scene-card p, .enemy-readout h3, .hero-card h2,
+.subscreen-card h1, .achievement-row h3, .defeated-panel h3 {
+  font-family: "Courier New", ui-monospace, monospace;
+  letter-spacing: -.045em;
+}
+.eyebrow { color: #a7e3d5; font-size: 10px; letter-spacing: .16em; }
+.btn, .title-button, .chapter-card, .class-card, .panel, .game-header,
+.game-status, .scene-card, .enemy-stage, .hero-avatar, .modal,
+.subscreen-card, .title-screen, .name-input, .settings-card select {
+  border-radius: 2px;
+  box-shadow: var(--shadow);
+}
+.panel, .game-header, .game-status, .subscreen-card, .title-screen, .modal {
+  border: 2px solid #473f42;
+  box-shadow: inset 0 0 0 2px rgba(255,224,151,.14), 5px 6px 0 rgba(8,13,22,.38);
+}
+.game-header { background: #19283c; border-color: #59504a; padding: 10px 14px; }
+.game-header h1 { color: #fff0cb; font-size: 25px; text-shadow: 2px 2px #432e37; }
+.header-actions .eyebrow { padding: 7px 9px; background: #2e3c4f; border: 2px solid #4e4c51; }
+.btn, .title-button {
+  color: #f6e9c9; background: #34445a; border: 2px solid #857153;
+  border-bottom-width: 4px; font-weight: 800; text-shadow: 1px 1px #192033;
+  transition: transform .12s steps(2), filter .12s linear;
+}
+.btn:hover, .title-button:hover { color: #fff4d6; background: #526b6a; border-color: #e9cc87; transform: translateY(-2px); }
+.btn--cyan { border-color: #8ac6ba; color: #b8eee0; background: #315759; }
+.btn--rest, .btn--rest:hover { color: #f4efc5; background: #536747; }
+.btn--danger { color: #f2b8a7; border-color: #a06056; }
+.screen--game { gap: 11px; }
+.game-layout { grid-template-columns: minmax(0, 1fr) 284px; gap: 11px; }
+.panel { background: #19263a; }
+.story-panel { background: #182538; }
+.panel-heading { border-bottom: 2px solid #41444b; background: #202e42; }
+.panel-heading h2 { color: #f1d69d; font-size: 16px; }
+.story-log { padding: 15px 18px 20px; scrollbar-color: #82734f #1b2637; }
+.story-entry { color: #e8e4d4; }
+.story-entry--system { color: #a5e0d2; }
+.story-entry--battle { border-left: 4px solid #d97c60; background: #3b2932; }
+.story-entry--narrative { border-left: 3px solid #d9b76f; color: #e0dac4; background: #282d35; }
+.scene-card { border: 2px solid #59705c; background: #304d49; box-shadow: 3px 3px 0 rgba(8,13,22,.45); }
+.scene-card p { color: #fff0ce; font-size: 16px; line-height: 1.42; }
+.scene-meta { color: #f4d180; font-size: 9px; }
+
+/* The battle panel reads as a small side-view game scene, not an illustration card. */
+.enemy-stage {
+  --arena-sky: #76a8ce;
+  --arena-mist: #c9d7c1;
+  --arena-far: #587e68;
+  --arena-ground: #467249;
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(205px, 29%);
+  align-items: end;
+  gap: 13px;
+  min-height: 286px;
+  margin: 7px 0 18px;
+  padding: 12px;
+  overflow: hidden;
+  border: 3px solid #292b32;
+  border-radius: 2px;
+  background-image: url("../assets/backgrounds/arena-village.svg");
+  background-position: center;
+  background-size: cover;
+  /* The SVG is a tiny hand-drawn pixel landscape; keep its tile edges crisp. */
+  image-rendering: pixelated;
+  /* Fallback palette for browsers that fail to load an image. */
+  background-color: #467249;
+  box-shadow: inset 0 0 0 2px rgba(255,232,179,.27), 4px 5px 0 rgba(8,13,22,.5);
+}
+.enemy-stage::before, .enemy-stage::after { display: none; }
+.screen--game[data-chapter="2"] .enemy-stage { background-image: url("../assets/backgrounds/arena-dungeon.svg"); }
+.screen--game[data-chapter="3"] .enemy-stage { background-image: url("../assets/backgrounds/arena-fjord.svg"); }
+.enemy-stage::before {
+  content: ""; position: absolute; z-index: -1; inset: 0 0 24%; opacity: .92;
+  background:
+    linear-gradient(135deg, transparent 0 11%, #71937d 11% 13%, transparent 13% 28%, #83a18b 28% 30%, transparent 30% 53%, #708e7a 53% 56%, transparent 56%),
+    radial-gradient(ellipse at 77% 46%, #eadfba 0 2px, transparent 3px) 0 0 / 88px 41px,
+    radial-gradient(ellipse at 20% 40%, #e5e3c8 0 2px, transparent 3px) 0 0 / 105px 53px;
+}
+.enemy-stage::after {
+  content: ""; position: absolute; z-index: -1; inset: auto 0 0; height: 31%;
+  background:
+    linear-gradient(90deg, transparent 0 7%, #273d32 7% 8%, transparent 8% 17%, #668346 17% 18%, transparent 18% 29%, #314931 29% 31%, transparent 31% 57%, #294332 57% 58%, transparent 58% 73%, #72904b 73% 74%, transparent 74%),
+    repeating-linear-gradient(90deg, transparent 0 12px, rgba(187,194,111,.45) 12px 14px, transparent 14px 23px),
+    linear-gradient(180deg, transparent 0 21%, #314b36 21% 100%);
+  clip-path: polygon(0 12%, 100% 0, 100% 100%, 0 100%);
+}
+.screen--game[data-chapter="2"] .enemy-stage {
+  --arena-sky: #292b3d; --arena-mist: #4e4949; --arena-far: #514342; --arena-ground: #342e33;
+}
+.screen--game[data-chapter="2"] .enemy-stage::before {
+  background:
+    repeating-linear-gradient(0deg, transparent 0 19px, rgba(201,159,100,.3) 19px 22px, transparent 22px 41px),
+    repeating-linear-gradient(90deg, #383744 0 27px, #55484a 27px 30px, #302f3a 30px 56px),
+    linear-gradient(180deg, #292b3d, #554342);
+  opacity: .66;
+}
+.screen--game[data-chapter="2"] .enemy-stage::after {
+  height: 35%;
+  background: radial-gradient(ellipse, #ffc75e 0 2px, #cf6841 3px 5px, transparent 7px) 12px 2px / 129px 34px,
+    repeating-linear-gradient(90deg, #34303a 0 20px, #685348 20px 24px, #3a3338 24px 47px);
+}
+.screen--game[data-chapter="3"] .enemy-stage {
+  --arena-sky: #5b8198; --arena-mist: #c5d2cb; --arena-far: #6d8580; --arena-ground: #d3d2bd;
+}
+.screen--game[data-chapter="3"] .enemy-stage::before {
+  background: linear-gradient(145deg, transparent 0 31%, #d0d6d0 31% 44%, transparent 44%),
+    linear-gradient(35deg, transparent 0 48%, #9db3ae 48% 60%, transparent 60%),
+    radial-gradient(ellipse at 75% 22%, #f5f0d8 0 2px, transparent 3px) 0 0 / 80px 45px;
+}
+.enemy-portrait {
+  position: relative; z-index: 1; display: flex; align-items: flex-end; justify-content: center;
+  min-width: 0; height: 256px; overflow: hidden; border: 0; border-radius: 0;
+  background: transparent; box-shadow: none;
+}
+.enemy-portrait img {
+  position: relative; z-index: 1; display: block;
+  width: calc(var(--sprite-width) * var(--sprite-scale)); height: auto;
+  max-width: 100%; max-height: 100%;
+  object-fit: contain; object-position: center bottom;
+  image-rendering: crisp-edges; image-rendering: pixelated;
+}
+.sprite-ground { position: absolute; left: 50%; bottom: 0; height: 10px; z-index: 0;
+  width: calc(var(--sprite-width) * var(--sprite-scale) * .8); max-width: 80%; transform: translateX(-50%);
+  background: #303b31; clip-path: polygon(12% 0, 87% 0, 100% 50%, 78% 100%, 19% 100%, 0 48%); }
+.enemy-readout {
+  position: relative; z-index: 2; min-width: 0; margin: 0 0 5px; padding: 12px 13px 14px;
+  text-align: left; overflow-wrap: anywhere; color: #fff0d0;
+  border: 3px solid #282a31; background: rgba(26,34,47,.9);
+  box-shadow: inset 0 0 0 2px rgba(246,218,159,.2), 3px 4px 0 rgba(19,24,30,.45);
+}
+.enemy-readout .eyebrow { color: #e8ca7a; }
+.enemy-readout h3 { margin: 5px 0 7px; color: #fff0cf; font-size: clamp(15px, 1.5vw, 21px); line-height: 1.12; }
+.enemy-readout p { margin-bottom: 8px; color: #d6d8c9; font-size: 11px; line-height: 1.4; }
+.meter {
+  height: 13px; padding: 2px; border: 2px solid #161d29; border-radius: 0;
+  background: #1b2029; box-shadow: inset 0 0 0 1px rgba(255,255,255,.1);
+}
+.meter > span {
+  border-radius: 0; background: repeating-linear-gradient(90deg, #e06c50 0 12px, #f59a62 12px 14px);
+  transition: width .2s steps(8, end);
+}
+.combat-footer { padding: 10px 13px; border-top: 2px solid #484750; background: #202d40; }
+.prompt { color: #f0d38e; font-size: 12px; }
+.action-list .btn { min-width: 88px; }
+.side-panel { background: #19263a; }
+.hero-card { background: #28374a; }
+.hero-avatar { border: 3px solid #8e7956; background: #334e50; image-rendering: pixelated; }
+.hero-class { color: #a7e3d5; }
+.bar-health { background: repeating-linear-gradient(90deg, #83bb71 0 12px, #a3cc70 12px 14px) !important; }
+.ability { border: 2px solid #62563f; border-radius: 2px; background: #202d3e; }
+.defeated-item { border-radius: 2px; background: #263348; }
+.game-status { background: #1a2739; }
+.title-screen, .subscreen-card { background: #1c2b40; }
+.chapter-card, .class-card { border: 2px solid #776650; background: #1e2d41; }
+.chapter-card:hover, .class-card:hover, .class-card.is-selected { background: #304951; }
+.class-portrait { border-radius: 2px; image-rendering: pixelated; }
+
+@media (max-width: 980px) {
+  .game-layout { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 680px) {
+  .game-layout { grid-template-columns: minmax(0, 1fr); }
+  .enemy-stage { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: end; gap: 7px; min-height: 178px; padding: 8px; }
+  .enemy-portrait { --sprite-scale: var(--sprite-mobile-scale) !important; height: 144px; }
+  .enemy-readout { margin: 0; padding: 8px; }
+  .enemy-readout h3 { font-size: 14px; }
+  .enemy-readout .eyebrow { font-size: 8px; letter-spacing: .08em; }
+  .enemy-readout p { font-size: 10px; }
+  .combat-footer { padding: 8px; }
+}
+@media (max-width: 960px) and (max-height: 520px) and (orientation: landscape) {
+  .game-layout { grid-template-columns: minmax(0, 1fr) 220px; }
+  .enemy-stage { min-height: 148px; padding: 8px; gap: 8px; grid-template-columns: minmax(0, 1fr) minmax(130px, 42%); }
+  .enemy-portrait { --sprite-scale: var(--sprite-mobile-scale) !important; height: 128px; }
+  .enemy-readout { margin: 0; padding: 7px; }
+  .enemy-readout h3 { font-size: 13px; }
+  .enemy-readout p, .enemy-readout .eyebrow { font-size: 9px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .enemy-stage *, .enemy-stage::before, .enemy-stage::after { animation: none !important; transition: none !important; }
+}

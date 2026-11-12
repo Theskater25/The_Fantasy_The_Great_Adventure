@@ -1,0 +1,99 @@
+/* Pixel scenery assembled from the player's two untouched sprite sheets. */
+.screen--game .enemy-stage[data-environment] {
+  --scene-sky: #55777f;
+  --scene-ridge-far: #496264;
+  --scene-ridge-near: #354f49;
+  --scene-ground: #34412d;
+  --scene-path: #5b5340;
+  --scene-fleck: #536346;
+  background: var(--scene-sky);
+  border-color: #303a3b;
+}
+.arena-scenery {
+  position: absolute; inset: 0; z-index: 0; overflow: hidden;
+  pointer-events: none; user-select: none; contain: paint;
+  background: linear-gradient(180deg, var(--scene-sky) 0 65%, var(--scene-ground) 65% 100%);
+}
+.scenery-ridge {
+  position: absolute; width: 100%; height: 57%; bottom: 29%;
+  clip-path: polygon(0 51%, 7% 51%, 7% 39%, 13% 39%, 13% 29%, 20% 29%, 20% 40%, 29% 40%, 29% 51%, 37% 51%, 37% 35%, 43% 35%, 43% 18%, 48% 18%, 48% 9%, 54% 9%, 54% 21%, 60% 21%, 60% 39%, 68% 39%, 68% 51%, 76% 51%, 76% 30%, 82% 30%, 82% 23%, 89% 23%, 89% 38%, 96% 38%, 96% 45%, 100% 45%, 100% 100%, 0 100%);
+}
+.scenery-ridge--far { background: var(--scene-ridge-far); opacity: .7; }
+.scenery-ridge--near { bottom: 24%; height: 39%; background: var(--scene-ridge-near); transform: scaleX(-1); }
+.scenery-wall { display: none; }
+.scenery-floor {
+  position: absolute; inset: 67% 0 0;
+  background-color: var(--scene-ground);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='40' shape-rendering='crispEdges'%3E%3Cpath fill='%23d7d2ab' opacity='.15' d='M9 7h4v2H9zM41 19h3v2h-3zM22 32h5v2h-5zM58 36h2v2h-2z'/%3E%3C/svg%3E");
+}
+.scenery-path {
+  position: absolute; inset: 70% 0 0;
+  background: repeating-linear-gradient(0deg, transparent 0 16px, #1c231526 16px 18px), var(--scene-path);
+  clip-path: polygon(25% 0, 49% 0, 68% 100%, 6% 100%);
+  opacity: .72;
+}
+.scene-prop {
+  --prop-zoom: var(--prop-scale);
+  display: block; position: absolute; left: var(--prop-x); bottom: var(--prop-floor);
+  width: calc(var(--prop-width) * var(--prop-zoom));
+  height: calc(var(--prop-height) * var(--prop-zoom));
+  transform: translateX(-50%);
+  background-repeat: no-repeat;
+  background-size: calc(var(--atlas-width) * var(--prop-zoom)) calc(var(--atlas-height) * var(--prop-zoom));
+  background-position: calc(var(--atlas-x) * var(--prop-zoom)) calc(var(--atlas-y) * var(--prop-zoom));
+  image-rendering: crisp-edges; image-rendering: pixelated;
+}
+.scene-prop--forest { background-image: url("../assets/scenery/forest-village.png"); }
+.scene-prop--ruins { background-image: url("../assets/scenery/ruins-north.png"); }
+.scene-prop.is-far { opacity: .72; }
+.scene-prop.is-feature { opacity: .94; }
+.enemy-stage[data-environment] .enemy-portrait { z-index: 1; }
+.enemy-stage[data-environment] .enemy-readout { z-index: 2; }
+.enemy-stage[data-environment] .sprite-ground { background: #111d1ba6; }
+
+.screen--game .enemy-stage[data-environment="forest"] {
+  --scene-sky: #526b62; --scene-ridge-far: #3c5950; --scene-ridge-near: #2d463e;
+  --scene-ground: #2c3b2c; --scene-path: #4a4832; --scene-fleck: #475a35;
+}
+.screen--game .enemy-stage[data-environment="graveyard"] {
+  --scene-sky: #3a4e5a; --scene-ridge-far: #30454d; --scene-ridge-near: #273b3c;
+  --scene-ground: #283a32; --scene-path: #414d43; --scene-fleck: #425143;
+}
+.screen--game .enemy-stage[data-environment="ruins"],
+.screen--game .enemy-stage[data-environment="forge"] {
+  --scene-sky: #282b34; --scene-ground: #38332f; --scene-path: #514333; --scene-fleck: #48403a;
+}
+.enemy-stage[data-environment="ruins"] .scenery-ridge,
+.enemy-stage[data-environment="forge"] .scenery-ridge { display: none; }
+.enemy-stage[data-environment="ruins"] .scenery-wall,
+.enemy-stage[data-environment="forge"] .scenery-wall {
+  display: block; position: absolute; inset: 0 0 28%;
+  background:
+    linear-gradient(0deg, #171c24 0 2px, transparent 2px) 0 0 / 64px 32px,
+    linear-gradient(90deg, #171c24 0 2px, transparent 2px) 0 0 / 64px 64px,
+    linear-gradient(90deg, #171c24 0 2px, transparent 2px) 32px 32px / 64px 64px,
+    #31343c;
+  box-shadow: inset 0 -6px #20262e;
+}
+.enemy-stage[data-environment="ruins"] .scenery-path,
+.enemy-stage[data-environment="forge"] .scenery-path { clip-path: none; opacity: .3; }
+.screen--game .enemy-stage[data-environment="forge"] {
+  --scene-ground: #392c2c; --scene-path: #694034; --scene-fleck: #584036;
+}
+.enemy-stage[data-environment="forge"] .scenery-wall { background-color: #3c3034; }
+.screen--game .enemy-stage[data-environment="fjord"],
+.screen--game .enemy-stage[data-environment="shrine"] {
+  --scene-sky: #667b8b; --scene-ridge-far: #abbab9; --scene-ridge-near: #718f96;
+  --scene-ground: #adb9b7; --scene-path: #7f9398; --scene-fleck: #c4cdc5;
+}
+.enemy-stage[data-environment="fjord"] .scenery-ridge--far,
+.enemy-stage[data-environment="shrine"] .scenery-ridge--far { height: 79%; opacity: .88; }
+.enemy-stage[data-environment="fjord"] .sprite-ground,
+.enemy-stage[data-environment="shrine"] .sprite-ground { background: #4d697a80; }
+
+@media (max-width: 680px), (max-width: 960px) and (max-height: 520px) and (orientation: landscape) {
+  .scene-prop { --prop-zoom: var(--prop-compact); }
+  .scene-prop.is-far { opacity: .5; }
+  .scene-prop.is-accent { display: none; }
+  .scenery-floor { background-size: 48px 30px; }
+}
