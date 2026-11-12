@@ -8,7 +8,7 @@ const { chromium } = require(process.env.TF_PLAYWRIGHT_MODULE || 'playwright');
 const { gameRoot: root, resultsRoot } = require('./project.cjs');
 fs.mkdirSync(resultsRoot, { recursive: true });
 const url = process.env.MERGE_QA_URL || 'http://127.0.0.1:8123/index.html';
-const oldKeys = ['the-fantasy-version-2-3-save', 'the-fantasy-version-2-3-settings',
+const oldKeys = ['the-fantasy-version-2-6-save', 'the-fantasy-version-2-6-settings', 'the-fantasy-version-2-6-achievements', 'the-fantasy-v26-guide-seen', 'fantasy-v26-name', 'the-fantasy-version-2-3-save', 'the-fantasy-version-2-3-settings',
   'the-fantasy-version-2-3-achievements', 'the-fantasy-version-2-4-save',
   'the-fantasy-version-2-settings', 'the-fantasy-version-2-achievements',
   'the-fantasy-v23-guide-seen', 'fantasy-v23-name'];
@@ -24,8 +24,8 @@ const oldKeys = ['the-fantasy-version-2-3-save', 'the-fantasy-version-2-3-settin
     await page.goto(url);
     await page.evaluate(async oldKeys => {
       for (const key of oldKeys) localStorage.setItem(key, 'legacy-sentinel');
-      localStorage.setItem('the-fantasy-version-2-6-settings', JSON.stringify({ language: 'fr', music: false, motion: false, volume: 0 }));
-      localStorage.setItem('the-fantasy-v26-guide-seen', 'true');
+      localStorage.setItem('the-fantasy-version-2-7-settings', JSON.stringify({ language: 'fr', music: false, motion: false, volume: 0 }));
+      localStorage.setItem('the-fantasy-v27-guide-seen', 'true');
       await navigator.serviceWorker.ready;
     }, oldKeys);
     await page.reload();
@@ -81,18 +81,19 @@ const oldKeys = ['the-fantasy-version-2-3-save', 'the-fantasy-version-2-3-settin
     await page.locator('[data-action="continue"]').click();
     const files = JSON.parse(fs.readFileSync(path.join(root, 'assets/enemies/sprites/manifest.json'), 'utf8')).sprites.map(s => 'assets/enemies/sprites/' + s.file);
     files.push('assets/scenery/forest-village.png', 'assets/scenery/ruins-north.png');
+    for (const directory of ['assets/heroes','assets/atlases','assets/backgrounds/v27']) files.push(...fs.readdirSync(path.join(root,directory)).filter(n=>n.endsWith('.png')).map(n=>directory+'/'+n));
     const images = await page.evaluate(async files => Promise.all(files.map(async src => {
       const img = new Image(); img.src = src; await img.decode();
       return { src, width: img.naturalWidth, height: img.naturalHeight };
     })), files);
     assert.ok(images.every(img => img.width > 0 && img.height > 0));
-    report.offlineSprites = 20; report.offlineAtlases = 2;
-    await page.screenshot({ path: path.join(resultsRoot, 'merge-2.6-offline.png') });
+    report.offlineSprites = 40; report.offlineAtlases = 7; report.offlineBackgrounds = 14;
+    await page.screenshot({ path: path.join(resultsRoot, 'merge-2.7-offline.png') });
     await context.close();
     const fileContext = await browser.newContext({ serviceWorkers: 'block' });
     const local = await fileContext.newPage(); local.on('pageerror', e => errors.push(String(e)));
     await local.goto(pathToFileURL(path.join(root, 'index.html')).href);
-    assert.match(await local.title(), /Version 2\.6/);
+    assert.match(await local.title(), /Version 2\.7/);
     await local.locator('[data-action="play"]').click();
     await local.locator('[data-chapter="1"]').click();
     await local.locator('[data-class="sorcier"]').click();
@@ -103,7 +104,7 @@ const oldKeys = ['the-fantasy-version-2-3-save', 'the-fantasy-version-2-3-settin
     assert.equal(await local.locator('.arena-scenery .scene-prop').count() > 0, true);
     report.fileLaunch = true;
     assert.deepEqual(errors, []);
-    fs.writeFileSync(path.join(resultsRoot, 'merge-2.6-report.json'), JSON.stringify(report, null, 2) + '\n');
+    fs.writeFileSync(path.join(resultsRoot, 'merge-2.7-report.json'), JSON.stringify(report, null, 2) + '\n');
     console.log(JSON.stringify(report, null, 2));
   } finally { await browser.close(); }
 })().catch(e => { console.error(e); process.exitCode = 1; });

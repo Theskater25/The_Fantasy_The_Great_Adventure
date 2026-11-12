@@ -21,7 +21,7 @@ fs.mkdirSync(screenshots, { recursive: true });
     const scope = await dialog.count() ? dialog : page;
     await scope.locator(selector).first().click();
   };
-  const snap = async name => page.screenshot({ path: path.join(screenshots, "mobile-v26-" + name + ".png") });
+  const snap = async name => page.screenshot({ path: path.join(screenshots, "mobile-v27-" + name + ".png") });
   async function layout(name, game = true) {
     await page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));
     const result = await page.evaluate(() => {
@@ -160,7 +160,7 @@ fs.mkdirSync(screenshots, { recursive: true });
     await layout("german-skills-320");
     await snap("german-skills");
     assert.deepEqual(errors, [], "browser JavaScript errors");
-    fs.writeFileSync(path.join(screenshots,"mobile-v26-checks.json"), JSON.stringify({checks,errors}, null, 2));
+    fs.writeFileSync(path.join(screenshots,"mobile-v27-checks.json"), JSON.stringify({checks,errors}, null, 2));
     console.log(JSON.stringify({passed:checks.length,checks,errors}, null, 2));
   } catch (e) {
     await snap("failure");

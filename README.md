@@ -1,59 +1,26 @@
-# The Fantasy — Version 2.6
+# The Fantasy — Version 2.7
 
-RPG narratif en trois chapitres : campagne, inventaire, talents, quêtes et trophées, avec 20 personnages et 18 accessoires en pixel art.
+Version locale indépendante de la 2.6, avec les nouvelles ressources fournies le 12 novembre 2026.
 
-[Jouer en ligne](https://theskater25.github.io/The_Fantasy_The_Great_Adventure/) · [Fonctionnalités](docs/guides/JEU_2.6.md) · [Guide de développement](docs/guides/DEVELOPPEMENT.md)
+Ouvrir [Jouer.html](Jouer.html) pour jouer directement, ou lancer `node tools/qa/serve.cjs` puis ouvrir http://localhost:8123.
+
+- 20 classes illustrées dans la sélection, la fiche du héros et le bandeau mobile.
+- 15 boss et 5 ennemis conservés.
+- 5 nouvelles planches de 9 éléments : armes, équipements, objets d’aventure, forge et village.
+- 14 fonds sélectionnés pour l’accueil, les chapitres, l’exploration et les combats.
+- Sauvegardes, paramètres et trophées propres à la 2.7 ; aucune écriture dans les clés de la 2.6.
 
 ## Organisation
 
-```text
-game/                 Jeu autonome
-  index.html          Page de départ
-  js/                 Moteur, données, trophées et décors
-  css/                Interface bureau, mobile et thème pixel art
-  assets/             Personnages, décors et icônes
-  audio/              Musiques et effets
-  translations/       Catalogues et sources des traductions
-docs/
-  guides/             Instructions de jeu et de développement
-  plans/              Pistes d'évolution
-tools/
-  qa/                 Contrôles et serveur local
-  deploy/             Préparation du site et aide au déploiement
-tests/results/        Rapports et captures, classés par version
-archive/              Anciens portraits SVG et outils historiques
-.github/workflows/    Vérification et publication automatiques
-```
+- `game/` : fichiers du jeu, avec `js/`, `css/`, `assets/` et `audio/`.
+- `docs/` : provenance, licences et rapport d’intégration.
+- `tools/qa/` : serveur et contrôles.
+- `tools/deploy/` : préparation du site avec `node tools/deploy/build-site.mjs`.
+- `tests/results/v2.7/` : rapports et captures.
+- `dist/` : copie autonome du site préparée pour une future publication.
 
-## Jouer en local
+Cette version est préparée localement. Le dépôt GitHub et le site public restent sur la 2.6.
 
-Ouvre `game/index.html` dans un navigateur, ou lance depuis la racine du dépôt :
+## Ressources
 
-```powershell
-node tools/qa/serve.cjs
-```
-
-Puis ouvre [le jeu local](http://localhost:8123/). Le serveur ne publie que le contenu de `game/`.
-
-## GitHub Pages
-
-Chaque mise à jour de `main` vérifie les règles du jeu, assemble **uniquement les ressources du site** dans `dist/`, puis publie ce dossier. `docs/`, `tests/`, `tools/`, `archive/`, les réglages locaux et les sources JSON des traductions restent hors du site.
-
-```powershell
-node tools/deploy/build-site.mjs
-```
-
-`dist/` est généré et ignoré par Git. Le contenu de `game/` est publié à la racine du site : l'adresse du jeu ne change pas. Les sauvegardes 2.6 gardent leurs clés et leur origine ; le rangement ne les réinitialise pas.
-
-## Vérifications
-
-```powershell
-node tools/qa/check-trophies.mjs
-node tools/qa/check-progression-rules.mjs
-node tools/qa/check-route-reward.mjs
-node tools/qa/check-translations.mjs
-```
-
-Les contrôles navigateur nécessitent Playwright et Chrome. Leur lancement et les variables de configuration sont décrits dans le [guide de développement](docs/guides/DEVELOPPEMENT.md). Les résultats actuels sont dans [tests/results/v2.6](tests/results/v2.6/).
-
-Les traductions automatiques méritent une relecture. Les informations de provenance audio conservées figurent dans [les notes audio](docs/plans/AUDIO.md) ; le dépôt ne contient pas encore toutes les URL et conditions de licence des pistes.
+Voir [les crédits et la provenance](docs/RESSOURCES_2.7.md) et [le rapport](docs/RAPPORT_2.7.md).

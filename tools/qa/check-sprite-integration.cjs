@@ -24,7 +24,7 @@ const server = http.createServer((req, res) => {
     const page = await browser.newPage({ viewport: { width: 1280, height: 720 }, deviceScaleFactor: 1 });
     const errors = [];
     page.on('pageerror', error => errors.push(error.message));
-    await page.addInitScript(() => localStorage.setItem('the-fantasy-version-2-6-settings', JSON.stringify({ language: 'fr', display: 'standard', music: false, motion: false, volume: 0 })));
+    await page.addInitScript(() => localStorage.setItem('the-fantasy-version-2-7-settings', JSON.stringify({ language: 'fr', display: 'standard', music: false, motion: false, volume: 0 })));
     await page.goto(`http://127.0.0.1:${server.address().port}/`);
     await page.locator('[data-action="play"]').click();
     await page.locator('[data-chapter="1"]').click();
@@ -106,7 +106,7 @@ const server = http.createServer((req, res) => {
         assert.ok(bounds.inside && bounds.noPageOverflow, `${sprite.id} overflows at ${viewport.width}x${viewport.height}`);
         rendered++;
         if ((viewport.width === 1280 && ['raiders', 'jack-chistophe', 'azharkan', 'fenrir'].includes(sprite.id)) || (viewport.width !== 1280 && sprite.id === 'jack-chistophe')) {
-          const file = `sprites-2.6-${sprite.id}-${viewport.width}.png`;
+          const file = `sprites-2.7-${sprite.id}-${viewport.width}.png`;
           await page.screenshot({ path: path.join(screenshotDir, file), fullPage: true });
           screenshots.push(file);
         }
@@ -142,7 +142,7 @@ const server = http.createServer((req, res) => {
         }
         sceneryRenders++;
         if (viewport.width === 1280 || theme === 'graveyard') {
-          const file = `scenery-2.6-${theme}-${viewport.width}.png`;
+          const file = `scenery-2.7-${theme}-${viewport.width}.png`;
           await page.screenshot({ path: path.join(screenshotDir, file), fullPage: true });
           screenshots.push(file);
         }
@@ -157,7 +157,7 @@ const server = http.createServer((req, res) => {
     assert.ok(await page.evaluate(before => state.enemy.hp < before && state.battle.turn === 2, before), 'Attack must still update combat');
     assert.deepEqual(errors, []);
     const report = { mapping, responsiveRenders: rendered, sceneryRenders, sceneryProps: usedProps.size, combatAction: 'passed', errors, screenshots };
-    fs.writeFileSync(path.join(screenshotDir, 'sprites-2.6-report.json'), JSON.stringify(report, null, 2) + '\n');
+    fs.writeFileSync(path.join(screenshotDir, 'sprites-2.7-report.json'), JSON.stringify(report, null, 2) + '\n');
     console.log(JSON.stringify(report, null, 2));
   } finally {
     if (browser) await browser.close();
