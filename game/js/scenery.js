@@ -185,14 +185,15 @@
     if (/crypte|cimetiere|croix|ossements|fantome/.test(place)) return 'graveyard';
     return /foret|arbre|sentier|riviere|cascade|chemin|bois/.test(place) ? 'forest' : 'village';
   }
-  function render(theme) {
+  function render(theme, background, decor = "") {
     const layout = layouts[theme] || layouts.village;
     const scenery = layout.map(([id, x, floor, scale, depth]) => {
       const prop = props[id], atlas = atlases[prop.atlas];
       const style = `--prop-x:${x}%;--prop-floor:${floor}%;--prop-scale:${scale};--prop-compact:${Math.max(1, Math.floor(scale / 2))};--prop-width:${prop.width}px;--prop-height:${prop.height}px;--atlas-width:${atlas.width}px;--atlas-height:${atlas.height}px;--atlas-x:${-prop.x}px;--atlas-y:${-prop.y}px`;
       return `<span class="scene-prop scene-prop--${prop.atlas} is-${depth}" data-prop="${id}" style="${style}"></span>`;
     }).join('');
-    return `<div class="arena-scenery" aria-hidden="true"><div class="scenery-ridge scenery-ridge--far"></div><div class="scenery-ridge scenery-ridge--near"></div><div class="scenery-wall"></div><div class="scenery-floor"></div><div class="scenery-path"></div>${scenery}</div>`;
+    const supplied = background ? `<img class="arena-backdrop" src="assets/backgrounds/v27/${background}.png" alt="" draggable="false">` : "";
+    return `<div class="arena-scenery ${background ? "has-art" : ""}" aria-hidden="true"><div class="scenery-ridge scenery-ridge--far"></div><div class="scenery-ridge scenery-ridge--near"></div><div class="scenery-wall"></div><div class="scenery-floor"></div><div class="scenery-path"></div>${scenery}${supplied}${window.TF_ART.props(theme,decor)}</div>`;
   }
   window.TF_SCENERY = Object.freeze({ themeFor, render });
 })();

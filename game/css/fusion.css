@@ -1,4 +1,4 @@
-/* Version 2.6: the 2.4 art direction with the 2.3 campaign and compact HUD. */
+/* Version 2.7: the 2.4 art direction with the 2.3 campaign and compact HUD. */
 .game-heading { min-width: 0; }
 .game-header h1 { overflow-wrap: anywhere; }
 .header-actions { flex: 1 1 480px; }

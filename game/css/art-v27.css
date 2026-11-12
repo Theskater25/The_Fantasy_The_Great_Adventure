@@ -1,0 +1,53 @@
+/* Version 2.7: supplied character sprites, inventory atlases and painted worlds. */
+.hero-sprite { display:block; image-rendering:pixelated; object-fit:contain; object-position:center bottom; max-width:100%; }
+.class-portrait { height:174px; background:#202e32; border:1px solid #546351; box-shadow:inset 0 -18px #182526; display:flex; align-items:flex-end; justify-content:center; padding:8px; }
+.class-portrait::after { display:none; }
+.class-portrait .hero-sprite { width:auto; height:auto; max-height:158px; max-width:100%; position:relative; z-index:1; }
+.class-card.is-selected .class-portrait { background:#364a43; border-color:#e2c47a; }
+.hero-avatar { width:106px; height:144px; border-radius:2px; background:#182b2d; padding:7px; align-items:end; }
+.hero-avatar .hero-sprite { width:auto; height:auto; max-height:128px; }
+.hero-top > div:last-child { min-width:0; }
+.hero-top h2 { overflow-wrap:anywhere; }
+.mobile-hero-button > span:first-child { overflow:hidden; position:relative; }
+.mobile-hero-button .hero-sprite { width:40px; height:44px; object-position:center; }
+.art-icon { display:inline-flex; flex-shrink:0; position:relative; align-items:center; justify-content:center; vertical-align:middle; }
+.art-icon > span { display:block; flex-shrink:0; background-repeat:no-repeat; image-rendering:pixelated; }
+.inventory-item-icon { border-radius:2px; background:#26322c; }
+.equipment-list > span { display:flex; align-items:center; gap:7px; }
+.scene-meta > span { display:inline-flex; align-items:center; gap:5px; }
+.btn--potion .art-icon { margin-right:2px; }
+.arena-backdrop { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center 70%; image-rendering:pixelated; z-index:0; }
+.arena-scenery.has-art { background:#192d34; }
+.has-art .scenery-ridge, .has-art .scenery-wall, .has-art .scenery-floor, .has-art .scenery-path { display:none !important; }
+.has-art .scene-prop { z-index:1; }
+.has-art .scene-prop.is-far { display:none; }
+.has-art .scene-prop.is-feature { opacity:.9; --prop-zoom:1; }
+.has-art .scene-prop.is-accent { display:none; }
+.v27-prop { position:absolute; bottom:4%; z-index:1; }
+.v27-prop-0 { left:2%; }
+.v27-prop-1 { left:48%; }
+.v27-prop-2 { right:2%; }
+.screen--game .enemy-stage[data-environment] { border:2px solid #776c50; box-shadow:inset 0 0 0 2px #171f25; }
+.enemy-readout { background:#15242bec; border:1px solid #657063; padding:12px; }
+.journey-panorama { position:relative; height:160px; margin:0 0 12px; overflow:hidden; border:2px solid #686b4e; background:#192d34; }
+.journey-panorama img { width:100%; height:100%; display:block; object-fit:cover; object-position:center 65%; image-rendering:pixelated; }
+.screen--title { background:linear-gradient(90deg,#08191de8,#08191d88,#08191dcc),url('../assets/backgrounds/v27/mist.png') center / cover; image-rendering:pixelated; }
+.screen--title .title-screen { background:#111f28da; border:2px solid #7d7656; box-shadow:0 12px 0 #080f17a0; }
+.chapter-card { background-color:#15262b; background-position:center; background-size:cover; }
+.chapter-card[data-chapter="1"] { background-image:linear-gradient(90deg,#0c1b22f2,#0c1b2290),url('../assets/backgrounds/v27/forest.png'); }
+.chapter-card[data-chapter="2"] { background-image:linear-gradient(90deg,#0c1b22f2,#0c1b2290),url('../assets/backgrounds/v27/ruins.png'); }
+.chapter-card[data-chapter="3"] { background-image:linear-gradient(90deg,#0c1b22f2,#0c1b2290),url('../assets/backgrounds/v27/aurora.png'); }
+.is-compact .journey-panorama { height:108px; margin-bottom:8px; }
+.is-compact .v27-prop .art-icon { transform:scale(.65); transform-origin:bottom left; }
+.is-compact .v27-prop-1, .is-compact .v27-prop-2 { display:none; }
+.is-compact .has-art .scene-prop.is-feature { opacity:.75; }
+@media(max-width:520px) {
+  .class-card { grid-template-columns:96px minmax(0,1fr); gap:8px 12px; }
+  .class-card .class-portrait { width:96px; }
+  .class-portrait { height:150px; }
+  .class-portrait .hero-sprite { max-height:140px; }
+  .hero-avatar { width:88px; height:132px; }
+  .hero-avatar .hero-sprite { max-height:118px; }
+}
+@media(max-height:650px) { .is-compact .journey-panorama { height:68px; } }
+@media(max-height:520px) and (orientation:landscape) { .is-compact .journey-panorama { height:60px; } }
